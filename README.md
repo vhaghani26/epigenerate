@@ -4,13 +4,24 @@ This document is for users in the LaSalle Lab to set up their computer environme
 
 ## Accounts ##
 
-You'll need an account to connect to epigenerate and the rest of the cluster.
+You'll need an account to connect to epigenerate and the rest of the cluster. Use these steps to request an account:
 
-* https://computing.genomecenter.ucdavis.edu
-* Follow the "request account" link
-* Select Janine LaSalle from the list of sponsors
-* You will get an email with a link where you can set your password
-* For help, email hpc-help@ucdavis.edu
+1. Go to this webpage: https://computing.genomecenter.ucdavis.edu
+2. Follow the "request account" link
+3. Select Janine LaSalle from the list of sponsors
+4. You will get an email with a link where you can set your password
+
+For help, email hpc-help@ucdavis.edu.
+
+## Logging into Epigenerate ##
+
+To log in to epigenerate, use `ssh`. In the following example, the user's name is `username`. Switch this to whatever user name you have.
+
+```
+ssh username@epigenerate.genomecenter.ucdavis.edu
+```
+
+This will prompt you to enter your password. If you are new to the command line, it is important to note that you will not see any characters appear as you type your password. Just type your password and click "Enter" and you will be logged in.
 
 ## Genome Center Cluster ##
 
@@ -20,29 +31,15 @@ The Genome Center cluster is composed of _head_ nodes that submit jobs, _cluster
 
 While epigenerate can submit jobs to the cluster nodes, most of the time we use it as a loosely managed compute node. What exactly does _loosely_ mean? We don't need to submit jobs via `slurm`. Instead, we run jobs directly via the shell. There is 1 main advantage: jobs start immediately. There is also 1 main problem: other people are also using the computer. As a result, sharing must be cooperative. There are no hard rules, but rather social guidelines.
 
-## `ssh` and `scp` ##
-
-To log in to epigenerate, use `ssh`. In the following examples, the user's name is `username`. Switch this to whatever user name you have.
-
-	ssh username@epigenerate.genomecenter.ucdavis.edu
-
-To copy files to epigenerate, use `scp`.
-
-	scp my_file username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/whatever
-
-You can also copy whole directories with the `-r` option.
-
-	scp -r my_dir username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/whatever
-
-Of course, you can also `scp` stuff from epigenerate back to your personal computer.
-
-	scp -r username@epigenerate.genomecenter.ucdavis.edu:/share/korflab/project/whatever .
-
 ## Best Practices ##
+
+### Epigenerate Slack Channel ###
+
+On the LaSalle Lab Slack, you should locate a channel called "epigenerate." If you plan to use epigenerate at all, please join this Slack channel. This is where discussions regarding resource intensive jobs will take place. There will also be general updates regarding storage expansions, increases in RAM, cluster outages, etc., so be sure to join it!
 
 ### RAM ###
 
-RAM is the hardest resource to share. A good rule of thumb is for each user to never use more than half of the total RAM. Since there is currently 500G RAM, never run jobs that take more than 250G in total. So don't set up 50 jobs, each taking 10G RAM. If you need to use more than 250G, discuss with the cluster overseer (currently Viki) first so we can warn other users. If you have no idea how much RAM your process is using, run `top` or `htop` and examine the memory usage.
+RAM is the hardest resource to share. A good rule of thumb is for each user to never use more than half of the total RAM. Since there is currently 500G RAM, never run jobs that take more than 250G in total. So don't set up 50 jobs, each taking 10G RAM. If you need to use more than 250G, discuss with the cluster overseer (currently Viki) first so we can warn other users. If you have no idea how much RAM your process is using, run `top` or `htop` and examine the memory usage. You can also run these commands to check active usage before you try running a job.
 
 ### CPU ###
 
@@ -67,30 +64,25 @@ This will report the size of the partition and how much is in use. If you want t
 
 	du -h -d 1 /share/lasallelab/whatever
 
+## `Transferring Files ##
+
+To copy files to epigenerate, use `scp`.
+
+	scp my_file username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/whatever
+
+You can also copy whole directories with the `-r` option.
+
+	scp -r my_dir username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/whatever
+
+Of course, you can also `scp` stuff from epigenerate back to your personal computer.
+
+	scp -r username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/whatever .
+
+
 ## $HOME away from $HOME ##
 
-The authentication system may drop the connection to your home directory after
-a long time. This means the programs that are running for hours will suddenly
-lose their connection to your `$HOME` directory. This could very well break
-whatever you're trying to do. Fortunately, `/share/korflab` does not have this
-problems. So the workaround is to reset your `$HOME` to
-`/share/korflab/home/$USER` and then place all of your configurations in there.
-Hopefully the sysadmins fix this someday.
+The authentication system may drop the connection to your home directory after a long time. This means the programs that are running for hours will suddenly lose their connection to your `$HOME` directory. This could very well break whatever you're trying to do. Fortunately, `/share/lasallelab` does not have this problem. The workaround is to reset your `$HOME` to `/share/lasallelab/$USER` and then place all of your configurations in there. Hopefully the sysadmins fix this someday.
 
-Are you using Conda? The answer should be _yes_. Is the Conda directory in your
-home directory? The answer should be _no_. Reset your $HOME to
-`/share/korflab/home/$USER` and do **all** of your work from there.
+## Conda Usage ##
 
-## Super-advanced shit for I/O intensive tasks ##
-
-In the cluster topology diagram, you may have noticed that every computer is
-attached to its own `/tmp` directory. If you have I/O intensive operations, it's
-a good idea to use `/tmp` as a local cache. This gives you a much higher speed
-to data and keeps traffic off the network. Less traffic means more speed. This
-strategy also prevents you from network outages as `/tmp` is attached directly
-to spitfire and not the network.
-
-Provisioning `/tmp` on spitfire is not a big deal, just copy stuff there. But
-provisioning lots of tmp directories on the cluster isn't trivial. You have to
-know which cluster nodes your jobs are going to land on and set those up with
-data ahead of time. If you have these kinds of needs, we need to discuss.
+Are you using Conda? The answer should be _yes_. Is the Conda directory in your home directory? The answer should be _no_. Reset your $HOME to `/share/lasallelab/$USER` and do **all** of your work from there.
