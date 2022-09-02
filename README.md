@@ -1,6 +1,6 @@
 # Epigenerate
 
-This document is for users in the LaSalle Lab to set up their computer environments on the Genome Center cluster.
+This document is for users in the LaSalle Lab to set up their computer environments on the Genome Center cluster. If you are not familiar with how to use a computing environment, please see [this repository](https://github.com/vhaghani26/python_focus_group) to learn basic UNIX commands and/or Python.
 
 ## Accounts ##
 
