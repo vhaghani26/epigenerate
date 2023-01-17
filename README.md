@@ -2,6 +2,8 @@
 
 This document is for users in the LaSalle Lab to set up their computer environments on the Genome Center cluster. If you are not familiar with how to use a computing environment, please see [this repository](https://github.com/vhaghani26/python_focus_group) to learn basic UNIX commands and/or Python.
 
+Much of this document was adapted from Dr. Ian Korf's documentation on Spitfire.
+
 ## Accounts ##
 
 You'll need an account to connect to epigenerate and the rest of the cluster. Use these steps to request an account:
