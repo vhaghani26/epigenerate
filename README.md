@@ -85,4 +85,4 @@ The authentication system may drop the connection to your home directory after a
 
 ## Conda Usage ##
 
-Are you using Conda? The answer should be _yes_. Is the Conda directory in your home directory? The answer should be _no_. Reset your $HOME to `/share/lasallelab/$USER` and do **all** of your work from there.
+Are you using Conda? The answer should be _yes_. Is the Conda directory in your home directory? The answer should be _no_. Reset your $HOME to `/share/lasallelab/$USER` and do **all** of your work from there. Please see the `conda.md` file for more information.
