@@ -65,6 +65,22 @@ To determine how much space you have available, use `df`.
 This will report the size of the partition and how much is in use. If you want to know exactly how much is in each project directory (for example), use `du`.
 
 	du -h -d 1 /share/lasallelab/whatever
+	
+#### Duplicated Data ####
+
+In the event that the best practices are not followed, we may end up with large levels of duplicated files taking up storage space. As such, there is a program I (Viki Haghani) have written to detect all duplicates and report them back. To run it, you can use the following:
+
+```
+python3 duplicate_finder.py --path /share/lasallelab/ > duplicate_files.txt
+```
+
+If you want to ignore small file sizes, you can also filter to ignore a minimum number of bytes using something like the following: 
+
+```
+python3 duplicate_finder.py --path /share/lasallelab/ --bytes 1000 > duplicate_files.txt
+```
+
+This will output `duplicate_files.txt`, where files are visualized with their unique checksums and every location that file is found. Hopefully this will not be a future issue, but if so, it is recommended to give lab members time to sort out duplicates before deleting them.
 
 ## `Transferring Files ##
 
