@@ -68,20 +68,17 @@ del dups
 ## Report Duplicates ##
 #######################
 
+# Determine duplicate checksums
 checksum_list = []
-
-# Print duplicate files
 for key, value in files_and_sizes.items():
     if value[1] != "NA":
         checksum_list.append(value[1])
 
-print(checksum_list)
+dups = list({x for x in checksum_list if checksum_list.count(x) > 1})
 
+# Clear space/memory
+del checksum_list
 
-
-# Visualize
-print(files_and_sizes)
-
-
-
-
+for key, value in files_and_sizes.items():
+    if value[1] in dups:
+        print(value[1], key)
