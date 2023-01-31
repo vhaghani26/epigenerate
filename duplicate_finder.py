@@ -1,5 +1,10 @@
 import argparse
 import os
+import subprocess
+
+####################
+## Argparse Setup ##
+####################
 
 # Initialize argparse
 parser = argparse.ArgumentParser(
@@ -8,37 +13,75 @@ parser = argparse.ArgumentParser(
 # Required arguments
 parser.add_argument('--path', required=True, type=str,
     metavar='<str>', help='Path to directory')
+    
+# Optional arguments
+parser.add_argument('--bytes', required=False, default = 0, type=int,
+    metavar='<int>', help='Integer describing minimum number of bytes to filter')
 
 # Finalization of argparse
 arg = parser.parse_args()
 
-# Get the path p, sub_directory sub_dir, and filename files from the given path
-walk_method = os.walk(arg.path)
- 
-# Use exception handling to remove the stop iteration from generator object that we get the output from os.walk() method
-while True:
-    try:
-        p, sub_dir, files = next(walk_method)
-        break
-    except:
-        break 
+#####################
+## Find Duplicates ##
+#####################
 
-# Create a list of files in directory along with the size
-size_of_file = [
-    (f,os.stat(os.path.join(arg.path, f)).st_size)
-    for f in files
-]
-  
-# Get the size of the sub_dir of the given path
-for sub in sub_dir:
-    i = os.path.join(arg.path,sub)
-    size = 0
-    for k in os.listdir(i):
-        size += os.stat(os.path.join(i,k)).st_size
-    size_of_file.append((sub,size))
+# Create dictionary for files and file sizes
+files_and_sizes = {}
 
-# Iterate over list of files along with size 
-# Sort by sample size and print
-for f, s in sorted(size_of_file,key = lambda x : x[1]):
-    print(f'{os.path.join(arg.path, f)}', s)
-    #print("{}\t{}MB".format(os.path.join(arg.path,f),round(s/(1024*1024),3)))
+# Populate dictionary
+for path, subdirs, files in os.walk(arg.path):
+    for name in files:
+        files_and_sizes[os.path.join(path, name)] = os.path.getsize(os.path.join(path, name))
+
+# Make a list containing only file sizes
+size_list = []
+for size in files_and_sizes.values():
+    size_list.append(size)
+
+# Find duplicate file sizes
+dups = list({x for x in size_list if size_list.count(x) > 1})
+
+# Clear space/memory
+del size_list
+
+######################
+## Compute Checksum ##
+######################
+
+# Run checksum only for potentially duplicated files
+for key, value in files_and_sizes.items():
+    if value in dups and value > arg.bytes:
+        # Run and capture checksum
+        checksum_byte = subprocess.check_output(['md5sum', f'{key}'])
+        # Convert type from byte to string
+        checksum_str = checksum_byte.decode('utf-8')
+        # Save checksum
+        checksum = checksum_str.split(' ')  
+        files_and_sizes[key] = [value, checksum[0]]
+    else :
+        files_and_sizes[key] = [value, "NA"]
+
+# Clear space/memory
+del dups
+
+#######################
+## Report Duplicates ##
+#######################
+
+checksum_list = []
+
+# Print duplicate files
+for key, value in files_and_sizes.items():
+    if value[1] != "NA":
+        checksum_list.append(value[1])
+
+print(checksum_list)
+
+
+
+# Visualize
+print(files_and_sizes)
+
+
+
+
