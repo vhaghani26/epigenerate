@@ -82,7 +82,7 @@ python3 duplicate_finder.py --path /share/lasallelab/ --bytes 1000 > duplicate_f
 
 This will output `duplicate_files.txt`, where files are visualized with their unique checksums and every location that file is found. Hopefully this will not be a future issue, but if so, it is recommended to give lab members time to sort out duplicates before deleting them.
 
-## `Transferring Files ##
+## Transferring Files ##
 
 To copy files to epigenerate, use `scp`.
 
