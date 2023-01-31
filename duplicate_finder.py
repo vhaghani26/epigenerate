@@ -1,6 +1,7 @@
 import argparse
 import os
 import subprocess
+from collections import defaultdict
 
 ####################
 ## Argparse Setup ##
@@ -68,17 +69,14 @@ del dups
 ## Report Duplicates ##
 #######################
 
-# Determine duplicate checksums
-checksum_list = []
-for key, value in files_and_sizes.items():
-    if value[1] != "NA":
-        checksum_list.append(value[1])
-
-dups = list({x for x in checksum_list if checksum_list.count(x) > 1})
-
-# Clear space/memory
-del checksum_list
-
-for key, value in files_and_sizes.items():
-    if value[1] in dups:
-        print(value[1], key)
+duplicate_files = {}
+for pair in files_and_sizes.items():
+    if pair[1][1] != "NA":
+        if pair[1][1] not in duplicate_files.keys():
+            duplicate_files[pair[1][1]] = []
+        duplicate_files[pair[1][1]].append(pair[0])
+    
+for key, value in duplicate_files.items():
+    print(key)
+    for val in value:
+        print("\t", val)
