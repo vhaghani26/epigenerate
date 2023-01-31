@@ -1,6 +1,5 @@
 import argparse
-from subprocess import run
-import pandas as pd
+import os
 
 # Initialize argparse
 parser = argparse.ArgumentParser(
@@ -13,16 +12,33 @@ parser.add_argument('--path', required=True, type=str,
 # Finalization of argparse
 arg = parser.parse_args()
 
-# Generate output containing file path and file size
-cmd = f'for FILENAME in `find {arg.path}`; do echo -n "$FILENAME "; stat -c "%s" $FILENAME; done'
-data = run(cmd, capture_output = True, shell = True)
-output = data.stdout.splitlines()
-errors = data.stderr.splitlines()
+# Get the path p, sub_directory sub_dir, and filename files from the given path
+walk_method = os.walk(arg.path)
+ 
+# Use exception handling to remove the stop iteration from generator object that we get the output from os.walk() method
+while True:
+    try:
+        p, sub_dir, files = next(walk_method)
+        break
+    except:
+        break 
 
-# Create data frame
-df = pd.DataFrame(output, columns = ['temp'])
-df[['file_name','file_size']] = df['temp'].str.split('',expand=True)
+# Create a list of files in directory along with the size
+size_of_file = [
+    (f,os.stat(os.path.join(arg.path, f)).st_size)
+    for f in files
+]
+  
+# Get the size of the sub_dir of the given path
+for sub in sub_dir:
+    i = os.path.join(arg.path,sub)
+    size = 0
+    for k in os.listdir(i):
+        size += os.stat(os.path.join(i,k)).st_size
+    size_of_file.append((sub,size))
 
-
-
-print(df)
+# Iterate over list of files along with size 
+# Sort by sample size and print
+for f, s in sorted(size_of_file,key = lambda x : x[1]):
+    print(f'{os.path.join(arg.path, f)}', s)
+    #print("{}\t{}MB".format(os.path.join(arg.path,f),round(s/(1024*1024),3)))
