@@ -1,29 +1,29 @@
-SLURM_NODELIST=fleet-41
-SLURM_JOB_NAME=duplicate_finder_Diane
-SLURMD_NODENAME=fleet-41
-SLURM_TOPOLOGY_ADDR=fleet-41
+SLURM_NODELIST=fleet-40
+SLURM_JOB_NAME=duplicate_finder_Theresa
+SLURMD_NODENAME=fleet-40
+SLURM_TOPOLOGY_ADDR=fleet-40
 SLURM_PRIO_PROCESS=0
 SLURM_NODE_ALIASES=(null)
 SLURM_JOB_QOS=normal
 SLURM_TOPOLOGY_ADDR_PATTERN=node
 SLURM_NNODES=1
 SLURM_SPANK_AUKS=done
-SLURM_JOBID=54711702
+SLURM_JOBID=54711715
 SLURM_NTASKS=1
 SLURM_TASKS_PER_NODE=1
 SLURM_WORKING_CLUSTER=wopr:trump:6817:9216:101
 SLURM_CONF=/opt/hpccf/etc/slurm/slurm.conf
-SLURM_JOB_ID=54711702
+SLURM_JOB_ID=54711715
 SLURM_CPUS_PER_TASK=8
 SLURM_JOB_USER=vhaghani
 SLURM_JOB_UID=23012
 SLURM_NODEID=0
 SLURM_SUBMIT_DIR=/share/lasallelab/Viki/epigenerate
-SLURM_TASK_PID=50043
+SLURM_TASK_PID=52258
 SLURM_NPROCS=1
 SLURM_CPUS_ON_NODE=8
 SLURM_PROCID=0
-SLURM_JOB_NODELIST=fleet-41
+SLURM_JOB_NODELIST=fleet-40
 SLURM_LOCALID=0
 SLURM_JOB_GID=23012
 SLURM_JOB_CPUS_PER_NODE=8
@@ -34,34 +34,34 @@ SLURM_JOB_PARTITION=production
 SLURM_JOB_ACCOUNT=jmlasalle
 SLURM_JOB_NUM_NODES=1
 SLURM_MEM_PER_NODE=5120
-JobId=54711702 JobName=duplicate_finder_Diane
+JobId=54711715 JobName=duplicate_finder_Theresa
    UserId=vhaghani(23012) GroupId=vhaghani(23012) MCS_label=N/A
    Priority=59039 Nice=0 Account=jmlasalle QOS=normal
    JobState=RUNNING Reason=None Dependency=(null)
    Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
-   RunTime=00:03:09 TimeLimit=05:00:00 TimeMin=N/A
-   SubmitTime=2023-02-01T11:42:56 EligibleTime=2023-02-01T11:42:56
-   AccrueTime=2023-02-01T11:42:56
-   StartTime=2023-02-01T11:42:57 EndTime=2023-02-01T16:42:57 Deadline=N/A
-   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2023-02-01T11:42:57
+   RunTime=00:00:23 TimeLimit=02:00:00 TimeMin=N/A
+   SubmitTime=2023-02-01T11:48:13 EligibleTime=2023-02-01T11:48:13
+   AccrueTime=2023-02-01T11:48:13
+   StartTime=2023-02-01T11:48:13 EndTime=2023-02-01T13:48:13 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2023-02-01T11:48:13
    Partition=production AllocNode:Sid=spitfire:4710
    ReqNodeList=(null) ExcNodeList=(null)
-   NodeList=fleet-41
-   BatchHost=fleet-41
+   NodeList=fleet-40
+   BatchHost=fleet-40
    NumNodes=1 NumCPUs=8 NumTasks=1 CPUs/Task=8 ReqB:S:C:T=0:0:*:*
    TRES=cpu=8,mem=5G,node=1,billing=8
    Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
    MinCPUsNode=8 MinMemoryNode=5G MinTmpDiskNode=0
    Features=(null) DelayBoot=00:00:00
    OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
-   Command=/share/lasallelab/Viki/epigenerate/Duplicate_Finder/slurm_scripts/2023_02_01_dup_finder_slurm_Diane.slurm
+   Command=/share/lasallelab/Viki/epigenerate/Duplicate_Finder/slurm_scripts/2023_02_01_dup_finder_slurm_Theresa.slurm
    WorkDir=/share/lasallelab/Viki/epigenerate/Duplicate_Finder
-   StdErr=/share/lasallelab/Viki/epigenerate/Duplicate_Finder/duplicate_finder_Diane.j54711702.err
+   StdErr=/share/lasallelab/Viki/epigenerate/Duplicate_Finder/duplicate_finder_Theresa.j54711715.err
    StdIn=/dev/null
-   StdOut=/share/lasallelab/Viki/epigenerate/Duplicate_Finder/duplicate_finder_Diane.j54711702.out
+   StdOut=/share/lasallelab/Viki/epigenerate/Duplicate_Finder/duplicate_finder_Theresa.j54711715.out
    Power=
    MailUser=vhaghani@ucdavis.edu MailType=INVALID_DEPEND,BEGIN,END,FAIL,REQUEUE,STAGE_OUT
    NtasksPerTRES:0
 
 JobID|MaxRSS|AveCPU
-54711702.batch|8264K|00:35.000
+54711715.batch|1228K|00:01.000

@@ -1,0 +1,479 @@
+23ed3060d094fb6db7f822ee81284c4b
+	 /share/lasallelab/Julia/PE_test/DM.R.sh
+	 /share/lasallelab/Julia/PE_test/cytosine_reports/DM.R.sh
+7a78f39a6615275a7ba4222f9e5929bc
+	 /share/lasallelab/Julia/PE_test/JLTT0004_USPD16083427_HGJ52CCXY_L6/JLTT0004_USPD16083427_HGJ52CCXY_L6_2_val_2_screen.html
+60170bcc2d858b39b56ab8c5442d4891
+	 /share/lasallelab/Julia/PE_test/JLTT0004_USPD16083427_HGJ52CCXY_L6/JLTT0004_USPD16083427_HGJ52CCXY_L6_1_val_1_screen.html
+83eeba502f1e3a03ed5150a1d15288ab
+	 /share/lasallelab/Julia/PE_test/JLTT0004_USPD16083427_HGJ52CCXY_L6/JLTT0004_USPD16083427_HGJ52CCXY_L6_2_val_2_screen.txt
+3a380877d6424c8ca66d3fdfa3ba18b3
+	 /share/lasallelab/Julia/PE_test/JLTT0004_USPD16083427_HGJ52CCXY_L6/JLTT0004_USPD16083427_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplicated.nucleotide_stats.txt
+4579119d700e101199d7f7e07cc02e79
+	 /share/lasallelab/Julia/PE_test/JLTT0004_USPD16083427_HGJ52CCXY_L6/JLTT0004_USPD16083427_HGJ52CCXY_L6_1_val_1_bismark_bt2_PE_report.txt
+d282c182fd63442f1ecdde5e5fed14d2
+	 /share/lasallelab/Julia/PE_test/JLTT0004_USPD16083427_HGJ52CCXY_L6/JLTT0004_USPD16083427_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplication_report.txt
+a5631c226a6569216d296e3a288bb5b3
+	 /share/lasallelab/Julia/PE_test/JLTT0004_USPD16083427_HGJ52CCXY_L6/JLTT0004_USPD16083427_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplicated.bismark.cov.gz.CpG_report.merged_CpG_evidence.cov.gz
+	 /share/lasallelab/Julia/PE_test/cytosine_reports_merged/JLTT0004_USPD16083427_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplicated.bismark.cov.gz.CpG_report.merged_CpG_evidence.cov.gz
+5f42c118de1d232bf5d0f32472fdbf95
+	 /share/lasallelab/Julia/PE_test/JLTT0004_USPD16083427_HGJ52CCXY_L6/JLTT0004_USPD16083427_HGJ52CCXY_L6_1_val_1_screen.txt
+68a45e3f74e2f869b7aaf0ac615a246f
+	 /share/lasallelab/Julia/PE_test/JLTT0004_USPD16083427_HGJ52CCXY_L6/JLTT0004_USPD16083427_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplicated_splitting_report.txt
+46e782373920d9f0a702e863df6930ef
+	 /share/lasallelab/Julia/PE_test/JLTT0001_USPD16083424_HGJ52CCXY_L6/JLTT0001_USPD16083424_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplicated_splitting_report.txt
+06f54d84aa8f5fd4d1caa34d13404072
+	 /share/lasallelab/Julia/PE_test/JLTT0001_USPD16083424_HGJ52CCXY_L6/JLTT0001_USPD16083424_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplicated.bismark.cov.gz.CpG_report.merged_CpG_evidence.cov.gz
+	 /share/lasallelab/Julia/PE_test/cytosine_reports_merged/JLTT0001_USPD16083424_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplicated.bismark.cov.gz.CpG_report.merged_CpG_evidence.cov.gz
+4c0b0baf2d1f5e95ce19bba927733777
+	 /share/lasallelab/Julia/PE_test/JLTT0001_USPD16083424_HGJ52CCXY_L6/JLTT0001_USPD16083424_HGJ52CCXY_L6_2_val_2_screen.txt
+bef0513020b93ca7b82d781ffde11a74
+	 /share/lasallelab/Julia/PE_test/JLTT0001_USPD16083424_HGJ52CCXY_L6/JLTT0001_USPD16083424_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplication_report.txt
+8f2ca1ad8a0d0c871dc93fa20ffa6357
+	 /share/lasallelab/Julia/PE_test/JLTT0001_USPD16083424_HGJ52CCXY_L6/JLTT0001_USPD16083424_HGJ52CCXY_L6_2_val_2_screen.html
+41c284f3c0a6079ea457349d36e5b40c
+	 /share/lasallelab/Julia/PE_test/JLTT0001_USPD16083424_HGJ52CCXY_L6/JLTT0001_USPD16083424_HGJ52CCXY_L6_1_val_1_screen.txt
+e9d2fc58fe5ecd686ded491691fc46ef
+	 /share/lasallelab/Julia/PE_test/JLTT0001_USPD16083424_HGJ52CCXY_L6/JLTT0001_USPD16083424_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplicated.nucleotide_stats.txt
+e99097e5e211751bffe37ab1ad97d9f7
+	 /share/lasallelab/Julia/PE_test/JLTT0001_USPD16083424_HGJ52CCXY_L6/JLTT0001_USPD16083424_HGJ52CCXY_L6_1_val_1_screen.html
+149af022f3d73ef165d7240187715fd6
+	 /share/lasallelab/Julia/PE_test/JLTT0008_USPD16083431_HGJ52CCXY_L7/JLTT0008_USPD16083431_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplicated.nucleotide_stats.txt
+a529f9fb5498d66bf190d1735efd18d3
+	 /share/lasallelab/Julia/PE_test/JLTT0008_USPD16083431_HGJ52CCXY_L7/JLTT0008_USPD16083431_HGJ52CCXY_L7_2.fq.gz_trimming_report.txt
+bcb3c14c14577d4ef89f2c273a432f08
+	 /share/lasallelab/Julia/PE_test/JLTT0008_USPD16083431_HGJ52CCXY_L7/JLTT0008_USPD16083431_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplication_report.txt
+f162d0d99150122d4e5e3bd8009bb3cd
+	 /share/lasallelab/Julia/PE_test/JLTT0008_USPD16083431_HGJ52CCXY_L7/JLTT0008_USPD16083431_HGJ52CCXY_L7_2_val_2_screen.txt
+ef345148bd268517a675efa1b2d6c587
+	 /share/lasallelab/Julia/PE_test/JLTT0008_USPD16083431_HGJ52CCXY_L7/JLTT0008_USPD16083431_HGJ52CCXY_L7_1_val_1_bismark_bt2_PE_report.txt
+489ecb62b070e9cfdb6e27b53c36f11b
+	 /share/lasallelab/Julia/PE_test/JLTT0008_USPD16083431_HGJ52CCXY_L7/JLTT0008_USPD16083431_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplicated_splitting_report.txt
+cc9cd6c82b49ad8a8ba219d4513b2c35
+	 /share/lasallelab/Julia/PE_test/JLTT0008_USPD16083431_HGJ52CCXY_L7/JLTT0008_USPD16083431_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplicated.bismark.cov.gz.CpG_report.merged_CpG_evidence.cov.gz
+	 /share/lasallelab/Julia/PE_test/cytosine_reports_merged/JLTT0008_USPD16083431_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplicated.bismark.cov.gz.CpG_report.merged_CpG_evidence.cov.gz
+127dfda7a9664c39b90ff2f774f48a3d
+	 /share/lasallelab/Julia/PE_test/JLTT0008_USPD16083431_HGJ52CCXY_L7/JLTT0008_USPD16083431_HGJ52CCXY_L7_2_val_2_screen.html
+e4f09655d9aa2a65ecef59cd784b334f
+	 /share/lasallelab/Julia/PE_test/JLTT0002_USPD16083425_HGJ52CCXY_L6/JLTT0002_USPD16083425_HGJ52CCXY_L6_2_val_2_screen.txt
+4bc16a5cbdf7daf1e2563839e3b4259a
+	 /share/lasallelab/Julia/PE_test/JLTT0002_USPD16083425_HGJ52CCXY_L6/JLTT0002_USPD16083425_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplicated_splitting_report.txt
+94e0c72c9784c06cfd4ad173db42f8ef
+	 /share/lasallelab/Julia/PE_test/JLTT0002_USPD16083425_HGJ52CCXY_L6/JLTT0002_USPD16083425_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplicated.bismark.cov.gz.CpG_report.merged_CpG_evidence.cov.gz
+	 /share/lasallelab/Julia/PE_test/cytosine_reports_merged/JLTT0002_USPD16083425_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplicated.bismark.cov.gz.CpG_report.merged_CpG_evidence.cov.gz
+29701915ca8ffd9356c838dab722a9ed
+	 /share/lasallelab/Julia/PE_test/JLTT0002_USPD16083425_HGJ52CCXY_L6/JLTT0002_USPD16083425_HGJ52CCXY_L6_1_val_1_bismark_bt2_PE_report.txt
+4d5a95e3d7e55f847453fb2c6662d0b2
+	 /share/lasallelab/Julia/PE_test/JLTT0002_USPD16083425_HGJ52CCXY_L6/JLTT0002_USPD16083425_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplicated.nucleotide_stats.txt
+6216f594fb3e32ab1498c2ca7b352e63
+	 /share/lasallelab/Julia/PE_test/JLTT0002_USPD16083425_HGJ52CCXY_L6/JLTT0002_USPD16083425_HGJ52CCXY_L6_2_val_2_screen.html
+203b220a9e7740701eaba640a6ac1521
+	 /share/lasallelab/Julia/PE_test/JLTT0002_USPD16083425_HGJ52CCXY_L6/JLTT0002_USPD16083425_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplication_report.txt
+eef60cbb23e7ef8f9ab3ce0f66785490
+	 /share/lasallelab/Julia/PE_test/JLTT0012_USPD16083435_HGJ52CCXY_L7/JLTT0012_USPD16083435_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplicated.nucleotide_stats.txt
+0a660106f8a04a44975f45a991cc8d85
+	 /share/lasallelab/Julia/PE_test/JLTT0012_USPD16083435_HGJ52CCXY_L7/JLTT0012_USPD16083435_HGJ52CCXY_L7_2_val_2_screen.txt
+f1cfc771366f46abda0680518e0d6ffa
+	 /share/lasallelab/Julia/PE_test/JLTT0012_USPD16083435_HGJ52CCXY_L7/JLTT0012_USPD16083435_HGJ52CCXY_L7_2_val_2_screen.html
+94fe50ef23e8c56684ae0375798348a7
+	 /share/lasallelab/Julia/PE_test/JLTT0012_USPD16083435_HGJ52CCXY_L7/JLTT0012_USPD16083435_HGJ52CCXY_L7_1_val_1_screen.html
+5dcd9e8af8bcd7db525c2510e1a84469
+	 /share/lasallelab/Julia/PE_test/JLTT0012_USPD16083435_HGJ52CCXY_L7/JLTT0012_USPD16083435_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplicated_splitting_report.txt
+db79c17ef4decd7fe9b1b9abd24c8562
+	 /share/lasallelab/Julia/PE_test/JLTT0012_USPD16083435_HGJ52CCXY_L7/JLTT0012_USPD16083435_HGJ52CCXY_L7_1_val_1_screen.txt
+1539779016697045cd522c1cc5506f1f
+	 /share/lasallelab/Julia/PE_test/JLTT0012_USPD16083435_HGJ52CCXY_L7/JLTT0012_USPD16083435_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplication_report.txt
+12b73bc21488c94e4a9a7a07c0def424
+	 /share/lasallelab/Julia/PE_test/JLTT0012_USPD16083435_HGJ52CCXY_L7/JLTT0012_USPD16083435_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplicated.bismark.cov.gz.CpG_report.merged_CpG_evidence.cov.gz
+	 /share/lasallelab/Julia/PE_test/cytosine_reports_merged/JLTT0012_USPD16083435_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplicated.bismark.cov.gz.CpG_report.merged_CpG_evidence.cov.gz
+7c19c575fdcece913b287c92d0443907
+	 /share/lasallelab/Julia/PE_test/multiqc_data_1/multiqc_cutadapt.txt
+	 /share/lasallelab/Julia/PE_test/multiqc_data/multiqc_cutadapt.txt
+c13627e12f117eef6fe4b6e1c33bea0b
+	 /share/lasallelab/Julia/PE_test/multiqc_data_1/multiqc_fastq_screen.txt
+	 /share/lasallelab/Julia/PE_test/multiqc_data/multiqc_fastq_screen.txt
+8d6d3b7dbd5bd13cfeb91a9010dd9e11
+	 /share/lasallelab/Julia/PE_test/multiqc_data_1/multiqc_bismark_bam2nuc.txt
+	 /share/lasallelab/Julia/PE_test/multiqc_data/multiqc_bismark_bam2nuc.txt
+11fd9a010cb7042519a7202e58878e7f
+	 /share/lasallelab/Julia/PE_test/multiqc_data_1/multiqc_fastqc.txt
+	 /share/lasallelab/Julia/PE_test/multiqc_data/multiqc_fastqc.txt
+858de079f1c74c81c2f93bde2d060706
+	 /share/lasallelab/Julia/PE_test/multiqc_data_1/multiqc_bismark_dedup.txt
+	 /share/lasallelab/Julia/PE_test/multiqc_data/multiqc_bismark_dedup.txt
+5fe1c6081c90ec47950d94740ae37559
+	 /share/lasallelab/Julia/PE_test/multiqc_data_1/multiqc_data.json
+e03ca0a59390f2b802ce6aa82ed8a7d4
+	 /share/lasallelab/Julia/PE_test/multiqc_data_1/multiqc_sources.txt
+	 /share/lasallelab/Julia/PE_test/multiqc_data/multiqc_sources.txt
+b805e4b00d1e6f61fcb17d2894b14969
+	 /share/lasallelab/Julia/PE_test/multiqc_data_1/multiqc_general_stats.txt
+	 /share/lasallelab/Julia/PE_test/multiqc_data/multiqc_general_stats.txt
+178e9192fc5472750c47865d17596ffe
+	 /share/lasallelab/Julia/PE_test/multiqc_data_1/multiqc_bismark_methextract.txt
+	 /share/lasallelab/Julia/PE_test/multiqc_data/multiqc_bismark_methextract.txt
+ac005b05cc42b00363c3dbedf051927d
+	 /share/lasallelab/Julia/PE_test/multiqc_data_1/multiqc_bismark_alignment.txt
+	 /share/lasallelab/Julia/PE_test/multiqc_data/multiqc_bismark_alignment.txt
+491945428051247b0062beec63c9ad2d
+	 /share/lasallelab/Julia/PE_test/JLTT0011_USPD16083434_HGJ52CCXY_L7/JLTT0011_USPD16083434_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplicated_splitting_report.txt
+7739558b64e4b6b3274a7e621c5138b1
+	 /share/lasallelab/Julia/PE_test/JLTT0011_USPD16083434_HGJ52CCXY_L7/JLTT0011_USPD16083434_HGJ52CCXY_L7_2_val_2_screen.html
+d87f7a72657e630f81a8f685ada4f7bf
+	 /share/lasallelab/Julia/PE_test/JLTT0011_USPD16083434_HGJ52CCXY_L7/JLTT0011_USPD16083434_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplication_report.txt
+118eab70929305103185c92aca1f36d2
+	 /share/lasallelab/Julia/PE_test/JLTT0011_USPD16083434_HGJ52CCXY_L7/JLTT0011_USPD16083434_HGJ52CCXY_L7_1_val_1_bismark_bt2_PE_report.txt
+5c52b063746df8f7baf81a1ddbdd85cd
+	 /share/lasallelab/Julia/PE_test/JLTT0011_USPD16083434_HGJ52CCXY_L7/JLTT0011_USPD16083434_HGJ52CCXY_L7_1_val_1_screen.html
+91dd496772560e1373e0bdc6fb981eb6
+	 /share/lasallelab/Julia/PE_test/JLTT0011_USPD16083434_HGJ52CCXY_L7/JLTT0011_USPD16083434_HGJ52CCXY_L7_2_val_2_screen.txt
+f1e611558c0e6cda99ac974f2a503510
+	 /share/lasallelab/Julia/PE_test/JLTT0011_USPD16083434_HGJ52CCXY_L7/JLTT0011_USPD16083434_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplicated.bismark.cov.gz.CpG_report.merged_CpG_evidence.cov.gz
+	 /share/lasallelab/Julia/PE_test/cytosine_reports_merged/JLTT0011_USPD16083434_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplicated.bismark.cov.gz.CpG_report.merged_CpG_evidence.cov.gz
+cf4877ae1fbae33a5d12b2a080789d36
+	 /share/lasallelab/Julia/PE_test/JLTT0011_USPD16083434_HGJ52CCXY_L7/JLTT0011_USPD16083434_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplicated.nucleotide_stats.txt
+6cb296602d609759e52c5088f26a107a
+	 /share/lasallelab/Julia/PE_test/JLTT0011_USPD16083434_HGJ52CCXY_L7/JLTT0011_USPD16083434_HGJ52CCXY_L7_1_val_1_screen.txt
+38f7672da92c7fc23cd7e04c0bdd25b5
+	 /share/lasallelab/Julia/PE_test/JLTT0007_USPD16083430_HGJ52CCXY_L7/JLTT0007_USPD16083430_HGJ52CCXY_L7_2_val_2_screen.txt
+c5f2465c04db4107bb14f5499b59c2b8
+	 /share/lasallelab/Julia/PE_test/JLTT0007_USPD16083430_HGJ52CCXY_L7/JLTT0007_USPD16083430_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplicated.bismark.cov.gz.CpG_report.merged_CpG_evidence.cov.gz
+	 /share/lasallelab/Julia/PE_test/cytosine_reports_merged/JLTT0007_USPD16083430_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplicated.bismark.cov.gz.CpG_report.merged_CpG_evidence.cov.gz
+f473b2f1cb4855d8198ba11511ae6995
+	 /share/lasallelab/Julia/PE_test/JLTT0007_USPD16083430_HGJ52CCXY_L7/JLTT0007_USPD16083430_HGJ52CCXY_L7_1_val_1_bismark_bt2_PE_report.txt
+3b416d685470ef549dda5cd58cbbfa0b
+	 /share/lasallelab/Julia/PE_test/JLTT0007_USPD16083430_HGJ52CCXY_L7/JLTT0007_USPD16083430_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplicated.nucleotide_stats.txt
+1e8017e4a08937b8b2329c31da48fb7c
+	 /share/lasallelab/Julia/PE_test/JLTT0007_USPD16083430_HGJ52CCXY_L7/JLTT0007_USPD16083430_HGJ52CCXY_L7_1_val_1_screen.txt
+1c5b24dd069f63bd0171e0a71b5a81cb
+	 /share/lasallelab/Julia/PE_test/JLTT0007_USPD16083430_HGJ52CCXY_L7/JLTT0007_USPD16083430_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplication_report.txt
+c1441a32502c9744bb518c64a7acc1f2
+	 /share/lasallelab/Julia/PE_test/JLTT0007_USPD16083430_HGJ52CCXY_L7/JLTT0007_USPD16083430_HGJ52CCXY_L7_2_val_2_screen.html
+42b26127ac4a78ae8e3848e3fda847a4
+	 /share/lasallelab/Julia/PE_test/JLTT0007_USPD16083430_HGJ52CCXY_L7/JLTT0007_USPD16083430_HGJ52CCXY_L7_1_val_1_screen.html
+33ca1f9b52050228a1dede77f43b7c7d
+	 /share/lasallelab/Julia/PE_test/JLTT0007_USPD16083430_HGJ52CCXY_L7/JLTT0007_USPD16083430_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplicated_splitting_report.txt
+e7e9470f7283553803b22f20d4e26de7
+	 /share/lasallelab/Julia/PE_test/JLTT0009_USPD16083432_HGJ52CCXY_L7/JLTT0009_USPD16083432_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplicated.bismark.cov.gz.CpG_report.merged_CpG_evidence.cov.gz
+	 /share/lasallelab/Julia/PE_test/cytosine_reports_merged/JLTT0009_USPD16083432_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplicated.bismark.cov.gz.CpG_report.merged_CpG_evidence.cov.gz
+0b25b38faa0cc0ee3ed14b55261f39fb
+	 /share/lasallelab/Julia/PE_test/JLTT0009_USPD16083432_HGJ52CCXY_L7/JLTT0009_USPD16083432_HGJ52CCXY_L7_2_val_2_screen.txt
+97864a1d9042b08e1e0edb3b035602e7
+	 /share/lasallelab/Julia/PE_test/JLTT0009_USPD16083432_HGJ52CCXY_L7/JLTT0009_USPD16083432_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplicated.nucleotide_stats.txt
+9be9dba7f573ea3e6e721ad12efeb7a7
+	 /share/lasallelab/Julia/PE_test/JLTT0009_USPD16083432_HGJ52CCXY_L7/JLTT0009_USPD16083432_HGJ52CCXY_L7_1_val_1_bismark_bt2_PE_report.txt
+eeeb60347f181d6383a4f86757c7c9b9
+	 /share/lasallelab/Julia/PE_test/JLTT0009_USPD16083432_HGJ52CCXY_L7/JLTT0009_USPD16083432_HGJ52CCXY_L7_2_val_2_screen.html
+9f9113aa1f7d5d27af0daec47d08b1ac
+	 /share/lasallelab/Julia/PE_test/JLTT0009_USPD16083432_HGJ52CCXY_L7/JLTT0009_USPD16083432_HGJ52CCXY_L7_2.fq.gz_trimming_report.txt
+5346b712dd15177588e05b12b352e202
+	 /share/lasallelab/Julia/PE_test/JLTT0009_USPD16083432_HGJ52CCXY_L7/JLTT0009_USPD16083432_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplicated_splitting_report.txt
+07a005a2cc0e86473473951c56ed59ff
+	 /share/lasallelab/Julia/PE_test/JLTT0009_USPD16083432_HGJ52CCXY_L7/JLTT0009_USPD16083432_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplication_report.txt
+19bb45cb09a47cb88366f0299f511149
+	 /share/lasallelab/Julia/PE_test/cytosine_reports_merged/JLTT0003_USPD16083426_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplicated.bismark.cov.gz.CpG_report.merged_CpG_evidence.cov.gz
+	 /share/lasallelab/Julia/PE_test/JLTT0003_USPD16083426_HGJ52CCXY_L6/JLTT0003_USPD16083426_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplicated.bismark.cov.gz.CpG_report.merged_CpG_evidence.cov.gz
+99b873532f9107088ff4e14ebb4dbb81
+	 /share/lasallelab/Julia/PE_test/cytosine_reports_merged/JLTT0005_USPD16083428_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplicated.bismark.cov.gz.CpG_report.merged_CpG_evidence.cov.gz
+	 /share/lasallelab/Julia/PE_test/JLTT0005_USPD16083428_HGJ52CCXY_L6/JLTT0005_USPD16083428_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplicated.bismark.cov.gz.CpG_report.merged_CpG_evidence.cov.gz
+ee7e72c7c78df9bcbe49d2e41e2b0207
+	 /share/lasallelab/Julia/PE_test/cytosine_reports_merged/JLTT0010_USPD16083433_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplicated.bismark.cov.gz.CpG_report.merged_CpG_evidence.cov.gz
+	 /share/lasallelab/Julia/PE_test/JLTT0010_USPD16083433_HGJ52CCXY_L7/JLTT0010_USPD16083433_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplicated.bismark.cov.gz.CpG_report.merged_CpG_evidence.cov.gz
+9783a79d5a241af35924a49df66edd27
+	 /share/lasallelab/Julia/PE_test/cytosine_reports_merged/JLTT0006_USPD16083429_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplicated.bismark.cov.gz.CpG_report.merged_CpG_evidence.cov.gz
+	 /share/lasallelab/Julia/PE_test/JLTT0006_USPD16083429_HGJ52CCXY_L6/JLTT0006_USPD16083429_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplicated.bismark.cov.gz.CpG_report.merged_CpG_evidence.cov.gz
+9987be2755e3081e1031f73b866f2e1a
+	 /share/lasallelab/Julia/PE_test/JLTT0003_USPD16083426_HGJ52CCXY_L6/JLTT0003_USPD16083426_HGJ52CCXY_L6_1_val_1_screen.html
+213bcf187670656e2848e388cce3bf26
+	 /share/lasallelab/Julia/PE_test/JLTT0003_USPD16083426_HGJ52CCXY_L6/JLTT0003_USPD16083426_HGJ52CCXY_L6_2_val_2_screen.html
+3da5cca7661febd9497e9cfa45c9a602
+	 /share/lasallelab/Julia/PE_test/JLTT0003_USPD16083426_HGJ52CCXY_L6/JLTT0003_USPD16083426_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplicated_splitting_report.txt
+2c2004fe3e9c83ed779f0824b7c0472c
+	 /share/lasallelab/Julia/PE_test/JLTT0003_USPD16083426_HGJ52CCXY_L6/JLTT0003_USPD16083426_HGJ52CCXY_L6_2_val_2_screen.txt
+0771b4647e4cc7aedf6cfa7a5df7efb3
+	 /share/lasallelab/Julia/PE_test/JLTT0003_USPD16083426_HGJ52CCXY_L6/JLTT0003_USPD16083426_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplicated.nucleotide_stats.txt
+5b8da9cabfd020b5441ed9cd7f3c69b0
+	 /share/lasallelab/Julia/PE_test/JLTT0003_USPD16083426_HGJ52CCXY_L6/JLTT0003_USPD16083426_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplication_report.txt
+c33ee3423612e98a2feda114bb74dae9
+	 /share/lasallelab/Julia/PE_test/JLTT0003_USPD16083426_HGJ52CCXY_L6/JLTT0003_USPD16083426_HGJ52CCXY_L6_1_val_1_screen.txt
+6fa66d08177598e7a80487a34091a09a
+	 /share/lasallelab/Julia/PE_test/JLTT0005_USPD16083428_HGJ52CCXY_L6/JLTT0005_USPD16083428_HGJ52CCXY_L6_2_val_2_screen.txt
+9b7b08e9d92d71f6642c54a937e1ec06
+	 /share/lasallelab/Julia/PE_test/JLTT0005_USPD16083428_HGJ52CCXY_L6/JLTT0005_USPD16083428_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplication_report.txt
+5d9a7517077944145e19df11e0a2ad35
+	 /share/lasallelab/Julia/PE_test/JLTT0005_USPD16083428_HGJ52CCXY_L6/JLTT0005_USPD16083428_HGJ52CCXY_L6_1_val_1_bismark_bt2_PE_report.txt
+1bfbe3c8abcf73df1e3838f45db8cb0f
+	 /share/lasallelab/Julia/PE_test/JLTT0005_USPD16083428_HGJ52CCXY_L6/JLTT0005_USPD16083428_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplicated.nucleotide_stats.txt
+d453c8d2940f539c4de20cda7b523721
+	 /share/lasallelab/Julia/PE_test/JLTT0005_USPD16083428_HGJ52CCXY_L6/JLTT0005_USPD16083428_HGJ52CCXY_L6_2_val_2_screen.html
+0ce91d2559080fcb1620eebd53b46a57
+	 /share/lasallelab/Julia/PE_test/JLTT0005_USPD16083428_HGJ52CCXY_L6/JLTT0005_USPD16083428_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplicated_splitting_report.txt
+101ae354fa1130ee7fb45a8af159c436
+	 /share/lasallelab/Julia/PE_test/JLTT0005_USPD16083428_HGJ52CCXY_L6/JLTT0005_USPD16083428_HGJ52CCXY_L6_1_val_1_screen.txt
+42634de7338a534bdd1dab4a0809690c
+	 /share/lasallelab/Julia/PE_test/JLTT0005_USPD16083428_HGJ52CCXY_L6/JLTT0005_USPD16083428_HGJ52CCXY_L6_1_val_1_screen.html
+d9cf0f0496e0c0ada832118f074131d4
+	 /share/lasallelab/Julia/PE_test/JLTT0006_USPD16083429_HGJ52CCXY_L6/JLTT0006_USPD16083429_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplicated_splitting_report.txt
+5f664f2e1f5df4e469ae4be4c9c30ba7
+	 /share/lasallelab/Julia/PE_test/JLTT0006_USPD16083429_HGJ52CCXY_L6/JLTT0006_USPD16083429_HGJ52CCXY_L6_2_val_2_screen.html
+06bb5d904b94bc26d12bc2517ad67112
+	 /share/lasallelab/Julia/PE_test/JLTT0006_USPD16083429_HGJ52CCXY_L6/JLTT0006_USPD16083429_HGJ52CCXY_L6_2_val_2_screen.txt
+5b47b2e172a01dd3d12976e365088005
+	 /share/lasallelab/Julia/PE_test/JLTT0006_USPD16083429_HGJ52CCXY_L6/JLTT0006_USPD16083429_HGJ52CCXY_L6_1_val_1_bismark_bt2_pe.deduplication_report.txt
+d4b872997a714827e35046a88441cddc
+	 /share/lasallelab/Julia/PE_test/multiqc_data/multiqc_data.json
+70727d78d307b161acb6b7f5cbd22ece
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208103.out
+6e2188f91138ee341e2ff69afeef4fb8
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208083.out
+009f6cc115996f362cb98be6e9530754
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208084.out
+0bde1c14bb81b78d0a989ce2791d1cc4
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208144.out
+698e11be118c179edc342401eac6093a
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208138.out
+0337095bca09747ede7a4030972266b3
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208108.err
+8f2fce6ed2263662a8a4e37fdf5b97a8
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208143.out
+86f2a7fa195c5c2594f7e82c57a0a089
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208131.out
+28c408eb143f640b6753202b57b2e095
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208066_2.out
+6db6278e38a7c05e5b2d499ed05ba7dc
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208106.err
+dd3933bf3e4bfeb2c73cdd1459dc5ef6
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208136.out
+6107dab6c752bb87d43fb1797275ae7a
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208066_5.out
+0fbb3df7e4af06119212a5029f42e9ee
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208110.err
+d9a05abec9f5be94771f5bb732e61ca1
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208127.out
+60be98b3d684f71d77877721788c28aa
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208120.out
+8a58549bb3cce1cf7014699ae92baa46
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208165.err
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208162.err
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208157.err
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208159.err
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208158.err
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208156.err
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208163.err
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208164.err
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208160.err
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208161.err
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208153.err
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208154.err
+a198a620104a5924d4fa1f111bdde380
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208152.out
+4da86840e08e3790bcf3f5ca4ab4d67e
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208119.err
+5282dbf9f3d9198dffcb3499f149b17e
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208155.out
+737b2d1e5717e953ee8825dc2737006e
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208129.out
+40906a172369dec0f8230b1a74af4b25
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208160.out
+9c4ea2669e215b76e71e8a449ad4922e
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208095.out
+089115c95442dc68f1f992637aa053ee
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208115.out
+264bd3119d450be50a3e6cd2742ec03c
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208122.err
+8e09e19c207ff5674d6d4061e8594442
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208112.out
+13c454866cca74749eb60b46f949aed0
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208066_4.out
+05d7cf6a48ef166772610eb2e47cf228
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208137.out
+d9d41d78d8eef8cd39ae7610f9ab77b5
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208066_3.out
+d3390f34691a52cfd2f003dd9958fac1
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208130.out
+0748aa905ae4c657ea9b8188b35a5387
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208107.err
+dbec8a46be4cbae96576da43c69580ce
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208109.err
+bef785af189fa97e46607ec7c94fc982
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208142.out
+89ff2740475ff21c9e5854425bf02bba
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208145.out
+8141c05aac6b4b23bca6aba03f54d8e7
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208139.out
+65e26e1b73b91bbc76b9a7c7defde098
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208085.out
+872cdfdbe043ddbf297465afd4c7465d
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208082.out
+a524cc9606176f9b300d466f4f338f98
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208105.out
+85b93591800a826993020c10814a045a
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208102.out
+a011983ebcfe87d0de60d7fa203c226b
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208113.out
+3e43e403406725d8042c5ea00f237a53
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208114.out
+4d313f3eceb068a202b3db1a7ed7f1ef
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208123.err
+a16f59c2988c01e126cafede05af4650
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208093.out
+8b993f5dbcdcf2b460079cbb795701aa
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208161.out
+8b7c81d8cc97fbb66df2cdee66d2bf5b
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208094.out
+eede6f5a840c1424a2f3746f789d40d7
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208154.out
+26e5c0eeaf7334bbbd93301f832c524f
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208066_12.out
+e813934d174150a04af01f56305936dd
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208128.out
+00d59541528ee4ae48494a2042c91a6c
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208153.out
+6b1757325407b8efffd496b6a156f3f4
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208118.err
+d6a082843f2b90a4d9298ea8bfdb416b
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208121.out
+3563c0ef6276e3cca63cacb2f91896d7
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208116.err
+f70cad8c39125824d59cbccefcdeb10b
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208111.err
+c6ae00a2cf58aeb41870f800c27458de
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208126.out
+238286b7a649fd6866ee578194af1c7d
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208110.out
+f5d304c35f12da320c870e59e8e126ab
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208099.out
+0d2eddca671f141daf30f7e895aa9c73
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208162.out
+d43963825e0adbf245d7a4990790fc31
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208129.err
+6523c75efb0dd5fa52ec15a404a004af
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208097.out
+d1de7ad02d76427fd02ce2a829dee950
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208119.out
+1a2251c097d53adf056fcd9c9aff71b6
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208165.out
+fd34985f464042508bd06399373e85ba
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208150.out
+bee80783d58ca7987bdad9bad670d65a
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208157.out
+bff63529d0b950e4c82a8588a1948cdb
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208066_11.out
+098a73fd29df302aa09fcce417384b56
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208159.out
+ab9b7073135888c1ddf6b4a61bb4865a
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208112.err
+fc97716aae35333996a8b7477b77fbbc
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208125.out
+f50a98916c7fa75c675f330ad32a29ca
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208122.out
+a51f35c26db55128221e4491efc84e7d
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208115.err
+1826e07a3aea9bf9ce22c99f978e466a
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208133.out
+d04475d3958fa0a1484b0bddc363b6e0
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208148.out
+5726b217e187ab240b80139ecf457f49
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208134.out
+e730e511e94d624793c2e38af5207d6b
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208066_7.out
+6ca968d0506287a2f92b9a3b11e95b16
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208146.out
+639a8678984533b161712617d4dae41f
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208066_9.out
+2bb6a9fc84bf1a967252f4e19d367dd0
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208141.out
+bb45480fb9c4a86ec628319cebd1e04c
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208081.out
+e69b14eceef3e1201075a26bab4bd280
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208108.out
+13edcba224ea8394507ca857ff20548a
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208086.out
+5fe75fe4c3b872394c5fb421e9776434
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208088.out
+d36e2cafcef98d2dfc9705837b1fb6f0
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208101.out
+e771d3692faa94beed270648398d538d
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208106.out
+f93a687327101e6ea45021af74d908ed
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208123.out
+d7ea8dfaf2eef7ed0910afcf453718aa
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208114.err
+78700ec6ec908bfb78077bb69096bec4
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208158.out
+3fae80bbf7b8d4d89286b4dbbd9f256d
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208113.err
+153f2a52eccf00ba88a33ebc4ad2a3fd
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208124.out
+aa1760718114b6d8dbe54fd4d6e487ae
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208156.out
+73a5a6988d59ac39bad1a9dd18ec23a3
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208066_10.out
+2aef734baf07ebf7015f89a7b426e456
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208151.out
+930a0af7fa3b86fd28cfebc721a7d7b3
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208118.out
+0e3a99ce3ba116b2901ccee08c83364f
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208164.out
+552227a51e8e575bb610d155312b3427
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208163.out
+812c65998c15998d5a3d00575f4a6fc7
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208096.out
+7259ef6f524a03cd63b2606d3f2c3f90
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208126.err
+4f586fc9c3165b092754184283defb72
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208111.out
+844223baaac58bdd47d6feda32c2faf8
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208098.out
+ae7f5b4ccbc0d9842b477659181d8705
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208116.out
+974d373359df968a32d683ff04108aea
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208107.out
+c6e4b0f6c69cadb5723084849c55b119
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208089.out
+7b5bfed8109e17f5947569411f220121
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208100.out
+05126c8e43621371fa3984a3e746ad6d
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208087.out
+8661cbac413f01728b9411d9300dad45
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208080.out
+c04f0be1b6ff354621e10646b472b40b
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208109.out
+0e4d484ad364916e3aee568b362a2bc3
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208140.out
+abc9ec98c59ef52db184103307cf02ba
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208147.out
+3de00c63e1060351861f474f87ee89b7
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208066_8.out
+f720c16cdc7533aef08385316e30b786
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208149.out
+e596baf874c94a46757c30b4b50559e7
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208066_6.out
+bd45f025d29df0be1fba4976e05ba674
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208135.out
+35698ffc69728073459f720c4f220cf9
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208066_1.out
+ea8ca45bcf500961cce1074b8a4ea261
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208132.out
+9ae86e5d301e72f5d230462339ff7336
+	 /share/lasallelab/Julia/PE_test/CpG_Me/CpG_Me_PE_27208105.err
+e38b52a4ff06ef41179859cc461f95e9
+	 /share/lasallelab/Julia/PE_test/JLTT0010_USPD16083433_HGJ52CCXY_L7/JLTT0010_USPD16083433_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplication_report.txt
+0fa4514206662812926b8f867b50fdb4
+	 /share/lasallelab/Julia/PE_test/JLTT0010_USPD16083433_HGJ52CCXY_L7/JLTT0010_USPD16083433_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplicated.nucleotide_stats.txt
+45af6fcb93306f8e0928c0a9c6fa259f
+	 /share/lasallelab/Julia/PE_test/JLTT0010_USPD16083433_HGJ52CCXY_L7/JLTT0010_USPD16083433_HGJ52CCXY_L7_2_val_2_screen.txt
+b6493f878283ae6752dd27080d6d1668
+	 /share/lasallelab/Julia/PE_test/JLTT0010_USPD16083433_HGJ52CCXY_L7/JLTT0010_USPD16083433_HGJ52CCXY_L7_1_val_1_bismark_bt2_pe.deduplicated_splitting_report.txt
+7d5a90911ade50ac563518249f7b5abe
+	 /share/lasallelab/Julia/PE_test/JLTT0010_USPD16083433_HGJ52CCXY_L7/JLTT0010_USPD16083433_HGJ52CCXY_L7_1_val_1_screen.html
+48afe6d7ed08485625f09f9c4b4aa26d
+	 /share/lasallelab/Julia/PE_test/JLTT0010_USPD16083433_HGJ52CCXY_L7/JLTT0010_USPD16083433_HGJ52CCXY_L7_1_val_1_bismark_bt2_PE_report.txt
+67488e47adf80a74e61aed93af774957
+	 /share/lasallelab/Julia/PE_test/JLTT0010_USPD16083433_HGJ52CCXY_L7/JLTT0010_USPD16083433_HGJ52CCXY_L7_1_val_1_screen.txt
+ccced8686164cf73ea5c10207bd85c02
+	 /share/lasallelab/Julia/PE_test/JLTT0010_USPD16083433_HGJ52CCXY_L7/JLTT0010_USPD16083433_HGJ52CCXY_L7_2_val_2_screen.html
+2a041e72d09f591f225fcd7da1c7d28b
+	 /share/lasallelab/Julia/Vietnam_Yihui_Project/DEMAND_First_Run/lane.html
+2d209d7387af83516e910d36b312dd46
+	 /share/lasallelab/Julia/Vietnam_Yihui_Project/DEMAND_Second_Run/lane.html

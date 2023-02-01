@@ -1,5 +1,5 @@
-+ python3 duplicate_finder.py --path /share/lasallelab/Dag_Yasui/
-md5sum: /share/lasallelab/Dag_Yasui/DY_MeCP2GFP_MethylC_seq/PerMeth_JLDY014A/PerMeth_JLDY014A_chrM.bed: Permission denied
++ python3 duplicate_finder.py --path /share/lasallelab/Jesse/
+md5sum: /share/lasallelab/Jesse/.Rhistory: Permission denied
 Traceback (most recent call last):
   File "duplicate_finder.py", line 63, in <module>
     checksum_byte = subprocess.check_output(['md5sum', f'{key}'])
@@ -7,4 +7,4 @@ Traceback (most recent call last):
     return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
   File "/software/anaconda3/4.8.3/lssc0-linux/lib/python3.8/subprocess.py", line 512, in run
     raise CalledProcessError(retcode, process.args,
-subprocess.CalledProcessError: Command '['md5sum', '/share/lasallelab/Dag_Yasui/DY_MeCP2GFP_MethylC_seq/PerMeth_JLDY014A/PerMeth_JLDY014A_chrM.bed']' returned non-zero exit status 1.
+subprocess.CalledProcessError: Command '['md5sum', '/share/lasallelab/Jesse/.Rhistory']' returned non-zero exit status 1.
