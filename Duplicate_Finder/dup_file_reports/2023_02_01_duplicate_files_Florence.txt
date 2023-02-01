@@ -1,0 +1,51 @@
+fc4253ba04d35c6a92e5fd94fb7299ea
+	 /share/lasallelab/Florence/Tables/JLFC001A.samAlignDistPlot1.png
+	 /share/lasallelab/Florence/Tables/AlignDistPlot1.png
+6755069076f072212023a7994e5a8b5d
+	 /share/lasallelab/Florence/Tables/JLFC001A.samAlignDistPlot16.png
+90e664be11e5152d0842ab431e82119e
+	 /share/lasallelab/Florence/Tables/kidney_downsample.csv
+9dbf78926d7e6b91acb638d07c99935a
+	 /share/lasallelab/Florence/Tables/NK_downsample.csv
+974ba8bb4be8987f7314bdd4892b24fc
+	 /share/lasallelab/Florence/Tables/N25k75_downsample.csv
+06738fdde17fc344e0961acd729b9c32
+	 /share/lasallelab/Florence/Tables/downsampleFresult.csv
+933fcc8eb3b4cbe251b45c5b9a759af0
+	 /share/lasallelab/Florence/Tables/downsampleGresult.csv
+bc90af8ad8f97027497afd44c32815d7
+	 /share/lasallelab/Florence/Tables/downsampleDresult.csv
+c1e05638d3f069acc245db01dac5e74e
+	 /share/lasallelab/Florence/Tables/downsampleEresult.csv
+2966724be4c9462ce5337ebf2e3db409
+	 /share/lasallelab/Florence/Tables/AlignDistPlot16.png
+c85bc17ff3badf392e7afb1b7127be95
+	 /share/lasallelab/Florence/Tables/N50k50_downsample.csv
+7f50d776f79d845205694e9008a7cfa3
+	 /share/lasallelab/Florence/Tables/downsampleBresult.csv
+97ca1c02762fb04887430119e4128e05
+	 /share/lasallelab/Florence/Tables/downsampleCresult.csv
+e2db0fbf59c0e0440db20cb1cee6d5aa
+	 /share/lasallelab/Florence/Tables/downsampleAresult.csv
+8759989dd4eaa019096752b41d27ff18
+	 /share/lasallelab/Florence/Tables/downsampleLresult.csv
+965329e9919ed36d304e545b98a6a3de
+	 /share/lasallelab/Florence/Tables/downsampleKresult.csv
+c212f039a6f4285d0668de6021a9a9d4
+	 /share/lasallelab/Florence/Tables/downsampleJresult.csv
+5f90a72f0d580b973503f39128e2d5be
+	 /share/lasallelab/Florence/Tables/downsampleIresult.csv
+1cc90da52f57912629830943b6c5f066
+	 /share/lasallelab/Florence/Tables/downsampleHresult.csv
+0a95aa48984a0952005fcdab05cef65d
+	 /share/lasallelab/Florence/Scripts/slurm-2971590.out
+3d383507d252bfd9b40c8d75dc56e369
+	 /share/lasallelab/Florence/Scripts/slurm-2971624.out
+b49d2b38ecbc4476163d19b021a013d4
+	 /share/lasallelab/Florence/Scripts/slurm-3001667.out
+30baa463a7c947b58d2c0076e7fba123
+	 /share/lasallelab/Florence/Scripts/slurm-3161952.out
+	 /share/lasallelab/Florence/Scripts/slurm-3001948.out
+	 /share/lasallelab/Florence/Scripts/slurm-3032014.out
+e265a55f47aefb01463c7f051f3fc9fa
+	 /share/lasallelab/Florence/Scripts/slurm-3001946.out
