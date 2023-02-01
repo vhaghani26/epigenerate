@@ -1,1 +1,5 @@
 + python3 duplicate_finder.py --path /share/lasallelab/2018_LaSalle-Yasui_Rodent_Brain_Single_Nuclei_SingleCell/
++ env
++ grep SLURM
++ scontrol show job 54711694
++ sstat --format JobID,MaxRSS,AveCPU -P 54711694.batch
