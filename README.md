@@ -64,7 +64,7 @@ To determine how much space you have available, use `df`.
 
 This will report the size of the partition and how much is in use. If you want to know exactly how much is in each project directory (for example), use `du`.
 
-	du -h -d 1 /share/lasallelab/whatever
+	du -h -d 1 /share/lasallelab/DirectoryName
 	
 #### Duplicated Data ####
 
@@ -86,15 +86,15 @@ This will output `duplicate_files.txt`, where files are visualized with their un
 
 To copy files to epigenerate, use `scp`.
 
-	scp my_file username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/whatever
+	scp my_file username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/FileName
 
 You can also copy whole directories with the `-r` option.
 
-	scp -r my_dir username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/whatever
+	scp -r my_dir username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/DirectoryName
 
-Of course, you can also `scp` files or folders from epigenerate back to your personal computer.
+Of course, you can also `scp` files or directories from epigenerate back to your personal computer.
 
-	scp -r username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/whatever .
+	scp -r username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/DirectoryName .
 
 
 ## $HOME away from $HOME ##
