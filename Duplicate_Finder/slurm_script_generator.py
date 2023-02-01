@@ -49,11 +49,10 @@ sub_dirs = [
 ## Slurm Script Creation ##
 ###########################
 
-print("Copy the following commands in your terminal to submit the sbatch jobs:"
+print("Copy the following commands in your terminal to submit the sbatch jobs:")
 
 # Create SLURM files for submission
 for sub_dir in sub_dirs:
-    # Set up information to be written into slurm files
     slurm_file_info = textwrap.dedent(f"""
     #!/bin/bash
     #
@@ -91,12 +90,9 @@ for sub_dir in sub_dirs:
     # Note: Run dos2unix {{filename}} if sbatch DOS line break error occurs
     """)
     
-    print(slurm_file_info)
-    
     # Write file 
-    """
     os.system(f'touch {parent_dir}Viki/epigenerate/Duplicate_Finder/slurm_scripts/{date1}_dup_finder_slurm_{sub_dir[:-1]}.slurm')
     with open(f'{parent_dir}Viki/epigenerate/Duplicate_Finder/slurm_scripts/{date1}_dup_finder_slurm_{sub_dir[:-1]}.slurm', 'w') as f:
         f.write(f'{slurm_file_info}')
+    os.system(f'sed -i \'1d\' {parent_dir}Viki/epigenerate/Duplicate_Finder/slurm_scripts/{date1}_dup_finder_slurm_{sub_dir[:-1]}.slurm')
     print(f'sbatch {parent_dir}Viki/epigenerate/Duplicate_Finder/slurm_scripts/{date1}_dup_finder_slurm_{sub_dir[:-1]}.slurm')
-    """
