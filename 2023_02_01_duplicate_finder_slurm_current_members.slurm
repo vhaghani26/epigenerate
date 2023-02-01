@@ -9,7 +9,7 @@
 #SBATCH -N 1                                                   # Number of nodes/computers
 #SBATCH -n 1                                                   # Number of cores
 #SBATCH -c 8                                                   # Eight cores per task
-#SBATCH -t 80:00:00                                            # Ask for no more than 80 hours
+#SBATCH -t 50:00:00                                            # Ask for no more than 80 hours
 #SBATCH --mem=16gb                                             # Ask for no more than 16 GB of memory
 #SBATCH --chdir=/share/lasallelab/                             # Directory I want the job to run in
 
