@@ -9,7 +9,7 @@
 #SBATCH -N 1                                                        # Number of nodes/computers
 #SBATCH -n 1                                                        # Number of cores
 #SBATCH -c 8                                                        # Eight cores per task
-#SBATCH -t 10:00:00                                                 # Ask for no more than 10 hours
+#SBATCH -t 3:00:00                                                 # Ask for no more than 10 hours
 #SBATCH --mem=5gb                                                   # Ask for no more than 5 GB of memory
 #SBATCH --chdir=/share/lasallelab/Viki/epigenerate/Duplicate_Finder # Directory I want the job to run in
 
