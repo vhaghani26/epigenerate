@@ -22,18 +22,6 @@ set -o errexit
 set -x
 
 # Run the duplicate finder
-python3 duplicate_finder.py --path /share/lasallelab/Aron/ > /share/lasallelab/Viki/duplicate_files_Aron.txt
-
-python3 duplicate_finder.py --path /share/lasallelab/Jules/ > /share/lasallelab/Viki/duplicate_files_Jules.txt
-
-python3 duplicate_finder.py --path /share/lasallelab/Logan/ > /share/lasallelab/Viki/duplicate_files_Logan.txt
-
-python3 duplicate_finder.py --path /share/lasallelab/Oran/ > /share/lasallelab/Viki/duplicate_files_Oran.txt
-
-python3 duplicate_finder.py --path /share/lasallelab/Osman/ > /share/lasallelab/Viki/duplicate_files_Osman.txt
-
-python3 duplicate_finder.py --path /share/lasallelab/Kelly/ > /share/lasallelab/Viki/duplicate_files_Kelly.txt
-
 python3 duplicate_finder.py --path /share/lasallelab/2018_LaSalle-Yasui_Rodent_Brain_Single_Nuclei_SingleCell/ > /share/lasallelab/Viki/duplicate_files_2018_LaSalle-Yasui_Rodent_Brain_Single_Nuclei_SingleCell.txt
 
 python3 duplicate_finder.py --path /share/lasallelab/Annie/ > /share/lasallelab/Viki/duplicate_files_Annie.txt
