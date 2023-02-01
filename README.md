@@ -92,7 +92,7 @@ You can also copy whole directories with the `-r` option.
 
 	scp -r my_dir username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/whatever
 
-Of course, you can also `scp` stuff from epigenerate back to your personal computer.
+Of course, you can also `scp` files or folders from epigenerate back to your personal computer.
 
 	scp -r username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/whatever .
 
