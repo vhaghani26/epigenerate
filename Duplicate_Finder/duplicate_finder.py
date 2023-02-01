@@ -2,6 +2,7 @@
 
 import argparse
 import os
+import sys
 import subprocess
 from collections import defaultdict
 
@@ -46,6 +47,10 @@ dups = list({x for x in size_list if size_list.count(x) > 1})
 
 # Clear space/memory
 del size_list
+
+if len(dups) < 1:
+    print(f"No duplicates found in {arg.path}")
+    sys.exit()
 
 ######################
 ## Compute Checksum ##
