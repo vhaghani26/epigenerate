@@ -48,6 +48,7 @@ dups = list({x for x in size_list if size_list.count(x) > 1})
 # Clear space/memory
 del size_list
 
+# Exit program with report that no duplicates were found (proceeds if duplicates found)
 if len(dups) < 1:
     print(f"No duplicates found in {arg.path}")
     sys.exit()
@@ -72,9 +73,9 @@ for key, value in files_and_sizes.items():
 # Clear space/memory
 del dups
 
-#######################
-## Report Duplicates ##
-#######################
+#########################
+## Validate Duplicates ##
+#########################
 
 duplicate_files = {}
 for pair in files_and_sizes.items():
@@ -82,7 +83,19 @@ for pair in files_and_sizes.items():
         if pair[1][1] not in duplicate_files.keys():
             duplicate_files[pair[1][1]] = []
         duplicate_files[pair[1][1]].append(pair[0])
-    
+        
+# Remove files with same sizes but different checksums
+buggy_items = []
+for key, value in duplicate_files.items():
+    if len(duplicate_files[key]) <= 1:
+        buggy_items.append(key)
+
+for bug in buggy_items:
+    del duplicate_files[bug]
+
+#######################
+## Report Duplicates ##
+#######################    
 for key, value in duplicate_files.items():
     print(key)
     for val in value:
