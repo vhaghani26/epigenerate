@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
 
 import argparse
+import time
 import os
 import sys
+import magic
 import subprocess
 from collections import defaultdict
+
+# Initiate timer
+t0 = time.time()
 
 ####################
 ## Argparse Setup ##
@@ -52,6 +57,20 @@ del size_list
 if len(dups) < 1:
     print(f"No duplicates found in {arg.path}")
     sys.exit()
+    
+# Check file type extension and remove aliases
+aliases = []
+for key, value in files_and_sizes.items():
+    ext = f'{magic.from_file(key)}'
+    if ext.startswith("symbolic"):
+        aliases.append(key)
+
+for alias in aliases:
+    if len(aliases) > 0:
+        del files_and_sizes[alias]      
+
+# Clear space/memory
+del aliases
 
 ######################
 ## Compute Checksum ##
@@ -95,8 +114,16 @@ for bug in buggy_items:
 
 #######################
 ## Report Duplicates ##
-#######################    
-for key, value in duplicate_files.items():
-    print(key)
-    for val in value:
-        print("\t", val)
+####################### 
+
+if len(duplicate_files) > 0:
+    for key, value in duplicate_files.items():
+        print(key)
+        for val in value:
+            print("\t", val)
+else:
+    print(f"No duplicates found in {arg.path}")
+
+# Stop timer    
+t1 = time.time()
+print(f'This run took {t1 - t0} seconds')
