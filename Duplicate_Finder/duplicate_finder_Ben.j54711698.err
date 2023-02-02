@@ -1,1 +1,2 @@
 + python3 duplicate_finder.py --path /share/lasallelab/Ben/
+slurmstepd: error: *** JOB 54711698 ON rafter-7 CANCELLED AT 2023-02-01T22:42:46 DUE TO TIME LIMIT ***
