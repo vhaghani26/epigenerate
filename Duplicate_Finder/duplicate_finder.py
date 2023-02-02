@@ -80,7 +80,7 @@ del aliases
 for key, value in files_and_sizes.items():
     if value in dups and value > arg.bytes:
         # Run and capture checksum
-        ps = subprocess.Popen(('head', '-100'), stdout = subprocess.PIPE)
+        ps = subprocess.Popen(('head', '-1000'), stdout = subprocess.PIPE)
         checksum_byte = subprocess.check_output(['md5sum', f'{key}'], stdin = ps.stdout)
         # Convert type from byte to string
         checksum_str = checksum_byte.decode('utf-8')
