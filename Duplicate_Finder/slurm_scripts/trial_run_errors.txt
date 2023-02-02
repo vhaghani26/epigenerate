@@ -1,0 +1,148 @@
+# Annie
++ python3 duplicate_finder.py --path /share/lasallelab/Annie/
+md5sum: /share/lasallelab/Annie/Annie_Microglia_p35MAA/Window_permeth_readcentric_mod2.pl: Permission denied
+Traceback (most recent call last):
+  File "duplicate_finder.py", line 63, in <module>
+    checksum_byte = subprocess.check_output(['md5sum', f'{key}'])
+  File "/software/anaconda3/4.8.3/lssc0-linux/lib/python3.8/subprocess.py", line 411, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/software/anaconda3/4.8.3/lssc0-linux/lib/python3.8/subprocess.py", line 512, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['md5sum', '/share/lasallelab/Annie/Annie_Microglia_p35MAA/Window_permeth_readcentric_mod2.pl']' returned non-zero exit status 1.
+
+# AJ
++ python3 duplicate_finder.py --path /share/lasallelab/Aron/
+md5sum: /share/lasallelab/Aron/wgbs-hmedip_practice/wgbs/F1/aligner_standard_error.GRKqE4ki.txt: Permission denied
+Traceback (most recent call last):
+  File "duplicate_finder.py", line 63, in <module>
+    checksum_byte = subprocess.check_output(['md5sum', f'{key}'])
+  File "/software/anaconda3/4.8.3/lssc0-linux/lib/python3.8/subprocess.py", line 411, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/software/anaconda3/4.8.3/lssc0-linux/lib/python3.8/subprocess.py", line 512, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['md5sum', '/share/lasallelab/Aron/wgbs-hmedip_practice/wgbs/F1/aligner_standard_error.GRKqE4ki.txt']' returned non-zero exit status 1.
+
+# Ben
++ python3 duplicate_finder.py --path /share/lasallelab/Ben/
+slurmstepd: error: *** JOB 54711698 ON rafter-7 CANCELLED AT 2023-02-01T22:42:46 DUE TO TIME LIMIT ***
+
+# Charles
++ python3 duplicate_finder.py --path /share/lasallelab/Charles/
+md5sum: /share/lasallelab/Charles/DK_WGBS_HumanLiver/.Rhistory: Permission denied
+Traceback (most recent call last):
+  File "duplicate_finder.py", line 63, in <module>
+    checksum_byte = subprocess.check_output(['md5sum', f'{key}'])
+  File "/software/anaconda3/4.8.3/lssc0-linux/lib/python3.8/subprocess.py", line 411, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/software/anaconda3/4.8.3/lssc0-linux/lib/python3.8/subprocess.py", line 512, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['md5sum', '/share/lasallelab/Charles/DK_WGBS_HumanLiver/.Rhistory']' returned non-zero exit status 1.
+
+# Dag
++ python3 duplicate_finder.py --path /share/lasallelab/Dag_Yasui/
+md5sum: /share/lasallelab/Dag_Yasui/DY_MeCP2GFP_MethylC_seq/PerMeth_JLDY014A/PerMeth_JLDY014A_chrM.bed: Permission denied
+Traceback (most recent call last):
+  File "duplicate_finder.py", line 63, in <module>
+    checksum_byte = subprocess.check_output(['md5sum', f'{key}'])
+  File "/software/anaconda3/4.8.3/lssc0-linux/lib/python3.8/subprocess.py", line 411, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/software/anaconda3/4.8.3/lssc0-linux/lib/python3.8/subprocess.py", line 512, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['md5sum', '/share/lasallelab/Dag_Yasui/DY_MeCP2GFP_MethylC_seq/PerMeth_JLDY014A/PerMeth_JLDY014A_chrM.bed']' returned non-zero exit status 1.
+
+# genomes
++ python3 duplicate_finder.py --path /share/lasallelab/genomes/
+slurmstepd: error: *** JOB 54711704 ON fleet-41 CANCELLED AT 2023-02-01T19:43:43 DUE TO TIME LIMIT ***
+
+# Hyeyeon
++ python3 duplicate_finder.py --path /share/lasallelab/Hyeyeon/
+Traceback (most recent call last):
+  File "duplicate_finder.py", line 38, in <module>
+    files_and_sizes[os.path.join(path, name)] = os.path.getsize(os.path.join(path, name))
+  File "/software/anaconda3/4.8.3/lssc0-linux/lib/python3.8/genericpath.py", line 50, in getsize
+    return os.stat(filename).st_size
+FileNotFoundError: [Errno 2] No such file or directory: '/share/lasallelab/Hyeyeon/projects/pws/BWAIndex/genome.fa'
+
+# Jesse
++ python3 duplicate_finder.py --path /share/lasallelab/Jesse/
+md5sum: /share/lasallelab/Jesse/.Rhistory: Permission denied
+Traceback (most recent call last):
+  File "duplicate_finder.py", line 63, in <module>
+    checksum_byte = subprocess.check_output(['md5sum', f'{key}'])
+  File "/software/anaconda3/4.8.3/lssc0-linux/lib/python3.8/subprocess.py", line 411, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/software/anaconda3/4.8.3/lssc0-linux/lib/python3.8/subprocess.py", line 512, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['md5sum', '/share/lasallelab/Jesse/.Rhistory']' returned non-zero exit status 1.
+
+# Jules
++ python3 duplicate_finder.py --path /share/lasallelab/Jules/
+md5sum: /share/lasallelab/Jules/DS_NDBS/DMRichR/CHD/Combined/V2/nohup.out: Permission denied
+Traceback (most recent call last):
+  File "duplicate_finder.py", line 63, in <module>
+    checksum_byte = subprocess.check_output(['md5sum', f'{key}'])
+  File "/software/anaconda3/4.8.3/lssc0-linux/lib/python3.8/subprocess.py", line 411, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/software/anaconda3/4.8.3/lssc0-linux/lib/python3.8/subprocess.py", line 512, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['md5sum', '/share/lasallelab/Jules/DS_NDBS/DMRichR/CHD/Combined/V2/nohup.out']' returned non-zero exit status 1.
+
+# Keith
++ python3 duplicate_finder.py --path /share/lasallelab/Keith/
+md5sum: /share/lasallelab/Keith/KD_AUTandPOP_WGBS/DMRs/.Rhistory: Permission denied
+Traceback (most recent call last):
+  File "duplicate_finder.py", line 63, in <module>
+    checksum_byte = subprocess.check_output(['md5sum', f'{key}'])
+  File "/software/anaconda3/4.8.3/lssc0-linux/lib/python3.8/subprocess.py", line 411, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/software/anaconda3/4.8.3/lssc0-linux/lib/python3.8/subprocess.py", line 512, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['md5sum', '/share/lasallelab/Keith/KD_AUTandPOP_WGBS/DMRs/.Rhistory']' returned non-zero exit status 1.
+
+# Kelly
++ python3 duplicate_finder.py --path /share/lasallelab/Kelly/
+Traceback (most recent call last):
+  File "duplicate_finder.py", line 38, in <module>
+    files_and_sizes[os.path.join(path, name)] = os.path.getsize(os.path.join(path, name))
+  File "/software/anaconda3/4.8.3/lssc0-linux/lib/python3.8/genericpath.py", line 50, in getsize
+    return os.stat(filename).st_size
+FileNotFoundError: [Errno 2] No such file or directory: '/share/lasallelab/Kelly/data/test/WGBBS/foo'
+
+# Logan
++ python3 duplicate_finder.py --path /share/lasallelab/Logan/
+md5sum: /share/lasallelab/Logan/CpG_Me_NovaPilot/LO_11_S9_L002/LO_11_S9_L002_1_val_1_bismark_bt2_pe.deduplicated_splitting_report.txt: No such file or directory
+Traceback (most recent call last):
+  File "duplicate_finder.py", line 63, in <module>
+    checksum_byte = subprocess.check_output(['md5sum', f'{key}'])
+  File "/software/anaconda3/4.8.3/lssc0-linux/lib/python3.8/subprocess.py", line 411, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/software/anaconda3/4.8.3/lssc0-linux/lib/python3.8/subprocess.py", line 512, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['md5sum', '/share/lasallelab/Logan/CpG_Me_NovaPilot/LO_11_S9_L002/LO_11_S9_L002_1_val_1_bismark_bt2_pe.deduplicated_splitting_report.txt']' returned non-zero exit status 1.
+
+# Oran
++ python3 duplicate_finder.py --path /share/lasallelab/Oran/
+Traceback (most recent call last):
+  File "duplicate_finder.py", line 38, in <module>
+    files_and_sizes[os.path.join(path, name)] = os.path.getsize(os.path.join(path, name))
+  File "/software/anaconda3/4.8.3/lssc0-linux/lib/python3.8/genericpath.py", line 50, in getsize
+    return os.stat(filename).st_size
+FileNotFoundError: [Errno 2] No such file or directory: '/share/lasallelab/Oran/dovetail/luhmes/merged/oj/lib/libstdc++.so.6.0.21'
+
+# Programs
++ python3 duplicate_finder.py --path /share/lasallelab/programs/
+slurmstepd: error: *** JOB 54711712 ON fleet-40 CANCELLED AT 2023-02-01T15:48:10 DUE TO TIME LIMIT ***
+
+# Rochelle
++ python3 duplicate_finder.py --path /share/lasallelab/Rochelle/
+slurmstepd: error: *** JOB 54711714 ON fleet-40 CANCELLED AT 2023-02-01T16:48:10 DUE TO TIME LIMIT ***
+
+# Yihui
++ python3 duplicate_finder.py --path /share/lasallelab/Yihui/
+Traceback (most recent call last):
+  File "duplicate_finder.py", line 38, in <module>
+    files_and_sizes[os.path.join(path, name)] = os.path.getsize(os.path.join(path, name))
+  File "/software/anaconda3/4.8.3/lssc0-linux/lib/python3.8/genericpath.py", line 50, in getsize
+    return os.stat(filename).st_size
+FileNotFoundError: [Errno 2] No such file or directory: '/share/lasallelab/Yihui/PMDfinder/PMDfinder_package/homebrew/Library/Homebrew/os/mac/pkgconfig/fuse/osxfuse.pc'
+

@@ -1,2 +1,0 @@
-+ python3 duplicate_finder.py --path /share/lasallelab/programs/
-slurmstepd: error: *** JOB 54711712 ON fleet-40 CANCELLED AT 2023-02-01T15:48:10 DUE TO TIME LIMIT ***

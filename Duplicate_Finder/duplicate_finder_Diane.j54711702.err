@@ -1,5 +1,0 @@
-+ python3 duplicate_finder.py --path /share/lasallelab/Diane/
-+ env
-+ grep SLURM
-+ scontrol show job 54711702
-+ sstat --format JobID,MaxRSS,AveCPU -P 54711702.batch
