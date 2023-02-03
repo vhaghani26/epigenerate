@@ -6,3 +6,11 @@ Traceback (most recent call last):
                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "<frozen genericpath>", line 50, in getsize
 FileNotFoundError: [Errno 2] No such file or directory: '/share/lasallelab/Yihui/PMDfinder/PMDfinder_package/homebrew/Library/Homebrew/os/mac/pkgconfig/fuse/osxfuse.pc'
+
+
+(/share/korflab/home/viki/.conda/dup_find) vhaghani@spitfire: Duplicate_Finder:$ ls /share/lasallelab/Yihui/PMDfinder/PMDfinder_package/homebrew/Library/Homebrew/os/mac/pkgconfig/fuse/ -al
+total 26
+drwxrwsr-x  2 yihui jmlasalle  4 Apr 26  2022 ./
+drwxrwsr-x 12 yihui jmlasalle 14 Apr 26  2022 ../
+lrwxrwxrwx  1 yihui jmlasalle 32 Apr 26  2022 fuse.pc -> /usr/local/lib/pkgconfig/fuse.pc
+lrwxrwxrwx  1 yihui jmlasalle 35 Apr 26  2022 osxfuse.pc -> /usr/local/lib/pkgconfig/osxfuse.pc
