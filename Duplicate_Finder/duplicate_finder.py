@@ -58,16 +58,20 @@ if len(dups) < 1:
     print(f"No duplicates found in {arg.path}")
     sys.exit()
     
-# Check file type extension and remove aliases
+# Check file type extension and remove aliases and user-specific paths
 aliases = []
 for key, value in files_and_sizes.items():
     ext = f'{magic.from_file(key)}'
     if ext.startswith("symbolic"):
         aliases.append(key)
+    if key.startswith("/usr/"):
+        aliases.append(key)
 
+# Ensure unique values in aliases to prevent KeyError
+aliases = set(aliases)
 for alias in aliases:
     if len(aliases) > 0:
-        del files_and_sizes[alias]      
+        del files_and_sizes[alias]
 
 # Clear space/memory
 del aliases
