@@ -10,11 +10,20 @@
 #SBATCH -n 1                                                        # Number of cores
 #SBATCH -c 8                                                        # Eight cores per task
 #SBATCH -t 72:00:00                                                 # Ask for no more than 72 hours
-#SBATCH --mem=6gb                                                   # Ask for no more than 5 GB of memory
+#SBATCH --mem=6gb                                                   # Ask for no more than 6 GB of memory
 #SBATCH --chdir=/share/lasallelab/Viki/epigenerate/Duplicate_Finder # Directory I want the job to run in
 
 # Run aklog to deal with SLURM bug
 aklog
+
+# Source profile so conda can be used
+source /share/korflab/home/viki/profile
+
+# Initialize conda
+. /software/anaconda3/4.8.3/lssc0-linux/etc/profile.d/conda.sh
+
+# Activate your desired conda environment
+conda activate /share/korflab/home/viki/.conda/dup_find
 
 # Fail on weird errors
 set -o nounset
