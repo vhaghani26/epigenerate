@@ -3,14 +3,14 @@
 #SBATCH --mail-user=vhaghani@ucdavis.edu                            # User email to receive updates
 #SBATCH --mail-type=ALL                                             # Get an email when the job begins, ends, or if it fails
 #SBATCH -p production                                               # Partition, or queue, to assign to
-#SBATCH -J duplicate_finder_Charles                           # Name for job
-#SBATCH -o duplicate_finder_Charles.j%j.out                   # File to write STDOUT to
-#SBATCH -e duplicate_finder_Charles.j%j.err                   # File to write error output to
+#SBATCH -J duplicate_finder                                         # Name for job
+#SBATCH -o duplicate_finder.j%j.out                                 # File to write STDOUT to
+#SBATCH -e duplicate_finder.j%j.err                                 # File to write error output to
 #SBATCH -N 1                                                        # Number of nodes/computers
 #SBATCH -n 1                                                        # Number of cores
 #SBATCH -c 8                                                        # Eight cores per task
-#SBATCH -t 15:00:00                                                 # Ask for no more than 15 hours
-#SBATCH --mem=5gb                                                   # Ask for no more than 5 GB of memory
+#SBATCH -t 72:00:00                                                 # Ask for no more than 72 hours
+#SBATCH --mem=6gb                                                   # Ask for no more than 5 GB of memory
 #SBATCH --chdir=/share/lasallelab/Viki/epigenerate/Duplicate_Finder # Directory I want the job to run in
 
 # Run aklog to deal with SLURM bug
@@ -22,7 +22,7 @@ set -o errexit
 set -x
 
 # Run the duplicate finder
-python3 duplicate_finder.py --path /share/lasallelab/Charles/ > /share/lasallelab/Viki/epigenerate/Duplicate_Finder/dup_file_reports/2023_02_01_duplicate_files_Charles.txt
+python3 duplicate_finder.py --path /share/lasallelab/ > /share/lasallelab/Viki/epigenerate/Duplicate_Finder/2023_02_03_duplicate_files_results.txt
 
 # Print out various information about the job
 env | grep SLURM                                               # Print out values of the current jobs SLURM environment variables
