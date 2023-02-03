@@ -104,6 +104,9 @@ for pair in files_and_sizes.items():
             duplicate_files[pair[1][1]] = []
         duplicate_files[pair[1][1]].append(pair[0])
         
+# Clear space/memory
+del files_and_sizes
+        
 # Remove files with same sizes but different checksums
 buggy_items = []
 for key, value in duplicate_files.items():
