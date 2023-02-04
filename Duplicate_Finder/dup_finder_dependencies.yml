@@ -1,4 +1,4 @@
-name: /share/korflab/home/viki/.conda/dup_find
+name: dup_find
 channels:
   - conda-forge
   - bioconda
@@ -30,5 +30,4 @@ dependencies:
   - xz=5.2.6=h166bdaf_0
   - pip:
     - python-magic==0.4.27
-prefix: /share/korflab/home/viki/.conda/dup_find
 
