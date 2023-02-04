@@ -40,7 +40,10 @@ files_and_sizes = {}
 # Populate dictionary
 for path, subdirs, files in os.walk(arg.path):
     for name in files:
-        files_and_sizes[os.path.join(path, name)] = os.path.getsize(os.path.join(path, name))
+        try:
+            files_and_sizes[os.path.join(path, name)] = os.path.getsize(os.path.join(path, name))
+        except:
+            print(f"An exception occured in {path}. This is likely a dead alias.")
 
 # Make a list containing only file sizes
 size_list = []
