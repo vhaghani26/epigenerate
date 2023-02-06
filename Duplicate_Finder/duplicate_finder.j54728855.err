@@ -1,0 +1,13 @@
+/var/spool/slurmd/job54728855/slurm_script: line 20: /share/korflab/home/viki/profile: No such file or directory
++ python3 duplicate_finder.py --path /share/lasallelab/
+Traceback (most recent call last):
+  File "/share/lasallelab/Viki/epigenerate/Duplicate_Finder/duplicate_finder.py", line 67, in <module>
+    ext = f'{magic.from_file(key)}'
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/share/korflab/home/viki/.conda/dup_find/lib/python3.11/site-packages/magic/__init__.py", line 182, in from_file
+    return m.from_file(filename)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/share/korflab/home/viki/.conda/dup_find/lib/python3.11/site-packages/magic/__init__.py", line 115, in from_file
+    with _real_open(filename):
+         ^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/share/lasallelab/Aron/RNA_seq_analysis/Analysis1_Feb112021/A11/A11__STARtmp/tmp.fifo.read2'
