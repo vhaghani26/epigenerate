@@ -31,7 +31,7 @@ set -o errexit
 set -x
 
 # Run the duplicate finder
-python3 duplicate_finder.py --path /share/lasallelab/ > /share/lasallelab/Viki/epigenerate/Duplicate_Finder/2023_02_03_duplicate_files_results.txt
+python3 duplicate_finder.py --path /share/lasallelab/ > /share/lasallelab/Viki/epigenerate/Duplicate_Finder/2023_02_07_duplicate_files_results.txt
 
 # Print out various information about the job
 env | grep SLURM                                               # Print out values of the current jobs SLURM environment variables
