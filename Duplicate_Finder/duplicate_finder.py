@@ -24,7 +24,7 @@ parser.add_argument('--path', required=True, type=str,
     metavar='<str>', help='Path to directory')
     
 # Optional arguments
-parser.add_argument('--bytes', required=False, default = 0, type=int,
+parser.add_argument('--bytes', required=False, default = 1, type=int,
     metavar='<int>', help='Integer describing minimum number of bytes to filter')
 
 # Finalization of argparse
