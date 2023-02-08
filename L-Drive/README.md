@@ -23,3 +23,7 @@ I recommend following [these](https://support.microsoft.com/en-gb/windows/map-a-
 5. For the folder path, input `\\hshome.ucdmc.ucdavis.edu\shared\som\medmicro\labs\lasalle lab`
 
 ![github](https://github.com/vhaghani26/epigenerate/blob/main/L-Drive/map_network_drive.png)
+
+6. This will prompt you to type your username and password. Note that your username will actually have to begin with `hs\`. This means you should type `hs\username` and your password to log in
+
+Congratulations! You've finally connected to the mystical L-Drive!
