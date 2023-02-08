@@ -51,6 +51,8 @@ CPU is easily shared but you should still be cognizant of how much you are using
 
 ### Storage ###
 
+#### On Epigenerate ####
+
 Looking at the cluster topology, it should be clear that epigenerate doesn't store any of your files directly. It has access to `/share/lasallelab` and other mount points via a network.
 
 Most LaSalle lab members and epigenerate users will be using the `/share/lasallelab/` mount point to store code, data, and experiments. This is your main hub on the file system, not your home directory.
@@ -66,21 +68,14 @@ This will report the size of the partition and how much is in use. If you want t
 
 	du -h -d 1 /share/lasallelab/DirectoryName
 	
-#### Duplicated Data ####
 
-In the event that the best practices are not followed, we may end up with large levels of duplicated files taking up storage space. As such, there is a program I (Viki Haghani) have written to detect all duplicates and report them back. To run it, you can use the following:
+#### The L-Drive ####
 
-```
-python3 duplicate_finder.py --path /share/lasallelab/ > duplicate_files.txt
-```
+In order to ensure we have a data back-up and that we do not have duplicate data on Epigenerate, one copy (read-only) or data will be maintained in `/share/lasallelab/data/`, while another will be hosted on the L-drive. The L-drive copy should be untouched aside from download. In order to access the L-drive and find out more about it, please take a look at the [L-Drive](https://github.com/vhaghani26/epigenerate/tree/main/L-Drive) directory.
+	
+## Duplicated Data ##
 
-If you want to ignore small file sizes, you can also filter to ignore a minimum number of bytes using something like the following: 
-
-```
-python3 duplicate_finder.py --path /share/lasallelab/ --bytes 1000 > duplicate_files.txt
-```
-
-This will output `duplicate_files.txt`, where files are visualized with their unique checksums and every location that file is found. Hopefully this will not be a future issue, but if so, it is recommended to give lab members time to sort out duplicates before deleting them.
+In the event that the best practices are not followed, we may end up with large levels of duplicated files taking up storage space. As such, there is a program Viki Haghani has written to detect all duplicates and report them back. For more information on how to run it, please head over to the [Duplicate_Finder](https://github.com/vhaghani26/epigenerate/tree/main/Duplicate_Finder) directory.
 
 ## Transferring Files ##
 
