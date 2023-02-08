@@ -15,10 +15,13 @@ To connect your MAC to the L-Drive, follow the steps spelled out below:
 3. You will see the connect to server window, add a new server
 
 ![github](https://github.com/vhaghani26/epigenerate/blob/main/L-Drive/Connect_to_server.png)
+
 4. For the folder path, input `smb://hshome.ucdmc.ucdavis.edu/shared/som/medmicro/labs/lasalle lab`
-5. Once you connect to the server, please enter the directory that has your name, if it doesnt exist, create one
-6. An example of such a directory is here:
+6. Once you connect to the server, please enter the directory that has your name, if it doesnt exist, create one
+7. An example of such a directory is here:
+
 ![github](https://github.com/vhaghani26/epigenerate/blob/main/L-Drive/Enter_(yourname)_directory.png)
+
 Congratulations! You've finally connected to the mystical L-Drive!
 
 ## Windows
