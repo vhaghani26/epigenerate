@@ -2,7 +2,7 @@
 
 ## UC Davis Health Systems Log-In
 
-In order to connect to the L-drive, a health systems log-in is required. To get one, email [Lawrence Ma](lwma@ucdavis.edu) and request one. We also have a lab-specific log-in that can be used if you are having trouble getting one.
+In order to connect to the L-drive, a health systems log-in is required. To get one, email Lawrence Ma(lwma@ucdavis.edu) and request one. We also have a lab-specific log-in that can be used if you are having trouble getting one.
 
 ## Mac OS
 
