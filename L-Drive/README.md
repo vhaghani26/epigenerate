@@ -15,6 +15,11 @@ I recommend following [these](https://support.microsoft.com/en-gb/windows/map-a-
 
 1. Open the File Explorer
 2. Select "This PC" from the left-side panel
-3. Select the "Map network drive" option from the menu bar
+3. Select the "Map network drive" option from the menu bar.
+
+![github](https://github.com/vhaghani26/epigenerate/blob/main/L-Drive/find_map_network_drive.png)
+
 4. Select a letter for the drive that does not interfere with your current drives. In this case, "L" is appropriate if it is not already taken
-5. In the 
+5. For the folder path, input `\\hshome.ucdmc.ucdavis.edu\shared\som\medmicro\labs\lasalle lab`
+
+![github](https://github.com/vhaghani26/epigenerate/blob/main/L-Drive/map_network_drive.png)
