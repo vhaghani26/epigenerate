@@ -6,7 +6,7 @@ Much of this document was adapted from Dr. Ian Korf's documentation on Spitfire.
 
 ## Table of Contents
 
-* Requesting an Epigenerate Account
+* [Requesting an Epigenerate Account](## Requesting an Epigenerate Account)
 * Logging into Epigenerate
 * Best Practices
     * Epigenerate Slack Channel
