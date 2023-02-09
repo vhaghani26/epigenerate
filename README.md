@@ -69,9 +69,7 @@ ulimit -v unlimited # Reset your memory cap to being unlimited
 
 ### CPUs
 
-(Viki needs to check how many CPUs are on epigenerate; this needs to be rewritten)
-
-CPU is easily shared but you should still be cognizant of how much you are using. There are 64 CPUs and you shouldn't use more than half (32) at a time. However, if you have some kind of rush job, you can use most of them if you `nice` your jobs to reduce their priority. In fact, if you want to be a good lab citizen, you will `nice` all of your jobs. To `nice` your job, simply put precede your command with the word `nice`.
+CPU is easily shared but you should still be cognizant of how much you are using. There are 64 CPUs allocated to epigenerate (you can check CPU number by running `lscpu`). you shouldn't use more than half (32) at a time. However, if you have some kind of rush job, you can use most of them if you `nice` your jobs to reduce their priority. In fact, if you want to be a good lab citizen, you will `nice` all of your jobs. To `nice` your job, simply put precede your command with the word `nice`.
 
 ## Data Storage
 
