@@ -48,7 +48,8 @@ for path, subdirs, files in os.walk(arg.path):
 # Make a list containing only file sizes
 size_list = []
 for size in files_and_sizes.values():
-    size_list.append(size)
+    if size >= arg.bytes:
+        size_list.append(size)
 
 # Find duplicate file sizes
 dups = list({x for x in size_list if size_list.count(x) > 1})
@@ -64,11 +65,14 @@ if len(dups) < 1:
 # Check file type extension and remove aliases and user-specific paths
 aliases = []
 for key, value in files_and_sizes.items():
-    ext = f'{magic.from_file(key)}'
-    if ext.startswith("symbolic"):
-        aliases.append(key)
-    if key.startswith("/usr/"):
-        aliases.append(key)
+    try:
+        ext = f'{magic.from_file(key)}'
+        if ext.startswith("symbolic"):
+            aliases.append(key)
+        if key.startswith("/usr/"):
+            aliases.append(key)
+    except:
+        print(f"An exception occured for {key}. This is likely a temporary file or pipe.")
 
 # Ensure unique values in aliases to prevent KeyError
 aliases = set(aliases)
@@ -85,7 +89,7 @@ del aliases
 
 # Run checksum only for potentially duplicated files
 for key, value in files_and_sizes.items():
-    if value in dups and value > arg.bytes:
+    if value in dups and value >= arg.bytes:
         # Run and capture checksum
         ps = subprocess.Popen(('head', '-1000'), stdout = subprocess.PIPE)
         checksum_byte = subprocess.check_output(['md5sum', f'{key}'], stdin = ps.stdout)
