@@ -10,13 +10,13 @@ Much of this document was adapted from Dr. Ian Korf's documentation on Spitfire.
 * [Logging into Epigenerate](#logging-into-epigenerate)
 * [Best Practices](#best-practices)
     * [Epigenerate Slack Channel](#epigenerate-slack-channel)
-	* [RAM](#ram)
+	* [RAM](#ram) - needs more info, specifically SLURM
 	* [CPUs](#cpus)
 * [Data Storage](#data-storage)
 	* [On Epigenerate](#on-epigenerate)
 	* [The L-Drive](#the-l-drive)
 	* [Duplicated Data](#duplicated-data)
-	* [Aliasing Data](#aliasing-data)
+	* [Aliasing Data](#aliasing-data) - needs more info
 	* [Transferring Data](#transferring-data)
 * [$HOME away from $HOME](#home-away-from-home)
 * [Conda Usage](#conda-usage)
@@ -69,7 +69,7 @@ ulimit -v unlimited # Reset your memory cap to being unlimited
 
 ### CPUs
 
-CPU is easily shared but you should still be cognizant of how much you are using. There are 64 CPUs allocated to epigenerate (you can check CPU number by running `lscpu`). you shouldn't use more than half (32) at a time. However, if you have some kind of rush job, you can use most of them if you `nice` your jobs to reduce their priority. In fact, if you want to be a good lab citizen, you will `nice` all of your jobs. To `nice` your job, simply put precede your command with the word `nice`.
+CPU is easily shared but you should still be cognizant of how much you are using. There are 64 CPUs allocated to epigenerate (you can check CPU number by running `lscpu`). You shouldn't use more than half (32) at a time. However, if you have some kind of rush job, you can use most of them if you `nice` your jobs to reduce their priority. In fact, if you want to be a good lab citizen, you will `nice` all of your jobs. To `nice` your job, simply put precede your command with the word `nice`.
 
 ## Data Storage
 
@@ -127,7 +127,13 @@ scp -r username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/Directory
 
 ## $HOME away from $HOME 
 
-The authentication system may drop the connection to your home directory after a long time. This means the programs that are running for hours will suddenly lose their connection to your `$HOME` directory. This could very well break whatever you're trying to do. Fortunately, `/share/lasallelab` does not have this problem. The workaround is to reset your `$HOME` to `/share/lasallelab/$USER` and then place all of your configurations in there. Hopefully the sysadmins fix this someday.
+The authentication system may drop the connection to your home directory after a long time. This means the programs that are running for hours will suddenly lose their connection to your `$HOME` directory. This could very well break whatever you're trying to do. Fortunately, `/share/lasallelab` does not have this problem. The workaround is to reset your `$HOME` to `/share/lasallelab/$USER` and then place all of your configurations in there. To do so, run:
+
+```
+export LASALLEHOME=/share/lasallelab/{your_directory}
+```
+
+Hopefully the sysadmins fix this someday.
 
 ## Conda Usage 
 
