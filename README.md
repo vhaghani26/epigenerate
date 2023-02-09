@@ -18,9 +18,9 @@ Much of this document was adapted from Dr. Ian Korf's documentation on Spitfire.
 	* [Duplicated Data](#duplicated-data)
 	* [Aliasing Data](#aliasing-data)
 	* [Transferring Data](#transferring-data)
-* [$HOME away from $HOME](#-home-away-from--home)
+* [$HOME away from $HOME](#-home-away-from-home)
 * [Conda Usage](#conda-usage)
-* [How the Genome Center Cluster Works (Extra Information)](#how-the-genome-center-cluster-works--extra-information-)
+* [How the Genome Center Cluster Works (Extra Information)](#how-the-genome-center-cluster-works-extra-information-)
 
 
 ## Requesting an Epigenerate Account 
