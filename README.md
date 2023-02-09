@@ -9,7 +9,18 @@ Much of this document was adapted from Dr. Ian Korf's documentation on Spitfire.
 * Requesting an Epigenerate Account
 * Logging into Epigenerate
 * Best Practices
-    * 
+    * Epigenerate Slack Channel
+	* RAM
+	* CPUs
+* Data Storage
+	* On Epigenerate
+	* The L-Drive
+	* Duplicated Data
+	* Aliasing Data
+	* Transferring Data
+* $HOME away from $HOME
+* Conda Usage
+* How the Genome Center Cluster Works (Extra Information)
 
 
 ## Requesting an Epigenerate Account 
@@ -56,7 +67,7 @@ ulimit -v unlimited # Reset your memory cap to being unlimited
 
 3. Submit the resource-intensive job via SLURM. See the [SLURM directory](https://github.com/vhaghani26/epigenerate/tree/main/SLURM) for information on how to create and submit a SLURM script.
 
-### CPU 
+### CPUs
 
 (Viki needs to check how many CPUs are on epigenerate; this needs to be rewritten)
 
@@ -96,7 +107,7 @@ In the event that the best practices are not followed, we may end up with large 
 
 One way we can prevent duplicated data is by aliasing (linking) the files we need into our own directories.
 
-## Transferring Files 
+### Transferring Data 
 
 To copy files to epigenerate, use `scp`.
 
@@ -124,7 +135,7 @@ The authentication system may drop the connection to your home directory after a
 
 Are you using Conda? The answer should be _yes_. Is the Conda directory in your home directory? The answer should be _no_. Reset your $HOME to `/share/lasallelab/$USER` and do **all** of your work from there. Please see the `conda.md` file for more information.
 
-## How the Genome Center Cluster Works (Extra Information_)
+## How the Genome Center Cluster Works (Extra Information)
 
 The Genome Center cluster is composed of _head_ nodes that submit jobs, _cluster_ nodes that work on jobs, and _file servers_ that store all of the data.
 
