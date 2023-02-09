@@ -4,7 +4,15 @@ This document is for users in the LaSalle Lab to set up their computer environme
 
 Much of this document was adapted from Dr. Ian Korf's documentation on Spitfire.
 
-## Accounts 
+## Table of Contents
+
+* Requesting an Epigenerate Account
+* Logging into Epigenerate
+* Best Practices
+    * 
+
+
+## Requesting an Epigenerate Account 
 
 You'll need an account to connect to epigenerate and the rest of the cluster. Use these steps to request an account:
 
@@ -33,7 +41,20 @@ On the LaSalle Lab Slack, you should locate a channel called "epigenerate." If y
 
 ### RAM 
 
-RAM is the hardest resource to share. A good rule of thumb is for each user to never use more than half of the total RAM. Since there is currently 500G RAM, never run jobs that take more than 250G in total. So don't set up 50 jobs, each taking 10G RAM. If you need to use more than 250G, discuss with the cluster overseer (currently Viki) first so we can warn other users. If you have no idea how much RAM your process is using, run `top` or `htop` and examine the memory usage. You can also run these commands to check active usage before you try running a job.
+RAM is the hardest resource to share. A good rule of thumb is for each user to never use more than half of the total RAM. Since there is currently 500G RAM, never run jobs that take more than 250G in total. So don't set up 50 jobs, each taking 10G RAM. If you have no idea how much RAM your process is using, run `top` or `htop` and examine the memory usage. You can also run these commands to check active usage before you try running a job.
+
+If you know you are going to be running a resource-intensive job, such as Comethyl, then you have some options regarding how to do so.
+
+1. Discuss with the cluster overseer (currently Viki) and other epigenerate users to confirm usage of epigenerate's RAM
+2. Cap the memory of the job using `ulimit`. There is more information on what `ulimit` is [here](https://www.geeksforgeeks.org/ulimit-soft-limits-and-hard-limits-in-linux/), but below is an example of how you can implement it:
+
+```
+ulimit -v 250000000 # Set RAM/memory limit to 250000000 kb (250 GB)
+{the command you are running}
+ulimit -v unlimited # Reset your memory cap to being unlimited
+```
+
+3. Submit the resource-intensive job via SLURM. See the [SLURM directory](https://github.com/vhaghani26/epigenerate/tree/main/SLURM) for information on how to create and submit a SLURM script.
 
 ### CPU 
 
@@ -41,48 +62,59 @@ RAM is the hardest resource to share. A good rule of thumb is for each user to n
 
 CPU is easily shared but you should still be cognizant of how much you are using. There are 64 CPUs and you shouldn't use more than half (32) at a time. However, if you have some kind of rush job, you can use most of them if you `nice` your jobs to reduce their priority. In fact, if you want to be a good lab citizen, you will `nice` all of your jobs. To `nice` your job, simply put precede your command with the word `nice`.
 
-### Storage
+## Data Storage
 
-#### On Epigenerate 
-
-Looking at the cluster topology, it should be clear that epigenerate doesn't store any of your files directly. It has access to `/share/lasallelab` and other mount points via a network.
+### On Epigenerate 
 
 Most LaSalle lab members and epigenerate users will be using the `/share/lasallelab/` mount point to store code, data, and experiments. This is your main hub on the file system, not your home directory.
 
-* /share/lasallelab/data - Shared data files like genomes
+* `/share/lasallelab/data` - contains raw data in the format `{year}_{project_or_data_title}`
+* `/share/lasallelab/data/genomes` - contains genome files organized by species
 
 To determine how much space you have available, use `df`.
 
-	cd /share/lasallelab/
-	df -h .
+```
+cd /share/lasallelab/
+df -h .
+```
 
 This will report the size of the partition and how much is in use. If you want to know exactly how much is in each project directory (for example), use `du`.
 
-	du -h -d 1 /share/lasallelab/DirectoryName
-	
+```
+du -h -d 1 /share/lasallelab/DirectoryName
+```
 
-#### The L-Drive 
+### The L-Drive 
 
 In order to ensure we have a data back-up and that we do not have duplicate data on Epigenerate, one copy (read-only) or data will be maintained in `/share/lasallelab/data/`, while another will be hosted on the L-drive. The L-drive copy should be untouched aside from download. In order to access the L-drive and find out more about it, please take a look at the [L-Drive](https://github.com/vhaghani26/epigenerate/tree/main/L-Drive) directory.
 	
-## Duplicated Data 
+### Duplicated Data 
 
 In the event that the best practices are not followed, we may end up with large levels of duplicated files taking up storage space. As such, there is a program Viki Haghani has written to detect all duplicates and report them back. For more information on how to run it, please head over to the [Duplicate_Finder](https://github.com/vhaghani26/epigenerate/tree/main/Duplicate_Finder) directory.
+
+### Aliasing Data
+
+One way we can prevent duplicated data is by aliasing (linking) the files we need into our own directories.
 
 ## Transferring Files 
 
 To copy files to epigenerate, use `scp`.
 
-	scp my_file username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/FileName
+```
+scp my_file username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/FileName
+```
 
 You can also copy whole directories with the `-r` option.
 
-	scp -r my_dir username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/DirectoryName
+```
+scp -r my_dir username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/DirectoryName
+```
 
 Of course, you can also `scp` files or directories from epigenerate back to your personal computer.
 
-	scp -r username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/DirectoryName .
-
+```
+scp -r username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/DirectoryName .
+```
 
 ## $HOME away from $HOME 
 
