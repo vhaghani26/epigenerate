@@ -7,20 +7,20 @@ Much of this document was adapted from Dr. Ian Korf's documentation on Spitfire.
 ## Table of Contents
 
 * [Requesting an Epigenerate Account](#requesting-an-epigenerate-account)
-* Logging into Epigenerate
-* Best Practices
-    * Epigenerate Slack Channel
-	* RAM
-	* CPUs
-* Data Storage
-	* On Epigenerate
-	* The L-Drive
-	* Duplicated Data
-	* Aliasing Data
-	* Transferring Data
-* $HOME away from $HOME
-* Conda Usage
-* How the Genome Center Cluster Works (Extra Information)
+* [Logging into Epigenerate](#logging-into-epigenerate)
+* [Best Practices](#best-practices)
+    * [Epigenerate Slack Channel](#epigenerate-slack-channel)
+	* [RAM](#ram)
+	* [CPUs](#cpus)
+* [Data Storage](#data-storage)
+	* [On Epigenerate](#on-epigenerate)
+	* [The L-Drive](#the_l-drive)
+	* [Duplicated Data](#duplicated-data)
+	* [Aliasing Data](#aliasing-data)
+	* [Transferring Data](#transferring-data)
+* [$HOME away from $HOME](#$home-away-from-$home)
+* [Conda Usage](#conda-usage)
+* [How the Genome Center Cluster Works (Extra Information)](#how-the-genome-center-cluster-works-(extra-information))
 
 
 ## Requesting an Epigenerate Account 
