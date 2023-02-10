@@ -10,13 +10,13 @@ Much of this document was adapted from Dr. Ian Korf's documentation on Spitfire.
 * [Logging into Epigenerate](#logging-into-epigenerate)
 * [Best Practices](#best-practices)
     * [Epigenerate Slack Channel](#epigenerate-slack-channel)
-	* [RAM](#ram) - needs more info, specifically SLURM
+	* [RAM](#ram)
 	* [CPUs](#cpus)
 * [Data Storage](#data-storage)
 	* [On Epigenerate](#on-epigenerate)
 	* [The L-Drive](#the-l-drive)
 	* [Duplicated Data](#duplicated-data)
-	* [Aliasing Data](#aliasing-data) - needs more info
+	* [Aliasing Data](#aliasing-data)
 	* [Transferring Data](#transferring-data)
 * [$HOME away from $HOME](#home-away-from-home)
 * [Conda Usage](#conda-usage)
@@ -103,7 +103,13 @@ In the event that the best practices are not followed, we may end up with large 
 
 ### Aliasing Data
 
-One way we can prevent duplicated data is by aliasing (linking) the files we need into our own directories.
+One way we can prevent duplicated data is by aliasing (linking) the files we need into our own directories. Linking files or directories is an extremely powerful tool. Let's say I downloaded and processed the entire human genome as a reference file on epigenerate and now someone else wants to use it. Instead of copying the whole file into their directory to work with, they can create a symbolic link to the file within their own directory. This allows them to use/access the file or directory without taking up any extra space - especially for such a large file! The **l**i**n**k command, `ln`, allows us to do this. Before we get started, there are a few things that may be helpful to explain. First, when we use the command, it will generally look like this:
+
+```
+ln -s <original file> <link to file>
+```
+
+Second, we will always use the `-s` option when using `ln`. `-s` represents that the link is "symbolic," which means that it creates a soft link rather than a hard link. A **soft link** is equivalent to a shortcut in Windows, or rather a redirection to the original location and file. A **hard link**, on the other hand, associates two files (which may have different names) to the same file information. We don't want hard links; we only want to use soft links, hence our strict use of `ln -s` instead of *just* `ln`.
 
 ### Transferring Data 
 
