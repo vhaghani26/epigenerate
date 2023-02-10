@@ -107,7 +107,9 @@ One way we can prevent duplicated data is by aliasing (linking) the files we nee
 
 ### Transferring Data 
 
-To copy files to epigenerate, use `scp`.
+**1. Transfer using `scp`**
+
+To copy files to epigenerate, you can use `scp`.
 
 ```
 scp my_file username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/FileName
@@ -124,6 +126,8 @@ Of course, you can also `scp` files or directories from epigenerate back to your
 ```
 scp -r username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/DirectoryName .
 ```
+
+**2. Transfer using `rsync`**
 
 Alternative transfer protocol from epigenerate to local, use `rsync`. `rsync` is famous for its delta-transfer algorithm, which reduces the amount of data sent over the network by sending only the differences between the source files and the existing files in the destination. Rsync is widely used for backups and mirroring and as an improved copy command for everyday use.
 
