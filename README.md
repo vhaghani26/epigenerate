@@ -125,6 +125,26 @@ Of course, you can also `scp` files or directories from epigenerate back to your
 scp -r username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/DirectoryName .
 ```
 
+Alternative transfer protocol from epigenerate to local, use `rsync`. `rsync` is famous for its delta-transfer algorithm, which reduces the amount of data sent over the network by sending only the differences between the source files and the existing files in the destination. Rsync is widely used for backups and mirroring and as an improved copy command for everyday use.
+
+TLDR; it only transfers files that haven't been transfered and does not overwrite or replace already exisiting files.
+
+Perform an `rsync` dry run using `-n`, `-a` archives files, `-z` compresses files, `-P` shows progress, and `-v` is verbose which will tell you how many files and the size of the data being transferred
+
+```
+rsync -azPnv username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/UserFolder/DirectoryName "local path"
+```
+
+The local path is identified by right-clicking your folder and selecting "Copy as Pathname" (PC) or by right clicking your folder and holding the option key (Mac) "Copy 'Folder Name' as Pathname"
+
+Run `rsync` by removing `-nv`
+
+```
+rsync -azP username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/UserFolder/DirectoryName "local path"
+```
+
+If transfer fails, run `rsync` again and the transfer will resume from the last file being transferred
+
 ## $HOME away from $HOME 
 
 The authentication system may drop the connection to your home directory after a long time. This means the programs that are running for hours will suddenly lose their connection to your `$HOME` directory. This could very well break whatever you're trying to do. Fortunately, `/share/lasallelab` does not have this problem. The workaround is to reset your `$HOME` to `/share/lasallelab/$USER` and then place all of your configurations in there. To do so, run:
