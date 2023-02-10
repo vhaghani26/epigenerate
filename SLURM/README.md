@@ -186,11 +186,11 @@ squeue -u {your_username}
 To cancel a single job you can specify the `JOBID`
 
 ```
-scancel <job_ID>
+scancel {job_ID}
 ```
 
 To cancel all of the jobs that belong to you, use the `-u`flag.
 
 ```
-scancel -u <username>
+scancel -u {username}
 ```
