@@ -1,3 +1,0 @@
-/var/spool/slurmd/job54781330/slurm_script: line 20: /share/korflab/home/viki/profile: No such file or directory
-+ python3 duplicate_finder.py --path /share/lasallelab/
-slurmstepd: error: *** JOB 54781330 ON rafter-18 CANCELLED AT 2023-02-12T10:53:45 DUE TO TIME LIMIT ***
