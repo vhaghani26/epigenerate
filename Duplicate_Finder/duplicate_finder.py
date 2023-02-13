@@ -26,6 +26,10 @@ parser.add_argument('--path', required=True, type=str,
 # Optional arguments
 parser.add_argument('--bytes', required=False, default = 1, type=int,
     metavar='<int>', help='Integer describing minimum number of bytes to filter')
+    
+# Switch
+parser.add_argument('--verbose', action="store_true",
+   help='Enables print out of script progress')
 
 # Finalization of argparse
 arg = parser.parse_args()
@@ -37,6 +41,9 @@ arg = parser.parse_args()
 # Create dictionary for files and file sizes
 files_and_sizes = {}
 
+if arg.verbose:
+    print("Scanning all subdirectories and files and recording sizes...", file = sys.stderr)
+    
 # Populate dictionary
 for path, subdirs, files in os.walk(arg.path):
     for name in files:
@@ -51,6 +58,9 @@ for size in files_and_sizes.values():
     if size >= arg.bytes:
         size_list.append(size)
 
+if arg.verbose:
+    print("Determining possible duplicates. Comparing file sizes now...", file = sys.stderr)
+
 # Find duplicate file sizes
 dups = list({x for x in size_list if size_list.count(x) > 1})
 
@@ -61,7 +71,10 @@ del size_list
 if len(dups) < 1:
     print(f"No duplicates found in {arg.path}")
     sys.exit()
-    
+
+if arg.verbose:
+    print("Removing aliases, user specific files, and temporary/piped files...", file = sys.stderr) 
+ 
 # Check file type extension and remove aliases and user-specific paths
 aliases = []
 for key, value in files_and_sizes.items():
@@ -90,6 +103,8 @@ del aliases
 # Run checksum only for potentially duplicated files
 for key, value in files_and_sizes.items():
     if value in dups and value >= arg.bytes:
+        if arg.verbose:
+            print(f"Calculating checksum for {key}...", file = sys.stderror)
         # Run and capture checksum
         ps = subprocess.Popen(('head', '-1000'), stdout = subprocess.PIPE)
         checksum_byte = subprocess.check_output(['md5sum', f'{key}'], stdin = ps.stdout)
@@ -108,6 +123,9 @@ del dups
 ## Validate Duplicates ##
 #########################
 
+if arg.verbose:
+    print("Validating duplicates by comparing checksums...", file = sys.stderr)
+
 duplicate_files = {}
 for pair in files_and_sizes.items():
     if pair[1][1] != "NA":
@@ -123,6 +141,8 @@ buggy_items = []
 for key, value in duplicate_files.items():
     if len(duplicate_files[key]) <= 1:
         buggy_items.append(key)
+    if arg.verbose:
+        print(f"Skipping over non-duplicated item: {key}", file = sys.stderr)
 
 for bug in buggy_items:
     del duplicate_files[bug]
