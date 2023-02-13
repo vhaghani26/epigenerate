@@ -104,7 +104,7 @@ del aliases
 for key, value in files_and_sizes.items():
     if value in dups and value >= arg.bytes:
         if arg.verbose:
-            print(f"Calculating checksum for {key}...", file = sys.stderror)
+            print(f"Calculating checksum for {key}...", file = sys.stderr)
         # Run and capture checksum
         ps = subprocess.Popen(('head', '-1000'), stdout = subprocess.PIPE)
         checksum_byte = subprocess.check_output(['md5sum', f'{key}'], stdin = ps.stdout)
@@ -141,10 +141,10 @@ buggy_items = []
 for key, value in duplicate_files.items():
     if len(duplicate_files[key]) <= 1:
         buggy_items.append(key)
-    if arg.verbose:
-        print(f"Skipping over non-duplicated item: {key}", file = sys.stderr)
 
 for bug in buggy_items:
+    if arg.verbose:
+        print(f"Skipping over non-duplicated item: {bug}", file = sys.stderr)
     del duplicate_files[bug]
 
 #######################
@@ -161,4 +161,5 @@ else:
 
 # Stop timer    
 t1 = time.time()
-print(f'This run took {t1 - t0} seconds')
+if arg.verbose:
+    print(f"Done! This run took {t1 - t0} seconds", file = sys.stderr)
