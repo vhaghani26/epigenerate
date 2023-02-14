@@ -1,3 +1,0 @@
-8e32ca7c901abfa7c12e69e325694c7c
-	 test/test1/file1.txt
-	 test/test2/file2.txt
