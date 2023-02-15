@@ -139,7 +139,9 @@ Alternative transfer protocol from epigenerate to local, use `rsync`. `rsync` is
 
 TLDR; it only transfers files that haven't been transfered and does not overwrite or replace already exisiting files.
 
-Perform an `rsync` dry run using `-n`, `-a` archives files, `-z` compresses files, `-P` shows progress, and `-v` is verbose which will tell you how many files and the size of the data being transferred
+*Transfer from epigenerate to local*
+
+Perform an `rsync` dry run using `-n`, `-a` archives files, `-z` compresses files, `-P` shows progress, and `-v` is verbose which will tell you how many files and the size of the data being transferred. *ssh to epigenerate is not required, run this on terminal locally*
 
 ```
 rsync -azPnv username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/UserFolder/DirectoryName "local path"
@@ -154,6 +156,20 @@ rsync -azP username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/UserF
 ```
 
 If transfer fails, run `rsync` again and the transfer will resume from the last file being transferred
+
+*Transfer from epigenerate to local*
+
+Perform `rsync` dry run to check if file paths are correct. If using an external drive or the L-drive please put path in `""`. `""` is not required for local folders in your personal computer. Example below is for files in external drives. Remove `""` for local folders.
+
+```
+rsync -azPnv "local path" username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/UserFolder/DirectoryName
+```
+
+**Highly recommend running a dry run before every transfer to check files being transferred.**
+
+```
+rsync -azP "local path" username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/UserFolder/DirectoryName
+```
 
 ## $HOME away from $HOME 
 
