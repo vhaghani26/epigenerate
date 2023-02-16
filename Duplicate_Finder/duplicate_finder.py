@@ -1,15 +1,6 @@
-#!/usr/bin/env python3
-
 import argparse
-import time
 import os
-import sys
-import magic
-import subprocess
-from collections import defaultdict
-
-# Initiate timer
-t0 = time.time()
+import stat
 
 ####################
 ## Argparse Setup ##
@@ -24,8 +15,11 @@ parser.add_argument('--path', required=True, type=str,
     metavar='<str>', help='Path to directory')
     
 # Optional arguments
-parser.add_argument('--bytes', required=False, default = 1, type=int,
-    metavar='<int>', help='Integer describing minimum number of bytes to filter')
+parser.add_argument('--min', required=False, default = 1024, type=int, 
+    metavar='<min size>', help='Minimum file size [%(default)s]')
+
+parser.add_argument('--bytes', required=False, default = 128, type=int,
+    metavar='<int>', help='Number of bytes to read for pseudo-checksum [%(default)s]')
     
 # Switch
 parser.add_argument('--verbose', action="store_true",
@@ -34,132 +28,60 @@ parser.add_argument('--verbose', action="store_true",
 # Finalization of argparse
 arg = parser.parse_args()
 
-#####################
-## Find Duplicates ##
-#####################
-
-# Create dictionary for files and file sizes
-files_and_sizes = {}
+#########################
+## Retrieve File Sizes ##
+#########################
 
 if arg.verbose:
     print("Scanning all subdirectories and files and recording sizes...", file = sys.stderr)
     
-# Populate dictionary
+# Index all files by their size
+size = {}
 for path, subdirs, files in os.walk(arg.path):
-    for name in files:
-        try:
-            files_and_sizes[os.path.join(path, name)] = os.path.getsize(os.path.join(path, name))
-        except:
-            print(f"An exception occured in {path}. This is likely an alias.")
+	for name in files:
+		filepath = os.path.join(path, name)
+		mode = os.lstat(filepath).st_mode
+		if not stat.S_ISREG(mode): continue
+		s = os.path.getsize(filepath)
+		if s < arg.min: continue
+		if s not in size: size[s] = []
+		size[s].append(filepath)
 
-# Make a list containing only file sizes
-size_list = []
-for size in files_and_sizes.values():
-    if size >= arg.bytes:
-        size_list.append(size)
-
-if arg.verbose:
-    print("Determining possible duplicates. Comparing file sizes now...", file = sys.stderr)
-
-# Find duplicate file sizes
-dups = list({x for x in size_list if size_list.count(x) > 1})
-
-# Clear space/memory
-del size_list
-
-# Exit program with report that no duplicates were found (proceeds if duplicates found)
-if len(dups) < 1:
-    print(f"No duplicates found in {arg.path}")
-    sys.exit()
-
-if arg.verbose:
-    print("Removing aliases, user specific files, and temporary/piped files...", file = sys.stderr) 
- 
-# Check file type extension and remove aliases and user-specific paths
-aliases = []
-for key, value in files_and_sizes.items():
-    try:
-        ext = f'{magic.from_file(key)}'
-        if ext.startswith("symbolic"):
-            aliases.append(key)
-        if key.startswith("/usr/"):
-            aliases.append(key)
-    except:
-        print(f"An exception occured for {key}. This is likely a temporary file or pipe.")
-
-# Ensure unique values in aliases to prevent KeyError
-aliases = set(aliases)
-for alias in aliases:
-    if len(aliases) > 0:
-        del files_and_sizes[alias]
-
-# Clear space/memory
-del aliases
-
-######################
-## Compute Checksum ##
-######################
-
-# Run checksum only for potentially duplicated files
-for key, value in files_and_sizes.items():
-    if value in dups and value >= arg.bytes:
-        if arg.verbose:
-            print(f"Calculating checksum for {key}...", file = sys.stderr)
-        # Run and capture checksum
-        ps = subprocess.Popen(('head', '-1000'), stdout = subprocess.PIPE)
-        checksum_byte = subprocess.check_output(['md5sum', f'{key}'], stdin = ps.stdout)
-        # Convert type from byte to string
-        checksum_str = checksum_byte.decode('utf-8')
-        # Save checksum
-        checksum = checksum_str.split(' ')  
-        files_and_sizes[key] = [value, checksum[0]]
-    else :
-        files_and_sizes[key] = [value, "NA"]
-
-# Clear space/memory
-del dups
-
-#########################
-## Validate Duplicates ##
-#########################
-
-if arg.verbose:
-    print("Validating duplicates by comparing checksums...", file = sys.stderr)
-
-duplicate_files = {}
-for pair in files_and_sizes.items():
-    if pair[1][1] != "NA":
-        if pair[1][1] not in duplicate_files.keys():
-            duplicate_files[pair[1][1]] = []
-        duplicate_files[pair[1][1]].append(pair[0])
-        
-# Clear space/memory
-del files_and_sizes
-        
-# Remove files with same sizes but different checksums
-buggy_items = []
-for key, value in duplicate_files.items():
-    if len(duplicate_files[key]) <= 1:
-        buggy_items.append(key)
-
-for bug in buggy_items:
+#####################
+## Find Duplicates ##
+#####################
+    
+# Find duplicate files (1) by file size (2) by pseudo-checksum
+for s in sorted(size, reverse=True):
     if arg.verbose:
-        print(f"Skipping over non-duplicated item: {bug}", file = sys.stderr)
-    del duplicate_files[bug]
-
-#######################
-## Report Duplicates ##
-####################### 
-
-if len(duplicate_files) > 0:
-    for key, value in duplicate_files.items():
-        print(key)
-        for val in value:
-            print("\t", val)
-else:
-    print(f"No duplicates found in {arg.path}")
-
-# Stop timer    
-t1 = time.time()
-if arg.verbose:
-    print(f"Done! This run took {t1 - t0} seconds", file = sys.stderr)
+        print("Finding duplicate files by filtering for file size...", file = sys.stderr)
+    
+	if len(size[s]) == 1: continue
+    
+    if arg.verbose:
+        print("Calculating psuedo-checksum for potentially duplicated files...", file = sys.stderr)
+    
+	# Create a pseudo-checksum by looking at the head and tail of a file
+	pseudosum = {}
+	for filepath in size[s]:
+		with open(filepath, mode='rb') as fp:
+			head = fp.read(arg.bytes)
+			fp.seek(-arg.bytes, 2)
+			tail = fp.read(arg.bytes)
+			sig = (head, tail)
+			if sig not in pseudosum: pseudosum[sig] = []
+			pseudosum[sig].append(filepath)
+    
+    if arg.verbose:
+        print("Determining duplicates..", file = sys.stderr)
+    
+	# Report duplicates
+	for sig in pseudosum:
+		if len(pseudosum[sig]) == 1: continue
+		ps = None
+		if   s > 1e12: ps = f'{s/1e12:.2f}T'
+		elif s > 1e9:  ps = f'{s/1e9:.2f}G'
+		elif s > 1e6:  ps = f'{s/1e6:.2f}M'
+		elif s > 1e3:  ps = f'{s/1e3:.2f}K'
+		else:          ps = s
+		print(ps, ' '.join(pseudosum[sig]))
