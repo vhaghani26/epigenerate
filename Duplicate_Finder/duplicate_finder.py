@@ -47,14 +47,14 @@ size = {}
 for path, subdirs, files in os.walk(arg.path):
     for name in files:
         filepath = os.path.join(path, name)
-        # Files/paths to ignore
-        #if not (filepath.startswith("/usr/")) or (".conda" in filepath): continue
-        mode = os.lstat(filepath).st_mode
-        if not stat.S_ISREG(mode): continue
-        s = os.path.getsize(filepath)
-        if s < arg.min: continue
-        if s not in size: size[s] = []
-        size[s].append(filepath)
+        # Avoid user-specific paths in HPCs and conda environments
+        if ("usr" not in filepath) and (".conda" not in filepath):
+            mode = os.lstat(filepath).st_mode
+            if not stat.S_ISREG(mode): continue
+            s = os.path.getsize(filepath)
+            if s < arg.min: continue
+            if s not in size: size[s] = []
+            size[s].append(filepath)
 
 #####################
 ## Find Duplicates ##
