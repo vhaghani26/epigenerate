@@ -47,6 +47,8 @@ size = {}
 for path, subdirs, files in os.walk(arg.path):
     for name in files:
         filepath = os.path.join(path, name)
+        # Files/paths to ignore
+        #if not (filepath.startswith("/usr/")) or (".conda" in filepath): continue
         mode = os.lstat(filepath).st_mode
         if not stat.S_ISREG(mode): continue
         s = os.path.getsize(filepath)
@@ -89,6 +91,10 @@ for s in sorted(size, reverse=True):
         print(ps)
         for x in pseudosum[sig]:
             print("\t", x)
+
+if not 'pseudosum' in globals():
+    print(f'No duplicates of file sizes greater than {arg.min} bytes found in "{arg.path}"')
+
 
 # End timer
 t1 = time.time()
