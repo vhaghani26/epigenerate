@@ -35,6 +35,14 @@ arg = parser.parse_args()
 # Initiate timer
 t0 = time.time()
 
+#################
+## Verify Path ##
+#################
+
+isExist = os.path.exists(arg.path)
+if not isExist:
+    raise AssertionError(f"No such file or directory {arg.path}")
+
 #########################
 ## Retrieve File Sizes ##
 #########################
