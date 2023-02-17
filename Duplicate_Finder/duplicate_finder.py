@@ -56,7 +56,7 @@ for path, subdirs, files in os.walk(arg.path):
     for name in files:
         filepath = os.path.join(path, name)
         # Avoid user-specific paths in HPCs and conda environments
-        if ("usr" not in filepath) and (".conda" not in filepath):
+        if ("usr" not in filepath) and ("conda" not in filepath):
             mode = os.lstat(filepath).st_mode
             if not stat.S_ISREG(mode): continue
             s = os.path.getsize(filepath)
