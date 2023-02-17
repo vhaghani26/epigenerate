@@ -78,7 +78,7 @@ CPU is easily shared but you should still be cognizant of how much you are using
 Most LaSalle lab members and epigenerate users will be using the `/share/lasallelab/` mount point to store code, data, and experiments. This is your main hub on the file system, not your home directory.
 
 * `/share/lasallelab/data` - contains raw data in the format `{year}_{project_or_data_title}`
-* `/share/lasallelab/data/genomes` - contains genome files organized by species
+* `/share/lasallelab/genomes` - contains genome files organized by species
 
 To determine how much space you have available, use `df`.
 
