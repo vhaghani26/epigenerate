@@ -35,6 +35,14 @@ arg = parser.parse_args()
 # Initiate timer
 t0 = time.time()
 
+#################
+## Verify Path ##
+#################
+
+isExist = os.path.exists(arg.path)
+if not isExist:
+    raise AssertionError(f"No such file or directory {arg.path}")
+
 #########################
 ## Retrieve File Sizes ##
 #########################
@@ -47,12 +55,14 @@ size = {}
 for path, subdirs, files in os.walk(arg.path):
     for name in files:
         filepath = os.path.join(path, name)
-        mode = os.lstat(filepath).st_mode
-        if not stat.S_ISREG(mode): continue
-        s = os.path.getsize(filepath)
-        if s < arg.min: continue
-        if s not in size: size[s] = []
-        size[s].append(filepath)
+        # Avoid user-specific paths in HPCs and hidden paths
+        if ("usr" not in filepath) and ("/." not in filepath) and ("rlibs" not in filepath) and ("bin" not in filepath):
+            mode = os.lstat(filepath).st_mode
+            if not stat.S_ISREG(mode): continue
+            s = os.path.getsize(filepath)
+            if s < arg.min: continue
+            if s not in size: size[s] = []
+            size[s].append(filepath)
 
 #####################
 ## Find Duplicates ##
@@ -89,6 +99,10 @@ for s in sorted(size, reverse=True):
         print(ps)
         for x in pseudosum[sig]:
             print("\t", x)
+
+if not 'pseudosum' in globals():
+    print(f'No duplicates of file sizes greater than {arg.min} bytes found in "{arg.path}"')
+
 
 # End timer
 t1 = time.time()
