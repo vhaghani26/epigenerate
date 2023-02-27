@@ -1,44 +1,18 @@
 # Duplicate Finder
 
-## Software Dependencies
-
-There are a few packages required in order to run the duplicate finder. All the dependencies have been packaged in `dup_finder_dependencies.yml`. In order to replicate this environment, make sure that you have conda installed. Download the `yml` file and run the following command in the directory containing the `yml` file.
-
-```
-conda env create -n dup_find -f dup_finder_dependencies.yml
-```
-
-If you are running the duplicate finder locally, then activate the environment:
-
-```
-conda activate dup_find
-```
-
-If you are planning to run the duplicate finder using a SLURM script, then you will need to run the conda activation command in the slurm script using the full environment path, which can be identified by running `conda env list`. For example:
-
-```
-conda activate /share/korflab/home/viki/.conda/dup_find
-```
-
-This will ensure that all software dependencies are met, preventing the program from erroring out.
-
 ## Running `duplicate_finder.py` 
 
 **Arguments**
 
 * `--path` is a required argument referring to the directory you are testing for duplicates
-* `--bytes` is an optional argument that allows you to specify the minimum file size you are interested in filtering for
+* `--output` is a required argument referring to the output file containing the results
+* `--min` is an optional argument that allows you to specify the minimum file size in bytes to check duplicates for (default is 1024)
+* `--bytes` is an optional argument that allows you to specify the minimum number of bytes to calculate a pseudo checksum for (default is 128)
 
 If you are running `duplicate_finder.py` locally or at the command line directly (i.e. not SLURM), you will need to ensure that the paths are correct given the directory you are running it in. I recommend downloading `duplicate_finder.py` to the parent directory of the directory you are testing for duplicates. If you do so, you may run the following:
 
 ```
-python3 duplicate_finder.py --path {duplicate_containing_directory}
-```
-
-This will print out the results at the command line. To receive results in a file, run the following:
-
-```
-python3 duplicate_finder.py --path {duplicate_containing_directory} > duplicate_finder_results.txt
+python3 duplicate_finder.py --path {duplicate_containing_directory} --output duplicate_finder_results.txt
 ```
 
 If you are running `duplicate_finder.py` through SLURM, which is recommended if you are searching through large volumes of files, then create a SLURM script and submit the slurm script. I find that using absolute paths in SLURM scripts prevents erroring out, so be mindful of replacing the paths in the template below with the appropriate ones for your computational environment.
@@ -77,7 +51,7 @@ set -o errexit
 set -x
 
 # Run the duplicate finder
-python3 duplicate_finder.py --path /share/lasallelab/ > /share/lasallelab/Viki/epigenerate/Duplicate_Finder/2023_02_03_duplicate_files_results.txt
+python3 duplicate_finder.py --path /share/lasallelab/ --output /share/lasallelab/Viki/epigenerate/Duplicate_Finder/2023_02_03_duplicate_files_results.txt
 
 # Print out various information about the job
 env | grep SLURM                                               # Print out values of the current jobs SLURM environment variables
@@ -97,12 +71,22 @@ sbatch {slurm_script}
 
 ## Interpreting Outputs
 
-The output of the program will have the unique file ID (checksum) of the first 1000 lines of the file followed by the locations of duplicate files. For example:
+The output of the program will have the file size followed by the locations of duplicate files. For example:
 
 ```
-80256bd7a55509665c4179fd61516745
+1.49K
 	/location1/that/contains/duplicates/some_file.txt
 	/location2/that/contains/duplicates/some_file_duplicate.txt
 ```
 
 This is intended for users to easily see where all multiple copies of files are located to ensure that they can be addressed appropriately.
+
+## Verifying Duplicates
+
+If, for some reason, you have believe that two files were incorrectly marked as documents, you can verify using an MD5 checksum. To do so, run the following:
+
+```
+md5sum {file}
+```
+
+The first column is the hash value output by the checksum and the second is the file name. The probability that the files are identical by chance is 1.47e-29, indicating that they're effectively identical if the output hashes are the same.
