@@ -19,6 +19,9 @@ parser = argparse.ArgumentParser(
 # Required arguments
 parser.add_argument('--path', required=True, type=str,
     metavar='<str>', help='Path to directory')
+
+parser.add_argument('--output', required=True, type=str,
+    metavar='<str>', help='Path to output file')
     
 # Optional arguments
 parser.add_argument('--min', required=False, default = 1024, type=int, 
@@ -34,9 +37,13 @@ arg = parser.parse_args()
 ## Verify Path ##
 #################
 
+# Verify path exists
 isExist = os.path.exists(arg.path)
 if not isExist:
     raise AssertionError(f"No such file or directory {arg.path}")
+
+# Create output file
+os.system(f'touch {arg.output}')
     
 ###############
 ## Threading ##
@@ -101,13 +108,14 @@ def foreground():
             elif s > 1e6:  ps = f'{s/1e6:.2f}M'
             elif s > 1e3:  ps = f'{s/1e3:.2f}K'
             else:          ps = s
-            #print(ps, ' '.join(pseudosum[sig]))
-            print(ps)
-            for x in pseudosum[sig]:
-                print("\t", x)
+            with open(arg.output, 'a') as sys.stdout:           
+                print(ps)
+                for x in pseudosum[sig]:
+                    print("\t", x)
 
     if not 'pseudosum' in locals():
-        print(f'No duplicates of file sizes greater than {arg.min} bytes found in "{arg.path}"')
+        with open(arg.output, 'a') as sys.stdout:           
+            print(f'No duplicates of file sizes greater than {arg.min} bytes found in "{arg.path}"')
     
     # End timer
     t1 = time.time()
