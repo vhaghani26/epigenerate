@@ -81,7 +81,7 @@ The output of the program will have the file size followed by the locations of d
 
 This is intended for users to easily see where all multiple copies of files are located to ensure that they can be addressed appropriately.
 
-## Verifying Duplicates
+## Verifying Duplicate Files
 
 If, for some reason, you have believe that two files were incorrectly marked as documents, you can verify using an MD5 checksum. To do so, run the following:
 
@@ -90,3 +90,27 @@ md5sum {file}
 ```
 
 The first column is the hash value output by the checksum and the second is the file name. The probability that the files are identical by chance is 1.47e-29, indicating that they're effectively identical if the output hashes are the same.
+
+## Verifying Duplicate Directories
+
+When linking full directories, verify that both the directory size AND number of files within the directory are equivalent.
+
+**1. Check Directory Size**
+
+In order to check directory sizes, run the following on both directories of interest.
+
+```
+du -sh {directory}
+```
+
+If the sizes are different, then they are not identical. If they are identical, proceed to verify that number of contents within the directory.
+
+**2. Check Directory Contents**
+
+Run the following on both directories:
+
+```
+ls -1 {directory} | wc -l
+```
+
+This will tell you the number of files within the directory. Assuming both the directory size and contents are equivalent, then it is relatively safe to assume that the directories are duplicates. At this point, you remove one of the directories and link the remaining directory in the location of the deleted one.
