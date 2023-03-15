@@ -110,7 +110,7 @@ If the sizes are different, then they are not identical. If they are identical, 
 Run the following on both directories:
 
 ```
-ls -1 {directory} | wc -l
+find {directory} -type f | wc -l
 ```
 
 This will tell you the number of files within the directory. Assuming both the directory size and contents are equivalent, then it is relatively safe to assume that the directories are duplicates. At this point, you remove one of the directories and link the remaining directory in the location of the deleted one.
