@@ -66,6 +66,15 @@ ulimit -v unlimited # Reset your memory cap to being unlimited
 ```
 
 3. Submit the resource-intensive job via SLURM. See the [SLURM directory](https://github.com/vhaghani26/epigenerate/tree/main/SLURM) for information on how to create and submit a SLURM script.
+4. If you are running a memory intensive job in R on epigenerate such as CoMethyl, limit your R environment memory to 250 GB max. Log in to the cluster and run the following code
+
+```
+nano ~/.Renviron
+```
+Paste the following inside the file and save it 
+```
+R_MAX_VSIZE=250Gb 
+```
 
 ### CPUs
 
