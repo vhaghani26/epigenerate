@@ -50,6 +50,8 @@ This will prompt you to enter your password. If you are new to the command line,
 
 On the LaSalle Lab Slack, you should locate a channel called "epigenerate." If you plan to use epigenerate at all, please join this Slack channel. This is where discussions regarding resource intensive jobs will take place. There will also be general updates regarding storage expansions, increases in RAM, cluster outages, etc., so be sure to join it!
 
+As a general rule of thumb, if you are running a resource-intensive job that can be run on SLURM, please do so in order to allow others that are running programs that must be run on Epigenerate (e.g. Comethyl) to have access to Epigenerate's resources.
+
 ### RAM 
 
 RAM is the hardest resource to share. A good rule of thumb is for each user to never use more than half of the total RAM. Since there is currently 500G RAM, never run jobs that take more than 250G in total. So don't set up 50 jobs, each taking 10G RAM. If you have no idea how much RAM your process is using, run `top` or `htop` and examine the memory usage. You can also run these commands to check active usage before you try running a job.
