@@ -80,13 +80,13 @@ R_MAX_VSIZE=250Gb
 
 ### CPUs
 
-**`nice`**
+**Using `nice`**
 
 CPU is easily shared but you should still be cognizant of how much you are using. There are 64 CPUs allocated to epigenerate (you can check CPU number by running `lscpu`). You shouldn't use more than half (32) at a time. However, if you have some kind of rush job, you can use most of them if you `nice` your jobs to reduce their priority. In fact, if you want to be a good lab citizen, you will `nice` all of your jobs. To `nice` your job, simply put precede your command with the word `nice`. As a general rule of thumb, `nice` your job if you expect it to run for over 24 hours. If nobody else is using epigenerate at the time, this still gives you the full allocation of resources you are running your program with.
 
 To better understand what it means to `nice` your job, your `nice` value is set to a default of 0 on epigenerate. The more "nice" you are, the higher your `nice` value. The maximum range of `nice` is 19, meaning that you are giving your job the lowest priority. When you run `nice`, it uses a default of `+10` to your `nice` value, effectively taking you from 0 to 10. If you want to make this higher or lower, you can use the `-n` command to specify how "nice" you would like to be. This means, for example, that you could run something like `nice -n 5 {your_command}`, increasing your "niceness" by 5 instead of 10. Essentially, the higher the number, the nicer you are being with resource allocation.
 
-**`renice`**
+**Using `renice`**
 
 Let's say you're running something and it's taking longer than expected. You start to worry and you're not sure when it's going to finish, but you didn't `nice` your job when you started it. Fortunately, you can use `renice` to reassign the `nice` value! To use `renice`, you either need the process ID (which is labeled as `PID` when you run `htop`) or your user ID. 
 
