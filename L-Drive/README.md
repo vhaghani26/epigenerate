@@ -22,7 +22,7 @@ To connect your MAC to the L-Drive, follow the steps spelled out below:
 
 ![github](https://github.com/vhaghani26/epigenerate/blob/main/L-Drive/Enter_(yourname)_directory.png)
 
-Congratulations! You've finally connected to the mystical L-Drive!
+Congratulations! You've finally connected to the mystical L-Drive! You can now use `rsync` in terminal to transfer files to and from the L-drive
 
 ## Windows
 
