@@ -1,8 +1,6 @@
-# Using Conda on Epigenerate
+# Conda
 
-As mentioned in the epigenerate documentation, you should be using conda. The problem with conda on epigenerate is that it mounts in your home directory, not in `/share/lasallelab/`. This creates many problems. Here, I will break down some background about conda as well as how you should set it up and use it.
-
-Much of this has been adapted from Dr. C. Titus Brown's material teaching Conda.
+Much of this has been adapted from Dr. C. Titus Brown's material teaching Conda and Dr. Ian Korf's Conda setup.
 
 ## Why should you use Conda?
 
@@ -36,9 +34,24 @@ Conda is a solution that seems to work pretty well, and can be used by any user.
 
 Note that conda emerged from the Python world but is now much broader and works for many more software packages, including R!
 
-## Getting started with conda
+## Setting Up Conda Locally
 
-As I mentioned earlier, Conda does NOT like to be in your home environment. To fix this problem, we have to tell it where to go. In the following code, please make sure to replace the appropriate variables, represented within curly brackets `{}`, with your information. 
+Go to the [Anaconda website](https://www.anaconda.com/download#downloads) and download whatever version is appropriate for your computer setup. Since I use Ubuntu via WSL2 (even though I'm on Windows), I download the Linux version. Once you have downloaded it, change into the directory containing the file and run it. The example below uses my personal setup:
+
+```
+cd /mnt/c/Users/vicky/Downloads/
+sh Anaconda3-2023.03-1-Linux-x86_64.sh
+```
+
+Read the license agreement and answer "yes" (without quotes) to accept the terms. Use the default location for the install by pressing Enter. It will take a little time to install. When the installer asks if you want to initialize Anaconda3 by running conda init, answer "yes."
+
+Close your terminal and open a new one. You should see `(base)` at the start of each prompt. This means you're in the `base` Conda environment. When you install new bioinformatics programs or even programming languages, use Conda to do that for you.
+
+## Setting Up Conda on Epigenerate
+
+As mentioned in the epigenerate documentation, you should be using conda. The problem with conda on epigenerate is that it mounts in your home directory, not in `/share/lasallelab/`. This creates many problems. Here, I will break down some background about conda as well as how you should set it up and use it.
+
+Since Conda does NOT like to be in your home environment, we have to tell it where to go. In the following code, please make sure to replace the appropriate variables, represented within curly brackets `{}`, with your information. 
 
 ```
 export LASALLEHOME=/share/lasallelab/{your_directory}
@@ -72,7 +85,6 @@ unset __conda_setup
 
 Once done, copy the code into your `.bashrc` or `.profile` (or whatever other configuration file you use on epigenerate). This file will be found in your home directory. 
 
-
 ## Using Conda
 
 Now that you have it set up (hopefully) properly, we need to initialize it. Run the following, and change `.bashrc`, if needed, to whatever configuration file you use.
@@ -96,6 +108,14 @@ To make sure all our software installs correctly, let's start by configuring sof
 conda config --add channels defaults
 conda config --add channels bioconda
 conda config --add channels conda-forge
+```
+
+## Mamba
+
+The default package resolver has been known to have some issues. As such, whenever you do a Conda install, you should instead use Mamba. You can install Mamba with the following command:
+
+```
+conda install mamba -n base -c conda-forge
 ```
 
 You are now ready to start creating environments. From this point forward, I recommend looking at the [Conda documentation](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) for how to create environments, activate them, deactivate them, and more.
