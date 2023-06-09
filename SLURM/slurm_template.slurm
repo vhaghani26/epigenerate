@@ -10,7 +10,7 @@
 #SBATCH -n 1                                                        # Number of cores
 #SBATCH -c 8                                                        # Eight cores per task
 #SBATCH -t 02:00:00                                                 # Ask for no more than 2 hours
-#SBATCH --mem=10b                                                   # Ask for no more than 10 GB of memory
+#SBATCH --mem=10gb                                                   # Ask for no more than 10 GB of memory
 #SBATCH --chdir={your_directory}                                    # Directory I want the job to run in
 
 # Run aklog to deal with SLURM bug
