@@ -54,21 +54,24 @@ As mentioned in the epigenerate documentation, you should be using conda. The pr
 Since Conda does NOT like to be in your home environment, we have to tell it where to go. In the following code, please make sure to replace the appropriate variables, represented within curly brackets `{}`, with your information. 
 
 ```
+# Paths for conda and software configuration
 export LASALLEHOME=/share/lasallelab/{your_directory}
 export PATH=$PATH:$LASALLEHOME/bin
-export PATH=$PATH:/share/lasallelab/{your_directory}/.conda
-export PATH=$PATH:/home/{your_directory}/.conda/envs
-export PYTHONPATH=$PYTHONPATH:$LASALLEHOME/lib
-export CONDA_ENVS_PATH=$LASALLEHOME/.conda
+export PATH=$PATH:/home/{your_username}/.conda/envs
+export PATH=$PATH:/software/anaconda3/4.8.3/lssc0-linux/envs
+export CONDA_ENVS_PATH=/share/lasallelab/programs/.conda
 export CONDA_PKGS_DIRS=$CONDA_ENVS_PATH/pkgs
-module load anaconda3
+
+# Aliases to improve CLI usage experience
 alias ls="ls -F"
 alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
 
+# Reconfigure command line display
 PS1='\u@\h: \W:\$ '
 
+# Execute conda setup 
 __conda_setup="$('/software/anaconda3/4.8.3/lssc0-linux/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
         eval "$__conda_setup"
