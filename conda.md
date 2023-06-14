@@ -51,7 +51,7 @@ Close your terminal and open a new one. You should see `(base)` at the start of 
 
 As mentioned in the epigenerate documentation, you should be using conda. The problem with conda on epigenerate is that it mounts in your home directory, not in `/share/lasallelab/`. This creates many problems. Here, I will break down some background about conda as well as how you should set it up and use it.
 
-Since Conda does NOT like to be in your home environment, we have to tell it where to go. In the following code, please make sure to replace the appropriate variables, represented within curly brackets `{}`, with your information. 
+Since Conda does NOT like to be in your home environment, we have to tell it where to go. Given that we all used shared software, we have shifted to having Conda environments configured in a central location, specifically in `/share/lasallelab/programs/.conda/`. The intsructions below will help you configure Conda to be able to load in and make environments in that central location. If you want your own copy, change the paths below accordingly. In the following code, please make sure to replace the appropriate variables, represented within curly brackets `{}`, with your information. 
 
 ```
 # Paths for conda and software configuration
