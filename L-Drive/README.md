@@ -39,6 +39,14 @@ I recommend following [these](https://support.microsoft.com/en-gb/windows/map-a-
 
 ![github](https://github.com/vhaghani26/epigenerate/blob/main/L-Drive/map_network_drive.png)
 
-6. This will prompt you to type your username and password. Note that your username will actually have to begin with `hs\`. This means you should type `hs\username` and your password to log in
+6. This will prompt you to type your username and password. Note that your username will actually have to begin with `hs\`. This means you should type `hs\username` and your password to log in. This will connect the File Explorer to the L-Drive, which is great for local transfers, but not for transferring between Epigenerate and the L-Drive. Therefore, you will need to mount it if you plan to do anything with Epigenerate or Ubuntu and the L-Drive
+7. Assuming you chose "L" as the drive letter, run the following commands:
+
+```
+mkdir /mnt/l/
+sudo mount -t drvfs L: /mnt/l/
+```
+
+This creates a new directory in your mounted drives folder and connects the L-Drive to your terminal. You may need to rerun the second command whenever you want to access the L-Drive, as this usually only lasts while you're logged in. There are further instructions [here](https://www.public-health.uiowa.edu/it/support/kb48568/) if you would like to mount the drive permanently.
 
 Congratulations! You've finally connected to the mystical L-Drive!
