@@ -193,7 +193,7 @@ rsync -azP username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/UserF
 
 If transfer fails, run `rsync` again and the transfer will resume from the last file being transferred
 
-*Transfer from epigenerate to local*
+*Transfer from local to epigenerate*
 
 Perform `rsync` dry run to check if file paths are correct. If using an external drive or the L-drive please put path in `""`. `""` is not required for local folders in your personal computer. Example below is for files in external drives. Remove `""` for local folders.
 
