@@ -56,4 +56,10 @@ sudo mount -t drvfs L: /mnt/l/
 
 This creates a new directory in your mounted drives folder and connects the L-Drive to your terminal. You may need to rerun the second command whenever you want to access the L-Drive, as this usually only lasts while you're logged in. There are further instructions [here](https://www.public-health.uiowa.edu/it/support/kb48568/) if you would like to mount the drive permanently.
 
+8. For any sort of transfers into the L-Drive, assuming you are using Ubuntu, you should precede the command with sudo. For example:
+
+```
+sudo rsync -azP vhaghani@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/{stuff_to_transfer} "/mnt/l/{destination}"
+```
+
 Congratulations! You've finally connected to the mystical L-Drive!
