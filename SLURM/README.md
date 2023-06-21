@@ -155,6 +155,8 @@ I have included a template file in this directory so you can copy it to make you
 wget https://github.com/vhaghani26/epigenerate/blob/main/SLURM/slurm_template.slurm
 ```
 
+Side Note: I have [read](https://github.com/dib-lab/farm-notes/blob/latest/advanced-usage.md) that generally, you should use `-N 1` and `-n 1` and only adjust the number of CPUs with `-c` to reflect the number of jobs being submitted. As such, just leave `-N` and `-n` as 1. 
+
 #### Monitor your jobs with `squeue`
 
 Oftentimes we submit jobs and would like to know certain things about them -- if they've started, how long they've been running, if they are _still_ running, etc, etc... We can look at the status of any job SLURM is handling by using `squeue`. This will output a list of **ALL** the jobs currently submitted to SLURM. Often we won't be able to scroll through the list to find our job(s). So, in order to only see your own job(s) we can specify a **username**:
