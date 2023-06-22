@@ -51,15 +51,15 @@ Close your terminal and open a new one. You should see `(base)` at the start of 
 
 As mentioned in the epigenerate documentation, you should be using conda. The problem with conda on epigenerate is that it mounts in your home directory, not in `/share/lasallelab/`. This creates many problems. Here, I will break down some background about conda as well as how you should set it up and use it.
 
-Since Conda does NOT like to be in your home environment, we have to tell it where to go. Given that we all used shared software, we have shifted to having Conda environments configured in a central location, specifically in `/share/lasallelab/programs/.conda/`. The intsructions below will help you configure Conda to be able to load in and make environments in that central location. If you want your own copy, change the paths below accordingly. In the following code, please make sure to replace the appropriate variables, represented within curly brackets `{}`, with your information. 
+Since Conda does NOT like to be in your home environment, we have to tell it where to go. The intsructions below will help you configure Conda to be able to load in and make environments. In the following code, please make sure to replace the appropriate variables, represented within curly brackets `{}`, with your information. 
 
 ```
 # Paths for conda and software configuration
-export LASALLEHOME=/share/lasallelab/{your_directory}
+export LASALLEHOME=/share/lasallelab/{your_folder}/
 export PATH=$PATH:$LASALLEHOME/bin
+export PATH=$PATH:/share/lasallelab/{your_folder}/.conda
 export PATH=$PATH:/home/{your_username}/.conda/envs
-export PATH=$PATH:/software/anaconda3/4.8.3/lssc0-linux/envs
-export CONDA_ENVS_PATH=/share/lasallelab/programs/.conda
+export CONDA_ENVS_PATH=$SEGALHOME/.conda
 export CONDA_PKGS_DIRS=$CONDA_ENVS_PATH/pkgs
 
 # Aliases to improve CLI usage experience
@@ -88,7 +88,7 @@ unset __conda_setup
 
 Once done, copy the code into your `.bashrc` or `.profile` (or whatever other configuration file you use on epigenerate). This file will be found in your home directory. 
 
-## Using Conda
+## Initialize Conda
 
 Now that you have it set up (hopefully) properly, we need to initialize it. Run the following, and change `.bashrc`, if needed, to whatever configuration file you use.
 
@@ -121,4 +121,16 @@ The default package resolver has been known to have some issues. As such, whenev
 conda install mamba -n base -c conda-forge
 ```
 
-You are now ready to start creating environments. From this point forward, I recommend looking at the [Conda documentation](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) for how to create environments, activate them, deactivate them, and more.
+You are now ready to start creating environments. 
+
+## Using Conda
+
+From this point forward, I recommend looking at the [Conda documentation](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) for how to create environments, activate them, deactivate them, and more.
+
+Given that we all used shared software, there are environments you are able to activate and use in `/share/lasallelab/programs/.conda/`, namely `epigenerator`. If you want to activate these environments, you will need to use the full file path:
+
+```
+conda activate /share/lasallelab/programs/.conda/epigenerator
+```
+
+Otherwise, it will activate the Conda using your Conda prefix.
