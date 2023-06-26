@@ -64,7 +64,7 @@ sudo rsync -azP vhaghani@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/
 
 Congratulations! You've finally connected to the mystical L-Drive!
 
-## Transferring files directly from SLIMS onto the L Drive
+## Transferring Files Directly from SLIMS to the L Drive
 
 1. Connect to ethernet
 2. Connect to L-Drive 
