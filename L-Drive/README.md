@@ -63,3 +63,29 @@ sudo rsync -azP vhaghani@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/
 ```
 
 Congratulations! You've finally connected to the mystical L-Drive!
+
+## Transferring files directly from SLIMS onto the L Drive
+
+1. Connect to ethernet
+2. Connect to L-Drive 
+3. Open the terminal (do not sign into Epigenerate)
+4. Change directory into the L-Drive folder you want your files to go into 
+
+```
+cd /Volumes/lasalle lab/[Your Name]/[Raw Files]/[Project]/[Sequencing lane]
+```
+
+5. Type:
+
+```
+rsync -azPLnv slimsdata:genomecenter.ucdavis.edu::slims/[whole string]/ .
+```
+
+6. Type: 
+
+```
+rsync -azPL slimsdata:genomecenter.ucdavis.edu::slims/[whole string]/ .
+```
+
+Whole string example: nus7s7mzrh/Un_DTSA777/Project/JLGK_Nova785P_Kuodza
+
