@@ -10,7 +10,7 @@ After typing `ssh {username}@epigenerate.genomecenter.ucdavis.edu` so many times
 alias epigenerate='ssh {username}@epigenerate.genomecenter.ucdavis.edu'
 ```
 
-Then, every time you want to log in, all you need to do is run `epigenerate` and it will prompt you for your password.
+Then, every time you want to log in, all you need to do is run `epigenerate` and it will prompt you for your password. You can also create your own aliases to easily run commands, change directories, and more.
 
 ## Notifications
 
