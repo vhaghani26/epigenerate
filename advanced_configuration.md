@@ -31,9 +31,9 @@ EOF
 
 To use the function, you can run:
 
-* `{your command}; notify {email_subject_line}` and it will email you when your command finishes with the email subject line you gave it
-* `{your command} && notify {email_subject_line}` and it will email you when your command finishes with the email subject line you gave it
-* `{your command} || notify {email_subject_line}` and it will email you if your command fails with the email subject line you gave it
+* `{your command}; notify {email_subject_line}` and it will email you when your command **completes** with the email subject line you gave it
+* `{your command} && notify {email_subject_line}` and it will email you if your command **succeeds** with the email subject line you gave it
+* `{your command} || notify {email_subject_line}` and it will email you if your command **fails** with the email subject line you gave it
 
 Try running
 
@@ -41,7 +41,7 @@ Try running
 sleep 5; notify test
 ```
 
-And you will receive an email notification about the job finishing! 
+And you will receive an email notification about the job finishing! Read [Titus' explanation](https://hackmd.io/zr2cYCnQQleH2k52i4sgKQ?view) for more information on its usage.
 
 ## Changing Command Prompt Colors
 
