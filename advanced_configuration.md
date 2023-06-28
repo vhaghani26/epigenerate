@@ -1,6 +1,6 @@
 # Advanced Configuration
 
-You should have a `.bashrc`, `.profile`, `.bash_profile`, or something of the sort in your home directory. On Epigenerate, since you have a login prompt instead of just SSH key pairs for login, you will need to use `.profile` or `.bash_profile`. I use `.profile` and then just put `source ~/.profile` in the other two files so that if I'm using other SSH features, I still have everything I normally have sourced.
+You should have a `.bashrc`, `.profile`, `.bash_profile`, or something of the sort in your home directory. On Epigenerate, since you have a login prompt instead of just SSH key pairs for login, you will need to use `.profile` or `.bash_profile`. I use `.profile` and then just put `source ~/.profile` in the other two files so that if I'm using other SSH features, I still have everything I normally have sourced. Below are some things you can put in your `.profile` to enhance your CLI experience.
 
 ## Aliases
 
