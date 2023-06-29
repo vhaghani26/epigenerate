@@ -68,7 +68,7 @@ ulimit -v unlimited # Reset your memory cap to being unlimited
 ```
 
 3. Submit the resource-intensive job via SLURM. See the [SLURM directory](https://github.com/vhaghani26/epigenerate/tree/main/SLURM) for information on how to create and submit a SLURM script.
-4. If you are running a memory intensive job in R on epigenerate such as CoMethyl, limit your R environment memory to 250 GB max. Log in to the cluster and run the following code
+4. If you are running a memory intensive job in R on epigenerate such as Comethyl, limit your R environment memory to 250 GB max. Log in to the cluster and run the following code
 
 ```
 nano ~/.Renviron
@@ -77,6 +77,31 @@ Paste the following inside the file and save it
 ```
 R_MAX_VSIZE=250Gb 
 ```
+5. Comethyl uses a lot of resources, but you can reduce the RAM required by changing a couple of default parameters. The two steps that are particularly resource-intensive are
+```
+getSoftPower
+```
+and
+```
+getModules
+```
+To address this, Comethyl breaks the genome into blocks for analysis for both of these steps. The default block size is 40000, which can be decreased to reduce RAM. To do this, run the functions (available at https://github.com/cemordaunt/comethyl) with your block size of choice for each function (the argument for getSoftPower is called blockSize and for getModules is called maxBlockSize). For example, the first part of each function is shown here, with the block size set to 10000:
+```
+getSoftPower <- function(meth, powerVector = 1:20,
+                         corType = c("pearson", "bicor"), maxPOutliers = 0.1,
+                         RsquaredCut = 0.8, blockSize = 10000,
+                         gcInterval = blockSize - 1, save = TRUE,
+                         file = "Soft_Power.rds", verbose = TRUE)
+```
+and
+```
+getModules <- function(meth, power, regions, maxBlockSize = 10000,
+                       corType = c("pearson", "bicor"), maxPOutliers = 0.1,
+                       deepSplit = 4, minModuleSize = 10, mergeCutHeight = 0.1,
+                       nThreads = 4, save = TRUE, file = "Modules.rds",
+                       verbose = TRUE)
+```
+From here, you can run Comethyl as usual and many fewer resources will be used
 
 ### CPUs
 
