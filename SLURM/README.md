@@ -177,10 +177,22 @@ echo $USER
 
 Note: there are subtle differences between the two. The `whoami` command displays the effective user id at the time the command is entered. The `$USER` is an environment variable that is set by the shell--it won't work on all operating systems, so just be mindful.
 
-We can use the output of this to see the status of the jobs associated with a particular username:
+We can use the output of this to see the status of the jobs associated with a particular username (yours or another user's can be displayed):
 
 ```
-squeue -u {your_username}
+squeue -u {username}
+```
+
+If you don't care about other people's jobs, you can also just use the `--me` flag instead of `-u {username}` like so:
+
+```
+squeue --me
+```
+
+We can also expand our view to show the full rule name (the default is 8 characters long, which is too short for my uses at times). It also displays how long a job has been running next to the time limit. As such, I find this more informative than the above command:
+
+```
+squeue --format="%.18i %.9P %.30j %.8u %.8T %.10M %.9l %.6D %R" --me
 ```
 
 #### Cancel your jobs with `scancel`
