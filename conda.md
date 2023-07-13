@@ -49,17 +49,29 @@ Close your terminal and open a new one. You should see `(base)` at the start of 
 
 ## Setting Up Conda on Epigenerate
 
-As mentioned in the epigenerate documentation, you should be using conda. The problem with conda on epigenerate is that it mounts in your home directory, not in `/share/lasallelab/`. This creates many problems. Here, I will break down some background about conda as well as how you should set it up and use it.
+As mentioned in the epigenerate documentation, you should be using conda. First, go to the [Anaconda website](https://www.anaconda.com/download#downloads). Right-click or control-click on Windows or MacOS, respectively, on the latest Anaconda installer listing under the "Linux" section. Click "copy link" and run the following, making sure to modify the path and enter the link:
 
-Since Conda does NOT like to be in your home environment, we have to tell it where to go. The intsructions below will help you configure Conda to be able to load in and make environments. In the following code, please make sure to replace the appropriate variables, represented within curly brackets `{}`, with your information. 
+```
+# Navigate to  your home directory
+cd /share/lasallelab/{your_directory}
+# Download Anaconda
+wget {copied_link}
+```
+
+This will download a file that look something like `Anaconda3{somestuff}.sh`. Run the script:
+
+```
+bash Anaconda3{somestuff}.sh
+```
+
+Read the license agreement and answer "yes" (without quotes) to accept the terms. **When you are asked about the install location, install it in `/share/lasallelab/{your_directory}/anaconda3`, NOT the default home directory.** If you use the default location, you will experience problems loading Conda down the line, so don't do that! It will take a little time to install. When the installer asks if you want to initialize Anaconda3 by running conda init, answer "yes."
+
+Now you have Conda installed! Add the following to your `.bashrc` or `.profile` or whatever you're using. Make sure to replace all variables within the curly brackets `{}` appropiately. Your Conda prefix is `/share/lasallelab/{your_directory}/anaconda3`.
 
 ```
 # Paths for conda and software configuration
-export LASALLEHOME=/share/lasallelab/{your_folder}/
-export PATH=$PATH:$LASALLEHOME/bin
-export PATH=$PATH:/share/lasallelab/{your_folder}/.conda
-export PATH=$PATH:/home/{your_username}/.conda/envs
-export CONDA_ENVS_PATH=$SEGALHOME/.conda
+export LASALLEHOME=/share/lasallelab/{your_folder}
+export CONDA_ENVS_PATH=$LASALLEHOME/anaconda3
 export CONDA_PKGS_DIRS=$CONDA_ENVS_PATH/pkgs
 
 # Aliases to improve CLI usage experience
@@ -72,34 +84,30 @@ alias mv="mv -i"
 PS1='\u@\h: \W:\$ '
 
 # Execute conda setup 
-__conda_setup="$('/software/anaconda3/4.8.3/lssc0-linux/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('{conda_prefix}/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
         eval "$__conda_setup"
 else
-        if [ -f "/software/anaconda3/4.8.3/lssc0-linux/etc/profile.d/conda.sh" ]; then
-                . "/software/anaconda3/4.8.3/lssc0-linux/etc/profile.d/conda.sh"
+        if [ -f "{conda_prefix}/etc/profile.d/conda.sh" ]; then
+                . "{conda_prefix}/etc/profile.d/conda.sh"
         else
-                export PATH="/software/anaconda3/4.8.3/lssc0-linux/bin:$PATH"
+                export PATH="{conda_prefix}/bin:$PATH"
         fi
 fi
 unset __conda_setup
 ```
 
-
-Once done, copy the code into your `.bashrc` or `.profile` (or whatever other configuration file you use on epigenerate). This file will be found in your home directory. 
+Once done, copy the above code into your `.bashrc` or `.profile` (or whatever other configuration file you use on epigenerate). This file will be found in your home directory. 
 
 ## Initialize Conda
 
-Now that you have it set up (hopefully) properly, we need to initialize it. Run the following, and change `.bashrc`, if needed, to whatever configuration file you use.
+If you did not initialize Conda when you installed it, run the following:
 
 ```
 conda init
-echo "PS1='\w $ '" >> .bashrc
 ```
 
-This will (1) initialize Conda and (2) modify your shell settings to a cleaner prompt.
-
-Now close & reopen your terminal or run `source ~/.bashrc` (or whatever configuration file you have, such as `.profile`).
+This will initialize Conda. Now close & reopen your terminal or run `source ~/.bashrc` (or whatever configuration file you have, such as `.profile`).
 
 If this gives you an error, do NOT proceed. Ask the cluster overseer for help.
 
@@ -121,7 +129,7 @@ The default package resolver has been known to have some issues. As such, whenev
 conda install mamba -n base -c conda-forge
 ```
 
-You are now ready to start creating environments. 
+From this point forward, just use `mamba` instead of `conda` with your install commands. You are now ready to start creating environments. 
 
 ## Using Conda
 
