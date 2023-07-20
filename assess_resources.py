@@ -23,7 +23,7 @@ epigenerate_users = {
 "vhaghani": "vhaghani@ucdavis.edu"
 }
 
-check_every_secs = 1 # How frequently to check memory usage in seconds
+check_every_secs = 60 # How frequently to check memory usage in seconds
 tot_ram_lim = 495 # Total RAM limit to exceed before notifying all users
 user_ram_lim = 250 # RAM limit to exceed before notifying a specific user
 logs_dir = '/share/lasallelab/programs/assess_resources/logs' # Path to put output logs
@@ -98,7 +98,7 @@ while True:
                         f.write(f'{notify_function}')
                     os.system(f'chmod 777 {logs_dir}/{now}_{user}_epigenerate_total.sh')
                     # Send notification 
-                    #os.system(f'. {logs_dir}/{now}_{user}_epigenerate_total.sh && notify')
+                    os.system(f'. {logs_dir}/{now}_{user}_epigenerate_total.sh && notify')
                     # Update flag
                     total_email_sent = True
     
@@ -110,7 +110,8 @@ while True:
 ########################
 ## Assess User Memory ##
 ########################
- 
+
+'''
     # Email a user if they are using more than the user RAM limit 
     for user, memory_usage in mem_per_user.items():
         if memory_usage > user_ram_lim and not user_email_sent[user]:
@@ -134,7 +135,7 @@ while True:
                 f.write(f'{notify_function}')
             os.system(f'chmod 777 {logs_dir}/{now}_{user}.sh')
             # Send notification 
-            #os.system(f'. {logs_dir}/{now}_{user}.sh && notify')
+            os.system(f'. {logs_dir}/{now}_{user}.sh && notify')
             # Update user flag
             user_email_sent[user] = True
             
@@ -142,5 +143,4 @@ while True:
             user_email_sent[user] = False 
             
     print("User memory has been checked...")
-    print(mem_per_user)
-    break
+'''
