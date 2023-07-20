@@ -113,7 +113,7 @@ while True:
  
     # Email a user if they are using more than the user RAM limit 
     for user, memory_usage in mem_per_user.items():
-        if memory_usage >= user_ram_lim and not user_email_sent[user]:
+        if memory_usage > user_ram_lim and not user_email_sent[user]:
             # Draft message
             notify_function = textwrap.dedent(f"""
             notify() {{
