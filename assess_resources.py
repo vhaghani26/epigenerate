@@ -23,7 +23,7 @@ epigenerate_users = {
 "vhaghani": "vhaghani@ucdavis.edu"
 }
 
-check_every_secs = 60 # How frequently to check memory usage in seconds
+check_every_secs = 1 # How frequently to check memory usage in seconds
 tot_ram_lim = 495 # Total RAM limit to exceed before notifying all users
 user_ram_lim = 250 # RAM limit to exceed before notifying a specific user
 logs_dir = '/share/lasallelab/programs/assess_resources/logs' # Path to put output logs
