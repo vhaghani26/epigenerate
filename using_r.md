@@ -106,3 +106,37 @@ conda install -c bioconda bioconductor-rrvgo
 conda install -c bioconda bioconductor-pcatools
 conda install -c bioconda bioconductor-enrichplot
 ```
+
+## Using R on Epigenerate
+
+Interactive R sessions for visualization are often essential, justifying the existence of tools like RStudio. But imagine having a directory filled with sizable data files that need visualizing in R. Do you shuttle individual files to your local computer for analysis? And if these files are massive, what then? Alternatively, would you script and run R operations on Epigenerate, continuously transferring figures to verify accuracy? While these methods function, they're cumbersome and inefficient. A more streamlined approach involves launching an interactive R session, akin to RStudio, via the command line to remotely access those substantial files. Ordinarily, you can set up and initiate an interactive RStudio session using rstudio-server. However, due to limited permissions, this isn't always feasible. My attempt to install and launch rstudio-server resulted in a discouraging "This incident will be reported." Given the extensive data awaiting visualization, this limitation proved exceedingly frustrating. Consequently, in my usual fashion, I invested significant effort into devising a workaround that enables you to run R and observe visualizations in real-time, all while leveraging Epigenerate's data-saving and storage capabilities. Without further ado, let's dive in!
+
+First, create a symbolic link to `/share/lasallelab/` in your home directory:
+
+```
+cd ~
+ln -s /share/lasallelab/ lasallelab
+```
+
+Now create or enter a Conda environment of your choosing, you will need to install Jupyter, R, and IRkernel (which allows you to launch a Jupyter notebook and run R). To do so, run the following:
+
+```
+conda install -c anaconda jupyter
+conda install r-base
+conda install -c conda-forge r-irkernel
+R -e "IRkernel::installspec(user = FALSE)" # I'm not sure what this does, but I ran it and things worked out in the end so I guess just trust me for now?
+```
+
+Then launch Jupyter Notebook:
+
+```
+jupyter notebook
+```
+
+A screen will open displaying a link that starts with something like `http://localhost:8888/`. Keep that aside for now. Open a new terminal and do **not** log into Epigenerate. Instead, you will tunnel into the session. Run the following:
+
+```
+ssh -L 8888:localhost:8888 {your_username}@epigenerate.genomecenter.ucdavis.edu
+```
+
+Enter your password when prompted. Now go back to the other terminal with the link and copy and paste it into your browser. It should open a Jupyter notebook. In order to access the shared space, click on the `lasallelab` symbolic link you made. It will take you to `/share/lasallelab/`. Enter the directory you want to work and save your files to. Click on "New" in the upper right-hand corner and click "R" for an R notebook. Name your notebook and save it, then you're good to go!
