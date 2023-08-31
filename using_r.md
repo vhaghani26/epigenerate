@@ -140,3 +140,5 @@ ssh -L 8888:localhost:8888 {your_username}@epigenerate.genomecenter.ucdavis.edu
 ```
 
 Enter your password when prompted. Now go back to the other terminal with the link and copy and paste it into your browser. It should open a Jupyter notebook. In order to access the shared space, click on the `lasallelab` symbolic link you made. It will take you to `/share/lasallelab/`. Enter the directory you want to work and save your files to. Click on "New" in the upper right-hand corner and click "R" for an R notebook. Name your notebook and save it, then you're good to go!
+
+There are actually other things this may be useful for as well, such as navigating your files easily, uploading files, downloading files, opening HTML files, looking at saved figures, etc. The world is your oyster. 
