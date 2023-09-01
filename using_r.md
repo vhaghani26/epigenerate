@@ -109,6 +109,8 @@ conda install -c bioconda bioconductor-enrichplot
 
 ## Using "RStudio" Directly on Epigenerate
 
+To view a step-by-step recording on how to do this, please watch [this video](https://youtu.be/Gnb9y-CoLXM). 
+
 Interactive R sessions for visualization are often essential, justifying the existence of tools like RStudio. But imagine having a directory filled with sizable data files that need visualizing in R. Do you shuttle individual files to your local computer for analysis? And if these files are massive, what then? Alternatively, would you script and run R operations on Epigenerate, continuously transferring figures to verify accuracy? While these methods function, they're cumbersome and inefficient. A more streamlined approach involves launching an interactive R session, akin to RStudio, via the command line to remotely access those substantial files. Ordinarily, you can set up and initiate an interactive RStudio session using rstudio-server. However, due to limited permissions, this isn't always feasible. My attempt to install and launch rstudio-server resulted in a discouraging "This incident will be reported." Given the extensive data awaiting visualization, this limitation proved exceedingly frustrating. Consequently, in my usual fashion, I invested significant effort into devising a workaround that enables you to run R and observe visualizations in real-time, all while leveraging Epigenerate's data-saving and storage capabilities. Without further ado, let's dive in!
 
 First, create a symbolic link to `/share/lasallelab/` in your home directory:
