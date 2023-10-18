@@ -260,7 +260,7 @@ This will bring you to your .Renviron file. Add a line of text that reads
 ```
 R_LIBS_USER = /share/lasallelab/directory_you_want_packages_to_go_into
 ````
-Save the .Renviron file and then load R as explained above. You can now install your packages. 
+Save the .Renviron file and then load R as explained above. You can now install your packages. If installation is unsuccessful, email hpc-help@ucdavis.edu
 
 ## $HOME away from $HOME 
 
