@@ -239,15 +239,15 @@ rsync -azP "local path" username@epigenerate.genomecenter.ucdavis.edu:/share/las
 
 Cyberduck is a free FTP/SFTP client that can be used to transfer files between Epigenerate and your personal computer. Its user interface looks fairly similar to a Mac finder so it can be helpful to easily navigate through your directories and files. 
 
-*First, download Cyberduck (https://cyberduck.io/download/) and open it on your computer*
-*In the top left corner, click "Open Connection"*
-*Select “SFTP (SSH File Transfer Protocol)”*
-*Fill in the server: epigenerate.genomecenter.ucdavis.edu*
-*Fill in your username and password*
-*Press connect. Once you've done this once, Cyberduck will remember the Epigenerate server*
-*Once you're in, you can navigate around directories, download files to your personal computer, and upload files to Epigenerate*
-*Downloading files from Epigenerate to personal computer (Mac): drag and drop, or click on the file you want to download and go to File --> Download To, or double click on a file and it will download to the most recent location you downloaded to*
-*Uploading files to Epigenerate: drag and drop*
+1. *First, download Cyberduck (https://cyberduck.io/download/) and open it on your computer*
+2. *In the top left corner, click "Open Connection"*
+3. *Select “SFTP (SSH File Transfer Protocol)”*
+4. *Fill in the server: epigenerate.genomecenter.ucdavis.edu*
+5. *Fill in your username and password*
+6. *Press connect. Once you've done this once, Cyberduck will remember the Epigenerate server*
+7. *Once you're in, you can navigate around directories, download files to your personal computer, and upload files to Epigenerate*
+8. *Downloading files from Epigenerate to personal computer (Mac): drag and drop, or click on the file you want to download and go to File --> Download To, or double click on a file and it will download to the most recent location you downloaded to*
+9. *Uploading files to Epigenerate: drag and drop*
 
 ## Using R on Epigenerate
 
