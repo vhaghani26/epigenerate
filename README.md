@@ -246,8 +246,8 @@ Cyberduck is a free FTP/SFTP client that can be used to transfer files between E
 5. *Fill in your username and password*
 6. *Press connect. Once you've done this once, Cyberduck will remember the Epigenerate server*
 7. *Once you're in, you can navigate around directories, download files to your personal computer, and upload files to Epigenerate*
-   	a. *Downloading files from Epigenerate to personal computer (Mac): drag and drop, or click on the file you want to download and go to File --> Download To, or double click on a file and it will download to the most recent location you downloaded to*
-	b. *Uploading files to Epigenerate: drag and drop*
+8. *Downloading files from Epigenerate to personal computer (Mac): drag and drop, or click on the file you want to download and go to File --> Download To, or double click on a file and it will download to the most recent location you downloaded to*
+9. *Uploading files to Epigenerate: drag and drop*
 
 ## Using R on Epigenerate
 
