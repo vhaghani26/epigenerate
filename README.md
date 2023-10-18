@@ -18,6 +18,9 @@ Much of this document was adapted from Dr. Ian Korf's documentation on Spitfire.
 	* [Duplicated Data](#duplicated-data)
 	* [Aliasing Data](#aliasing-data)
 	* [Transferring Data](#transferring-data)
+* [Using R on Epigenerate](#using-R-on-epigenerate)
+	* [Loading R](#loading-R)
+	* [Installing R Packages](#installing-R-packages)
 * [$HOME away from $HOME](#home-away-from-home)
 * [Conda Usage](#conda-usage)
 * [How the Genome Center Cluster Works (Extra Information)](#how-the-genome-center-cluster-works-extra-information)
@@ -231,6 +234,33 @@ rsync -azPnv "local path" username@epigenerate.genomecenter.ucdavis.edu:/share/l
 ```
 rsync -azP "local path" username@epigenerate.genomecenter.ucdavis.edu:/share/lasallelab/UserFolder/DirectoryName
 ```
+
+## Using R on Epigenerate
+
+### Loading R
+To see what versions of R are available, run:
+```
+module avail R
+```
+To load (a certain version of) R, run:
+```
+module load R/4.1.0
+```
+```
+R
+```
+This example loads R v4.1.0, but you can load any available version of R. You should now see the '<' symbol 
+
+### Installing R Packages
+To install an R package into a certain directory (e.g. /share/lasallelab/programs...), you must set your R_LIBS_USER variable to that directory before you run R. When you're logged into Epigenerate in your terminal, type:
+```
+nano ~/.Renviron
+```
+This will bring you to your .Renviron file. Add a line of text that reads
+```
+R_LIBS_USER = /share/lasallelab/directory_you_want_packages_to_go_into
+````
+Save the .Renviron file and then load R as explained above. You can now install your packages. 
 
 ## $HOME away from $HOME 
 
