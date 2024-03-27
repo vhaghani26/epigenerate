@@ -1,6 +1,6 @@
 # SLURM and the Cluster
 
-This material was adapted from [Dr. C. Titus Brown's material](https://github.com/ngs-docs/2021-GGG298/tree/latest/Week9-Slurm_and_Farm_cluster_for_doing_analysis).
+This material was adapted from [Dr. C. Titus Brown's material](https://github.com/ngs-docs/2021-GGG298/tree/latest/Week9-Slurm_and_Farm_cluster_for_doing_analysis) and the [UC Davis Bioinformatics Core's SLURM workshop](https://ucdavis-bioinformatics-training.github.io/2023-October-Slurm-Seminar/cluster_training/intro).
 
 ## What is a Cluster?
 
