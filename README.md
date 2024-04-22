@@ -8,6 +8,7 @@ Much of this document was adapted from Dr. Ian Korf's documentation on Spitfire.
 
 * [Requesting an Epigenerate Account](#requesting-an-epigenerate-account)
 * [Logging into Epigenerate](#logging-into-epigenerate)
+* [Configuring Your Profile](#configuring-your-profile)
 * [Best Practices](#best-practices)
     * [Epigenerate Slack Channel](#epigenerate-slack-channel)
 	* [RAM](#ram)
@@ -46,6 +47,53 @@ ssh username@epigenerate.genomecenter.ucdavis.edu
 ```
 
 This will prompt you to enter your password. If you are new to the command line, it is important to note that you will not see any characters appear as you type your password. Just type your password and click "Enter" and you will be logged in.
+
+## Configuring Your Profile
+
+Whenever you log into a computer, a special file, like `.bashrc` or `.profile` run in the background. These files help you set up how your terminal looks and what commands are available. Most of the time, you will only rely on `.bashrc`, but on the Genome Center HPC, you will actually need a `.profile`. `.bashrc` is a script that runs whenever a new Bash shell is started, whereas `.profile` is sourced by the Bash shell upon login. When logging into Epigenerate, you unknowingly run `.profile`. The complication here is that any process you run outside of that immediate session requires `.bashrc`. This includes things like SLURM, screen, tmux, etc. How do we fix this? Well, we set up our files in a way that you only have to edit one file and they'll both be "in sync." First, we will create our `.profile`:
+
+```
+cd ~
+touch .profile
+```
+
+This creates our `.profile`. I like to put a variety of things in my `.profile`, including aliases and commands to make things easier for myself (but mostly failsafes for when I inevitably do something stupid at the terminal). For example:
+
+```
+alias ls="ls -F" # Helps distinguish files, directories, aliases, etc. every time you run ls
+alias rm="rm -i" # Makes you confirm deletions before you actually delete something
+alias cp="cp -i" # Asks if you want to overwrite an existing file if you're copying a file
+alias mv="mv -i" # Asks if you want to overwrite an existing file if you're renaming or moving a file
+```
+
+I also like to put some fun personal configuration stuff in there. The following code formats my terminal to make my conda environnment the default text color, my username and hostname green, and my working directory blue. 
+
+```
+# Set color codes
+GREEN="\[\e[32m\]"
+BLUE="\[\e[36m\]"
+RESET_COLOR="\[\e[0m\]"
+
+# Customize the PS1 prompt
+PS1="${GREEN}\u@\h${RESET_COLOR}: ${BLUE}\W${RESET_COLOR}\$ "
+```
+
+For more advanced configuration options, see [here](https://github.com/vhaghani26/epigenerate/blob/main/advanced_configuration.md). Otherwise, once you have determined all the things you want to put in your `.profile`, edit and save it.
+
+Now, you will create a `.bashrc`:
+
+```
+cd ~
+touch .bashrc
+```
+
+All you are going to put in your `.bashrc` is:
+
+```
+source ~/.profile
+```
+
+To implement any changes, either restart your terminal or run `source ~/.profile` and they will be implemented. 
 
 ## Best Practices 
 
