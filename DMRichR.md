@@ -22,8 +22,8 @@ nano {project_name}_dmrichr.slurm
 
 3. Add the job details to your slurm file and save the file. Here is a SLURM script template for you to use that allows for the usage of the DMRichR environment. Make sure to make the following changes:
 
-* Change {your_email} to your email
-* Change {your_cytosine_reports} to the absolute path (i.e. starting with /share/lasallelab/...) containing your cytosine reports
+* Change `{your_email}` to your email
+* Change `{your_cytosine_reports}` to the absolute path (i.e. starting with /share/lasallelab/...) containing your cytosine reports
 * Change `source ~/.profile` if you use a different configuration file (if you set up Conda with Viki, you use .profile)
 * Change any desired parameters in the DM.R section of the script
 
