@@ -30,14 +30,14 @@ nano {project_name}_dmrichr.slurm
 ```
 #!/bin/bash
 #
-#SBATCH --job-name=dmrichr                                  # Job name
-#SBATCH --mail-user={your_email}                            # Your email
-#SBATCH --ntasks=70 										# Number of cores/threads
-#SBATCH --mem=500000 										# Ram in Mb
-#SBATCH --partition=production 								# Partition, or queue, to assign to
-#SBATCH --time=2-00:00:00                                   # Time requested for job
-#SBATCH --mail-type=ALL                                     # Get an email when the job begins, ends, or fails
-#SBATCH --chdir={your_cytosine_reports}                     # Your working directory
+#SBATCH --job-name=dmrichr             	# Job name
+#SBATCH --mail-user={your_email}       	# Your email
+#SBATCH --ntasks=70                     # Number of cores/threads
+#SBATCH --mem=500000                    # Ram in Mb
+#SBATCH --partition=production          # Partition, or queue, to assign to
+#SBATCH --time=2-00:00:00              	# Time requested for job
+#SBATCH --mail-type=ALL                	# Get an email when the job begins, ends, or fails
+#SBATCH --chdir={your_cytosine_reports}	# Your working directory
 
 ###################
 # Run Information #
@@ -109,5 +109,11 @@ echo $runtime
 sbatch {project_name}_dmrichr.slurm
 ```
 
-You will receive email notifications when your job starts and ends and if it fails!
+5. Depending on how the SLURM script was edited, there may be an error that says something about "DOS line break error." If this occurs, run:
+
+```
+dos2unix {project_name}_dmrichr.slurm
+```
+
+And then resubmit the script. You will receive email notifications when your job starts and ends and if it fails!
 
