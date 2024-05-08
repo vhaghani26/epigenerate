@@ -8,19 +8,21 @@ The new system set up for the Genome Center HPC does not have modules any more. 
 
 In addition to not being able to module load software, we are also moving away from running things directly on head nodes. This means we are going to be switching over to SLURM submissions for our jobs. Here are some instructions regarding how you can submit a DMRichR job:
 
-1. Navigate to your directory
+1. Create your `sample_info.xlsx` file and put it in the same directory as your cytosine reports. Please refer to the DMRichR documentation on [creating your design matrix](https://www.benlaufer.com/DMRichR/articles/DMRichR.html#the-design-matrix-and-covariates). Note that because it's in `xlsx` format, it may be easier to create it on your local machine and `scp` or `rsync` it into the directory on Epigenerate.
+
+2. Navigate to your directory
 
 ```
 cd /share/lasallelab/{your_name}/{your_project}/{your_cytosine_reports}
 ```
 
-2. Create a slurm file
+3. Create a slurm file
 
 ```
 nano {project_name}_dmrichr.slurm
 ```
 
-3. Add the job details to your slurm file and save the file. Here is a SLURM script template for you to use that allows for the usage of the DMRichR environment. Make sure to make the following changes:
+4. Add the job details to your slurm file and save the file. Here is a SLURM script template for you to use that allows for the usage of the DMRichR environment. Make sure to make the following changes:
 
 * Change `{your_email}` to your email
 * Change `{your_cytosine_reports}` to the absolute path (i.e. starting with /share/lasallelab/...) containing your cytosine reports
@@ -100,16 +102,15 @@ eval $call
 end=`date +%s`
 runtime=$((end-start))
 echo $runtime
-
 ```
 
-4. Submit the job
+5. Submit the job
 
 ```
 sbatch {project_name}_dmrichr.slurm
 ```
 
-5. Depending on how the SLURM script was edited, there may be an error that says something about "DOS line break error." If this occurs, run:
+6. Depending on how the SLURM script was edited, there may be an error that says something about "DOS line break error." If this occurs, run:
 
 ```
 dos2unix {project_name}_dmrichr.slurm
