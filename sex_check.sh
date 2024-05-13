@@ -5,6 +5,8 @@ detect_chromosome_notation() {
     # Run idxstats on the BAM file and check if any chromosome starts with "chr"
     if samtools idxstats "$1" 2>/dev/null | awk '$1 ~ /^chr/{exit 0} END{exit 1}'; then
         echo "chrX"
+    elif samtools idxstats "$1" 2>/dev/null | awk '$1 == "chrY"{exit 0} END{exit 1}'; then
+        echo "chrY"
     else
         echo "X"
     fi
@@ -12,7 +14,7 @@ detect_chromosome_notation() {
 
 # Function to calculate coverage statistics
 coveragestats() {
-    samtools idxstats "$1" 2>/dev/null | awk -v chr_notation="$2" '$1==chr_notation{print $2}'
+    samtools idxstats "$1" 2>/dev/null | awk -v chr_notation="$2" '$1==chr_notation{print $3}'
 }
 
 # Set the directory containing BAM files
@@ -31,7 +33,7 @@ for bam_file in "$bam_dir"/*.bam; do
         # Calculate coverage statistics
         xcov=$(coveragestats "$bam_file" "$chromosome_notation")
         ycov=$(coveragestats "$bam_file" "Y")
-        total_xy_reads=$(coveragestats "$bam_file" "$chromosome_notation" | awk '{sum+=$1} END{print sum}')
+        total_xy_reads=$(echo "$xcov + $ycov" | bc)
         
         # Check if X and Y coverage information is available
         if [ -n "$xcov" ] && [ -n "$ycov" ]; then
