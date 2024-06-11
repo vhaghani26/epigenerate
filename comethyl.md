@@ -273,6 +273,8 @@ And then resubmit the script. You will receive email notifications when your job
 
 ### Second `srun` Session
 
+Although the instructions allow for you to run Comethyl using `srun`, you may be able to run this on your local computer, as it is not resource intensive and the visualization aspect of Rstudio may be helpful. Down the line, the Genome Center HPC will have better options for visualization. That is currently (and unfortunately) not the case. If you choose to do it on your local computer, you will need to `scp` or `rsync` the `sample_info.xlsx` file you created as well as the `Modules.rds` file generated after you submit the SLURM script. You will also need to install the necessary packages (`tidyverse` and `comethyl`), which may be a pain depending on how up-to-date or out-of-date your R version is. Because R really likes to have dependency issues with any updates, I still advise using the Conda environment on `epigenerate` for consistency across your software versions, but you are still free to run it on your own computer if you're in a bind or having issues with `epigenerate`.
+
 24. Once your SLURM job finishes, initiate another `srun` session, activate the environment, and restart R:
 
 ```
@@ -344,7 +346,8 @@ plotMEtraitCor(MEtraitCor, moduleOrder = moduleDendro$order,
                height = 4.25)
 ```
 
-28. Now we will explore significant ME-trait correlations. First, we will plot the module eigennodes vs. traits
+
+28. Now we will explore significant ME-trait correlations. First, we will plot the module eigennodes vs. traits. **From this point forward**, the code serves as more of a template. You will need to adjust the modules to be your modules of interest and change the color coding to match the traits you have in your Sample Trait Table. 
 
 ```
 plotMEtraitDot(MEs$bisque4, trait = colData$Diagnosis_ASD,
