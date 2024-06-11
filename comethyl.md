@@ -16,7 +16,7 @@ In its essence, Comethyl will get run in 3 parts:
 
 * An `srun` session
 * A SLURM script submission
-* A final `srun` session
+* A final `srun` session (optionally local)
 
 You will already be familiar with the code if you have run it before. The biggest difference now is that you will change how/where you run the code.
 
