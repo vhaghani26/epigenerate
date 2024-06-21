@@ -78,6 +78,7 @@ AnnotationHub::setAnnotationHubOption("CACHE", value = "/share/lasallelab/{your_
 ```
 library(tidyverse)
 library(comethyl)
+library(Biobase)
 ```
 
 10. Set your global options
