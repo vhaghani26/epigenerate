@@ -85,7 +85,7 @@ library(comethyl)
 ```
 options(stringsAsFactors = FALSE)
 Sys.setenv(R_THREADS = 1)
-WGCNA::disableWGCNAthreads()
+WGCNA::disableWGCNAThreads()
 ```
 
 11. Read the Bismark CpG reports. For the first command, it runs assuming the cytosine reports are in your current working directory. To mimic this, we will briefly change our working directory, then change back after we read in what we need.
