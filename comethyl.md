@@ -38,6 +38,11 @@ cd Comethyl_Results
 mkdir .cache
 chmod 777 -R .cache/
 ```
+To see that the .cache file was successfully created, you can run:
+
+```
+ls -a
+```
 
 3. Create your Sample Trait Table (`sample_info.xlsx` file) and put it in `Comethyl_Results/`. Please refer to the Comethyl documentation on [creating your Sample Trait Table](https://cemordaunt.github.io/comethyl/articles/comethyl.html). Note that because it's in `xlsx` format, it may be easier to create it on your local machine and `scp` or `rsync` it into the directory on Epigenerate.
 
