@@ -180,7 +180,7 @@ library(comethyl)
 # Set global options
 options(stringsAsFactors = FALSE)
 Sys.setenv(R_THREADS = 1)
-WGCNA::disableWGCNAthreads()
+WGCNA::disableWGCNAThreads()
 
 # Load objects
 methAdj <- readRDS("Adjusted_Region_Methylation.rds")
