@@ -144,7 +144,7 @@ plotSDstats(regions, maxQuantile = 0.99, file = "Filtered_SD_Plots.pdf")
 
 ### SLURM Submission
 
-# SLURM script contains steps to adjust methylation data for PCs, select a soft power threshold, and get comethylation modules 
+#### SLURM script contains steps to adjust methylation data for PCs, select a soft power threshold, and get comethylation modules 
 
 18. Create a new file called `PCs_softpower_modules.R` and put the following in it. Make sure to edit the working directory on the second line and the cache path on the fourth line.
 
