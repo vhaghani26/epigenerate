@@ -131,7 +131,7 @@ regionTotals <- getRegionTotals(regions, file = "Region_Totals.txt")
 plotRegionTotals(regionTotals, file = "Region_Totals.pdf")
 ```
 
-16. Filter regions. At this step, you have another opportunity to change parameters to better fit your needs. Typically, we do 500000 regions. However, this was with the constraints of the old epigenerate's computational power. As such, you have some room for exploration here.
+16. Filter regions. At this step, you have another opportunity to change parameters to better fit your needs. Typically, we do 500000 regions. However, this was with the constraints of the old epigenerate's computational power. As such, you have some room for exploration here. This is the last step we will run with `srun` before switching to an `sbatch` submission. 
 
 ```
 regions <- filterRegions(regions, covMin = 10, methSD = 0.05,
@@ -140,12 +140,38 @@ plotRegionStats(regions, maxQuantile = 0.99, file = "Filtered_Region_Plots.pdf")
 plotSDstats(regions, maxQuantile = 0.99, file = "Filtered_SD_Plots.pdf")
 ```
 
-17. Adjust methylation data for PCs. This is the last step we will run with `srun` before switching to an `sbatch` submission. 
+17. Once you are done, fully exit. Quit R using `q()`, then end your `srun` session using `exit`.
+
+### SLURM Submission
+
+# SLURM script contains steps to adjust methylation data for PCs, select a soft power threshold, and get comethylation modules 
+
+18. Create a new file called `PCs_softpower_modules.R` and put the following in it. Make sure to edit the working directory on the second line and the cache path on the fourth line.
 
 ```
+# Set directory and library path
+setwd("/share/lasallelab/{your_name}/{your_project}/Comethyl_Results/.cache")
+.libPaths("/share/lasallelab/programs/.conda/Comethyl_v1.3.0/lib/R/library")
+AnnotationHub::setAnnotationHubOption("CACHE", value = "/share/lasallelab/{your_name}/{your_project}/Comethyl_Results/.cache")
+
+# Load libraries
+library(tidyverse)
+library(comethyl)
+library(Biobase)
+
+# Set global options
+options(stringsAsFactors = FALSE)
+Sys.setenv(R_THREADS = 1)
+WGCNA::disableWGCNAThreads()
+
+# Load objects
+colData <- openxlsx::read.xlsx("sample_info.xlsx", rowNames = TRUE)
+regions <- read.delim("Filtered_Regions.txt")
+bs <- readRDS("Filtered_BSseq.rds")
+
+# Adjust methylation data for PCs ####
 meth <- getRegionMeth(regions, bs = bs, file = "Region_Methylation.rds")
 mod <- model.matrix(~1, data = pData(bs))
-
 PCs <- getPCs(meth, mod = mod, file = "Top_Principal_Components.rds")
 PCtraitCor <- getMEtraitCor(PCs, colData = colData, corType = "bicor",
                             file = "PC_Trait_Correlation_Stats.txt")
@@ -155,36 +181,10 @@ PCtraitDendro <- getCor(PCs, y = colData, corType = "bicor", robustY = FALSE) %>
 plotMEtraitCor(PCtraitCor, moduleOrder = PCdendro$order,
                traitOrder = PCtraitDendro$order,
                file = "PC_Trait_Correlation_Heatmap.pdf")
-
 methAdj <- adjustRegionMeth(meth, PCs = PCs,
                             file = "Adjusted_Region_Methylation.rds")
 getDendro(methAdj, distance = "euclidean") %>%
         plotDendro(file = "Sample_Dendrogram.pdf", expandY = c(0.25, 0.08))
-```
-
-18. Once you are done, fully exit. Quit R using `q()`, then end your `srun` session using `exit`.
-
-### SLURM Submission
-
-19. Create a new file called `softpower_modules.R` and put the following in it. Make sure to edit the cache path on the third line.
-
-```
-# Set library path
-.libPaths("/share/lasallelab/programs/.conda/Comethyl_v1.3.0/lib/R/library")
-AnnotationHub::setAnnotationHubOption("CACHE", value = "/share/lasallelab/{your_name}/{your_project}/Comethyl_Results/.cache")
-
-# Load libraries
-library(tidyverse)
-library(comethyl)
-
-# Set global options
-options(stringsAsFactors = FALSE)
-Sys.setenv(R_THREADS = 1)
-WGCNA::disableWGCNAThreads()
-
-# Load objects
-methAdj <- readRDS("Adjusted_Region_Methylation.rds")
-regions <- read.delim("Filtered_Regions.txt")
 
 # Select Soft Power Threshold ####
 sft <- getSoftPower(methAdj, corType = "pearson", file = "Soft_Power.rds")
@@ -197,13 +197,13 @@ plotRegionDendro(modules, file = "Region_Dendrograms.pdf")
 BED <- getModuleBED(modules$regions, file = "Modules.bed")
 ```
 
-20. Create a slurm file
+19. Create a slurm file to run the R script you just created 
 
 ```
 nano {project_name}_comethyl.slurm
 ```
 
-21. Add the job details to your slurm file and save the file. Here is a SLURM script template for you to use that allows for the usage of the Comethyl environment. Make sure to make the following changes:
+20. Add the job details to your slurm file and save the file. Here is a SLURM script template for you to use that allows for the usage of the Comethyl environment. Make sure to make the following changes:
 
 * Change `{your_email}` to your email
 * Fix the path listed under `--chdir` to update the working directory
@@ -252,7 +252,7 @@ conda activate /share/lasallelab/programs/.conda/Comethyl_v1.3.0
 ## Comethyl ##
 ##############
 
-Rscript softpower_modules.R
+Rscript PCs_softpower_modules.R
 
 ###################
 # Run Information #
@@ -263,13 +263,13 @@ runtime=$((end-start))
 echo $runtime
 ```
 
-22. Submit the job
+21. Submit the job
 
 ```
 sbatch {project_name}_comethyl.slurm
 ```
 
-23. Depending on how the SLURM script was edited, there may be an error that says something about "DOS line break error." If this occurs, run:
+22. Depending on how the SLURM script was edited, there may be an error that says something about "DOS line break error." If this occurs, run:
 
 ```
 dos2unix {project_name}_comethyl.slurm
@@ -281,7 +281,7 @@ And then resubmit the script. You will receive email notifications when your job
 
 Although the instructions allow for you to run Comethyl using `srun`, you may be able to run this on your local computer, as it is not resource intensive and the visualization aspect of Rstudio may be helpful. Down the line, the Genome Center HPC will have better options for visualization. That is currently (and unfortunately) not the case. If you choose to do it on your local computer, you will need to `scp` or `rsync` the `sample_info.xlsx` file you created as well as the `Modules.rds` file generated after you submit the SLURM script. You will also need to install the necessary packages (`tidyverse` and `comethyl`), which may be a pain depending on how up-to-date or out-of-date your R version is. Because R really likes to have dependency issues with any updates, I still advise using the Conda environment on `epigenerate` for consistency across your software versions, but you are still free to run it on your own computer if you're in a bind or having issues with `epigenerate`.
 
-24. Once your SLURM job finishes, initiate another `srun` session, activate the environment, and restart R:
+23. Once your SLURM job finishes, initiate another `srun` session, activate the environment, and restart R:
 
 ```
 srun --mem=50G --time=5:00:00 --pty /bin/bash
@@ -289,7 +289,7 @@ conda activate /share/lasallelab/programs/.conda/Comethyl_v1.3.0
 R
 ```
 
-25. Reload the libraries and data needed and reset the global options
+24. Reload the libraries and data needed and reset the global options
 
 ```
 # Set library path
@@ -309,7 +309,7 @@ WGCNA::disableWGCNAthreads()
 modules <- readRDS("Modules.rds")
 ```
 
-26. Examine correlations between modules and samples
+25. Examine correlations between modules and samples
 
 ```
 MEs <- modules$MEs
@@ -332,7 +332,7 @@ plotHeatmap(MEs, rowDendro = sampleDendro, colDendro = moduleDendro,
             legend.position = c(0.37, 0.89), file = "Sample_ME_Heatmap.pdf")
 ```
 
-27. Test correlations between module eigennodes and sample traits
+26. Test correlations between module eigennodes and sample traits
 
 ```
 MEtraitCor <- getMEtraitCor(MEs, colData = colData, corType = "bicor",
@@ -353,7 +353,7 @@ plotMEtraitCor(MEtraitCor, moduleOrder = moduleDendro$order,
 ```
 
 
-28. Now we will explore significant ME-trait correlations. First, we will plot the module eigennodes vs. traits. **From this point forward**, the code serves as more of a template. You will need to adjust the modules to be your modules of interest and change the color coding to match the traits you have in your Sample Trait Table. 
+27. Now we will explore significant ME-trait correlations. First, we will plot the module eigennodes vs. traits. **From this point forward**, the code serves as more of a template. You will need to adjust the modules to be your modules of interest and change the color coding to match the traits you have in your Sample Trait Table. 
 
 ```
 plotMEtraitDot(MEs$bisque4, trait = colData$Diagnosis_ASD,
@@ -369,7 +369,7 @@ plotMEtraitScatter(MEs$paleturquoise, trait = colData$Bcell, ylim = c(-0.15, 0.1
                    file = "paleturquoise_ME_Bcells_Scatterplot.pdf")
 ```
 
-29. Plot region methylation vs. traits
+28. Plot region methylation vs. traits
 
 ```
 regions <- modules$regions
@@ -388,7 +388,7 @@ plotMethTrait("paleturquoise", regions = regions, meth = meth,
               file = "paleturquoise_Module_Methylation_Bcells_Heatmap.pdf")
 ```
 
-30. Annotate modules
+29. Annotate modules
 
 ```
 regionsAnno <- annotateModule(regions, module = c("bisque4", "paleturquoise"),
@@ -398,7 +398,7 @@ geneList_bisque4 <- getGeneList(regionsAnno, module = "bisque4")
 geneList_paleturquoise <- getGeneList(regionsAnno, module = "paleturquoise")
 ```
 
-31. Analyze functional enrichment
+30. Analyze functional enrichment
 
 ```
 ontologies <- listOntologies("hg38", version = "4.0.4")
