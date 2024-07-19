@@ -35,9 +35,9 @@ nano {project_name}_dmrichr.slurm
 #SBATCH --job-name=dmrichr             	# Job name
 #SBATCH --mail-user={your_email}       	# Your email
 #SBATCH --ntasks=70                     # Number of cores/threads
-#SBATCH --mem=500000                    # Ram in Mb
+#SBATCH --mem=700000                    # Ram in Mb
 #SBATCH --partition=production          # Partition, or queue, to assign to
-#SBATCH --time=2-00:00:00              	# Time requested for job
+#SBATCH --time=5-00:00:00              	# Time requested for job
 #SBATCH --mail-type=ALL                	# Get an email when the job begins, ends, or fails
 #SBATCH --chdir={your_cytosine_reports}	# Your working directory
 
