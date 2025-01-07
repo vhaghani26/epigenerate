@@ -6,6 +6,8 @@ Much of this document was adapted from Dr. Ian Korf's documentation on Spitfire.
 
 ## Table of Contents
 
+* [Requesting a Hive Account](#requesting-a-hive-account)
+* [Logging into Hive](#logging-into-hive)
 * [Requesting an Epigenerate Account](#requesting-an-epigenerate-account)
 * [Logging into Epigenerate](#logging-into-epigenerate)
 * [Configuring Your Profile](#configuring-your-profile)
@@ -26,8 +28,79 @@ Much of this document was adapted from Dr. Ian Korf's documentation on Spitfire.
 * [Conda Usage](#conda-usage)
 * [How the Genome Center Cluster Works (Extra Information)](#how-the-genome-center-cluster-works-extra-information)
 
+## Requesting a Hive Account
 
-## Requesting an Epigenerate Account 
+We are moving away from Epigenerate in support of a new centralized cluster - Hive. Use these steps to create your account:
+
+1. Go to this webpage: https://hippo.ucdavis.edu/clusters
+2. Select "HIVE" for the cluster
+3. Select "lasallegrp" as the group
+4. Write "Janine LaSalle" for the PI
+5. Make your SSH key
+	- To make an SSH key, you will need to run the following on a Unix based terminal (which is the native terminal for macOS and Linux, but for Windows may be something like Ubuntu):
+
+```
+ssh-keygen
+ls -al ~/.ssh
+cat ~/.ssh/*.pub
+```
+
+6. Copy and paste the ENTIRE key into the prompt 
+7. Submit your profile request for approval. Once approved, it may take a few hours for your account to become active
+
+### More on SSH Keys
+
+In order to access your HPC account, you need to generate an SSH key pair for authorization. You generate a pair of keys: a public key and a private key. The private key is kept securely on your computer or device. The public key is submitted to HPCCF to grant you access to a cluster. This helps verify your identity to grant you access to the cluster.
+
+Additional user documentation can be found at https://docs.hpc.ucdavis.edu.
+
+## Logging Into Hive
+
+Your username will be emailed to you once your account is live. You will need to log in using the device you generated the SSH key on. I will look into how multiple devices work and update this when I figure it out.
+
+### CLI Interface
+
+If you just want to work with the command line, then you can run:
+
+```
+ssh {username}@hive.hpc.ucdavis.edu
+```
+
+### Desktop Interface
+
+Some software has a Graphical User Interface (GUI), and requires X11 to be enabled. X11 forwarding allows an application on a remote server (in this case, Franklin) to render its GUI on a local system (your computer). How this is enabled depends on the operating system the computer you are using to access Franklin is running.
+
+#### Linux 
+
+If you are SSHing from a Linux distribution, you likely already have an X11 server running locally, and can support forwarding natively. If you are on campus, you can use the `-Y` flag to enable it, like so:
+
+```
+ssh -Y {username}@hive.hpc.ucdavis.edu
+```
+
+If you are off campus on a slower internet connection, you may get better performance by enabling compression with:
+
+```
+ssh -Y -C {username}@hive.hpc.ucdavis.edu
+```
+
+If you have multiple SSH key pairs, and you want to use a specific private key to connect to the clusters, use the option `-i` to specify path to the private key with SSH:
+
+```
+ssh -i ~/.ssh/id_hpc {username}@hive.hpc.ucdavis.edu
+```
+
+#### macOS
+
+macOS does not come with an X11 implementation out of the box. You will first need to install the free, open-source [XQuartz package](https://www.xquartz.org/), after which you can use the same ssh flags as described in the Linux instructions above.
+
+#### Windows
+
+The client you use will determine how you access Hive. If you are using MobaXterm, which is recommended by the Genome Center, X11 forwarding should be enabled by default. You can confirm this by checking that the X11-Forwarding box is ticked under your Franklin session settings. For off-campus access, you may want to tick the Compression box as well.
+
+## Requesting an Epigenerate Account
+
+**Note**: If you are new to the lab, please only refer to the instructions about Hive. 
 
 You'll need an account to connect to epigenerate and the rest of the cluster. Use these steps to request an account:
 
