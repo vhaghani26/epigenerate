@@ -56,7 +56,7 @@ Additional user documentation can be found at https://docs.hpc.ucdavis.edu.
 
 ## Logging Into Hive
 
-Your username will be emailed to you once your account is live. You will need to log in using the device you generated the SSH key on. I will look into how multiple devices work and update this when I figure it out.
+Your **username** will be emailed to you once your account is live. You will need to log in using the device you generated the SSH key on. Enter your **Kerberos password** when prompted to log in. I will look into how multiple devices work and update this when I figure it out.
 
 ### CLI Interface
 
