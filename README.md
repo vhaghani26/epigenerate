@@ -409,7 +409,85 @@ Hopefully the sysadmins fix this someday.
 
 ## Conda Usage 
 
-Are you using Conda? The answer should be _yes_. Is the Conda directory in your home directory? The answer should be _no_. Reset your $HOME to `/share/lasallelab/$USER` and do **all** of your work from there. Please see the `conda.md` file for more information.
+Are you using Conda? The answer should be _yes_. Please see the `conda.md` file for more information.
+
+Assuming you are already using conda, there are a number of environments you can use within the LaSalle Lab group. 
+
+### Comethyl
+
+```
+conda activate /quobyte/lasallegrp/programs/.conda/Comethyl_v1.3.0/
+```
+
+There are also updates underway to fix the gene annotation:
+
+```
+conda activate /quobyte/lasallegrp/programs/.conda/Comethyl_v1.3.0_UPDATED/
+```
+
+### DMRichR
+
+```
+conda activate /quobyte/lasallegrp/programs/.conda/DMRichR_R4.2/
+```
+
+### NGS_Tools
+
+This environment is a sort of "base" environment for the lab. It's a catch all for software that is used across many pipelines or needed for quick use (e.g. samtools). While most of the software can be accessed using:
+
+```
+conda activate /quobyte/lasallegrp/programs/.conda/NGS_Tools/
+```
+
+There are some tools with executable files that need to be hard coded into your `.profile`. Please add the following to your `.profile` if you plan to use any of the following software. Also make sure that the `NGS_Tools` conda environment is activated when running the following.
+
+#### NanoMethPhase
+
+```
+# NanoMethPhase
+export PATH="$PATH:/quobyte/lasallegrp/programs/.conda/NanoMethPhase"
+alias nanomethphase='python /quobyte/lasallegrp/programs/.conda/NanoMethPhase/nanomethphase/__main__.py'
+```
+
+Confirm you can run it by running:
+
+```
+nanomethphase --help
+```
+
+#### DeepMod
+
+```
+# DeepMod
+export PATH="$PATH:/quobyte/lasallegrp/programs/.conda/DeepMod/bin"
+```
+
+Confirm you can run it by running:
+
+```
+DeepMod --help
+```
+
+Note that the documentation tells you to run:
+
+```
+python bin/DeepMod.py [arguments]
+```
+
+But I installed and set it up so that you just need to use `DeepMod` instead of `python bin/DeepMod.py`.
+
+#### Modkit
+
+```
+# Modkit
+export PATH="$PATH:/quobyte/lasallegrp/programs/.conda/dist_modkit_v0.4.2_10d99bc"
+```
+
+Confirm that you can run it by running:
+
+```
+modkit --help
+```
 
 ## How the Genome Center Cluster Works (Extra Information)
 

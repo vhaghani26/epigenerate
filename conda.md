@@ -53,7 +53,7 @@ As mentioned in the epigenerate documentation, you should be using conda. First,
 
 ```
 # Navigate to  your home directory
-cd /share/lasallelab/{your_directory}
+cd ~
 # Download Anaconda
 wget {copied_link}
 ```
@@ -64,15 +64,13 @@ This will download a file that look something like `Anaconda3{somestuff}.sh`. Ru
 bash Anaconda3{somestuff}.sh
 ```
 
-Read the license agreement and answer "yes" (without quotes) to accept the terms. **When you are asked about the install location, install it in `/share/lasallelab/{your_directory}/anaconda3`, NOT the default home directory.** If you use the default location, you will experience problems loading Conda down the line, so don't do that! It will take a little time to install. When the installer asks if you want to initialize Anaconda3 by running conda init, answer "yes."
+Read the license agreement and answer "yes" (without quotes) to accept the terms. Accept all defaults. It will take a little time to install. When the installer asks if you want to initialize Anaconda3 by running conda init, answer "yes."
 
-Now you have Conda installed! Add the following to your `.bashrc` or `.profile` or whatever you're using. Make sure to replace all variables within the curly brackets `{}` appropiately. Your Conda prefix is `/share/lasallelab/{your_directory}/anaconda3`.
+Now you have Conda installed! Add the following to your `.bashrc` or `.profile` or whatever you're using. Make sure to replace all variables within the curly brackets `{}` appropiately. Your Conda prefix is `home/{your_username}/anaconda3`.
 
 ```
 # Paths for conda and software configuration
-export LASALLEHOME=/share/lasallelab/{your_folder}
-export CONDA_ENVS_PATH=$LASALLEHOME/anaconda3
-export CONDA_PKGS_DIRS=$CONDA_ENVS_PATH/pkgs
+export LASALLEHOME=/quobyte/lasallegrp/{your_folder}
 
 # Aliases to improve CLI usage experience
 alias ls="ls -F"
