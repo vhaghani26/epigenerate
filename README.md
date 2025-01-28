@@ -422,7 +422,7 @@ conda activate /quobyte/lasallegrp/programs/.conda/Comethyl_v1.3.0/
 There are also updates underway to fix the gene annotation:
 
 ```
-conda activate /quobyte/lasallegrp/programs/.conda/Comethyl_v1.3.0_UPDATED/
+conda activate /quobyte/lasallegrp/programs/.conda/envs/Comethyl_v1.3.0_UPDATED
 ```
 
 ### DMRichR
