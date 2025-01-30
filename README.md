@@ -98,6 +98,10 @@ macOS does not come with an X11 implementation out of the box. You will first ne
 
 The client you use will determine how you access Hive. If you are using MobaXterm, which is recommended by the Genome Center, X11 forwarding should be enabled by default. You can confirm this by checking that the X11-Forwarding box is ticked under your Franklin session settings. For off-campus access, you may want to tick the Compression box as well.
 
+#### OnDemand
+
+You can alternatively open up an instance of Hive through your browser by logging in here: https://ondemand.hive.hpc.ucdavis.edu. This will allow you to launch an RStudio Server, a Linux Desktop, JupyterLab, or VSCode Server, which are all interactive.
+
 ## Requesting an Epigenerate Account
 
 **Note**: If you are new to the lab, please only refer to the instructions about Hive. 
