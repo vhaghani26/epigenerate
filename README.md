@@ -480,6 +480,27 @@ python bin/DeepMod.py [arguments]
 
 But I installed and set it up so that you just need to use `DeepMod` instead of `python bin/DeepMod.py`.
 
+#### DeepMod2
+
+```
+# DeepMod2
+export PATH="$PATH:/quobyte/lasallegrp/programs/.conda/DeepMod2"
+```
+
+Confirm you can run it by running:
+
+```
+DeepMod2 --help
+```
+
+Note that the documentation tells you to run:
+
+```
+python DeepMod2/deepmod2 [arguments]
+```
+
+But I installed and set it up so that you just need to use `DeepMod2` instead of `python DeepMod2/deepmod2`.
+
 #### Modkit
 
 ```
