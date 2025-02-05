@@ -59,12 +59,6 @@ echo "Allocated memory: " $MEM
 # Load Environment #
 ####################
 
-# Run aklog to deal with SLURM bug
-aklog
-
-# Source your config file so conda can be used (likely .profile, could be .bashrc)
-source ~/.profile
-
 # Activate the conda environment
 conda activate /quobyte/lasallegrp/programs/.conda/envs/DMRichR_R4.2
 
