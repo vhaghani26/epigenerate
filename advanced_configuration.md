@@ -56,3 +56,19 @@ RESET_COLOR="\[\e[0m\]"
 # Customize the PS1 prompt
 PS1="${GREEN}\u@\h${RESET_COLOR}: ${BLUE}\W${RESET_COLOR}\$ "
 ```
+
+# Viewing CSVs
+
+CSV files are common files for storing data. However, they are not easy on the eye viewing them at the command line. Here is a function called `prettycsv` that allows you to view CSV files easily. Put the following in your `.profile`:
+
+```
+prettycsv() {
+    if [ -z "$1" ]; then
+        echo "Usage: prettycsv [file]"
+    else
+        cat "$1" | column -t -s, | less -S
+    fi
+}
+```
+
+Now source your `.profile` and test it out on any CSV by running `prettycsv {file.csv}`. For more viewing options and use cases, please visit the [Pretty CSV Website](https://www.stefaanlippens.net/pretty-csv.html).
