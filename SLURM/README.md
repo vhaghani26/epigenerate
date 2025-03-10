@@ -86,7 +86,7 @@ We can use a number of different flags to specify resources we want from SLURM:
 If we were being mean to ourselves we would write these out at the command line each time we submitted a job to SLURM with `sbatch`. It would look something like this:
 
 ```
-sbatch --time=01-02:03:04 -p high2 --mem=4Gb --mail-user={your_email} --mail-type=ALL -J {job_name} -o {file_name}.out -e {file_name}.err
+sbatch --time=01-02:03:04 -p high --mem=4Gb --mail-user={your_email} --mail-type=ALL -J {job_name} -o {file_name}.out -e {file_name}.err
 ```
 
 Typing all of the parameters out on the command line every time we want to submit a batch script is annoying and it also doesn't allow us to record what parameters we used easily. We can instead put the parameters to run each job in the script we submit to SLURM!
@@ -101,43 +101,38 @@ In the best case (of this terrible scenario) we would have a script to recreate 
 
 We can do this by adding **#SBATCH** lines of code after the sh-bang line (`#!/bin/bash`) in our script.
 
-Here is a template of a SLURM script that I have run in the past.
+Here is a template of a SLURM script.
 
 ```
 #!/bin/bash
 #
 #SBATCH --mail-user=vhaghani@ucdavis.edu                            # User email to receive updates
 #SBATCH --mail-type=ALL                                             # Get an email when the job begins, ends, or if it fails
-#SBATCH -p production                                               # Partition, or queue, to assign to
-#SBATCH -J duplicate_finder                                         # Name for job
-#SBATCH -o duplicate_finder.j%j.out                                 # File to write STDOUT to
-#SBATCH -e duplicate_finder.j%j.err                                 # File to write error output to
+#SBATCH -p high		                                                # Partition, or queue, to assign to
+#SBATCH -J job_name		                                            # Name for job
+#SBATCH -o job_name.j%j.out              		                    # File to write STDOUT to
+#SBATCH -e job_name.j%j.err                  		                # File to write error output to
 #SBATCH -N 1                                                        # Number of nodes/computers
 #SBATCH -n 1                                                        # Number of cores
 #SBATCH -c 8                                                        # Eight cores per task
 #SBATCH -t 72:00:00                                                 # Ask for no more than 72 hours
 #SBATCH --mem=6gb                                                   # Ask for no more than 6 GB of memory
-#SBATCH --chdir=/share/lasallelab/Viki/epigenerate/Duplicate_Finder # Directory I want the job to run in
+#SBATCH --chdir=/quobyte/lasallegrp/Viki/my_project_directory	    # Directory I want the job to run in
 
-# Run aklog to deal with SLURM bug
-aklog
+# Source your config file (usually ~/.bashrc or ~/.profile) so conda can be used
+source {config_file}
 
-# Source profile so conda can be used
-source /share/korflab/home/viki/profile
-
-# Initialize conda
-. /software/anaconda3/4.8.3/lssc0-linux/etc/profile.d/conda.sh
 
 # Activate your desired conda environment
-conda activate /share/korflab/home/viki/.conda/dup_find
+conda activate {full_env_path}
 
 # Fail on weird errors
 set -o nounset
 set -o errexit
 set -x
 
-# Run the duplicate finder
-python3 duplicate_finder.py --path /share/lasallelab/ > /share/lasallelab/Viki/epigenerate/Duplicate_Finder/2023_02_09_duplicate_files_results.txt
+# Run your commands
+{your_commands_go_here}
 
 # Print out various information about the job
 env | grep SLURM                                               # Print out values of the current jobs SLURM environment variables

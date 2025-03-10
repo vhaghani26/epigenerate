@@ -2,7 +2,7 @@
 #
 #SBATCH --mail-user={your_email}                                    # User email to receive updates
 #SBATCH --mail-type=ALL                                             # Get an email when the job begins, ends, or if it fails
-#SBATCH -p production                                               # Partition, or queue, to assign to
+#SBATCH -p high                                                     # Partition, or queue, to assign to
 #SBATCH -J {job_name}                                               # Name for job
 #SBATCH -o {job_name}.j%j.out                                       # File to write STDOUT to
 #SBATCH -e {job_name}.j%j.err                                       # File to write error output to
@@ -13,14 +13,9 @@
 #SBATCH --mem=10gb                                                   # Ask for no more than 10 GB of memory
 #SBATCH --chdir={your_directory}                                    # Directory I want the job to run in
 
-# Run aklog to deal with SLURM bug
-aklog
-
 # Source your config file (usually ~/.bashrc or ~/.profile) so conda can be used
 source {config_file}
 
-# Initialize conda (note that the path may differ for you)
-. /software/anaconda3/4.8.3/lssc0-linux/etc/profile.d/conda.sh
 
 # Activate your desired conda environment
 conda activate {full_env_path}
