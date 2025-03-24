@@ -53,7 +53,21 @@ Also, you can request more/different resources by using to following flags:
 * `--mem=<number>Gb` - request a certain amount of memory
 * `-c <number>` - request a certain number of CPUs
 * `--pty R` - request an interactive R session
+* `--account` - specifies the account; either `publicgrp`, which has a high and low partition (with a 3 day job time limit) or `lasallegrp`, which has a high partition and prioritizes our jobs compared to others
 
+Any of the options you add should come before the `--pty` argument. For example, this will **not** work:
+
+```
+srun --time=00:05:00 --pty /bin/bash --mem=4Gb --account publicgrp --partition low
+```
+
+But this will work:
+
+```
+srun --time=00:05:00 --mem=4Gb --account publicgrp --partition low --pty /bin/bash
+```
+
+Once you are done your `srun` session, type `exit` so that the resources can be used by someone else since you are no longer using them. This is the nice thing to do!
 
 ### 2. Submit batch scripts with `sbatch`
 
