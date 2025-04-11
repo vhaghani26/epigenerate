@@ -201,7 +201,7 @@ squeue --me
 We can also expand our view to show the full rule name (the default is 8 characters long, which is too short for my uses at times). It also displays how long a job has been running next to the time limit. As such, I find this more informative than the above command:
 
 ```
-squeue --format="%.18i %.9P %.30j %.8u %.8T %.10M %.9l %.6D %R" --me
+squeue --format="%.18i %.9P %.30j %.8u %.8T %.10M %.9l %.6D %.10a %.10R" --me
 ```
 
 #### Cancel your jobs with `scancel`
