@@ -72,3 +72,19 @@ prettycsv() {
 ```
 
 Now source your `.profile` and test it out on any CSV by running `prettycsv {file.csv}`. For more viewing options and use cases, please visit the [Pretty CSV Website](https://www.stefaanlippens.net/pretty-csv.html).
+
+# Viewing Excel Files
+
+Excel files are binary, making them irritating to quickly check the contents of at the command line. Ensure you have Python and Pandas installed before running this. Add this function to your `.profile`:
+
+```
+view_xlsx() {
+    python -c "import pandas as pd; print(pd.read_excel('$1').to_csv(index=False))"
+}
+```
+
+Now you can view Excel files by running:
+
+```
+view_xlsx {file.xlsx}
+```
