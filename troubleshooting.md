@@ -43,7 +43,7 @@ Calls: <Anonymous> ... <Anonymous> -> <Anonymous> -> <Anonymous> -> <Anonymous>
 Execution halted
 ```
 
-Fix: ???
+Fix: ??? \
 I encountered MatrixGenerics error  due to inconsistent seqname style. When working with the "rheMac10" genome, CpG reports from Bismark have "NC_" style chromosome names (e.g., NC_041754.1), but DMRichR expects chr style names (e.g., chr1, chr2).
 
 You can fix this by remapping the chromosome names using the UCSC–RefSeq conversion file (ucsdtorefseq_rheMac10.txt), which looks like:
