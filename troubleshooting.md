@@ -48,8 +48,8 @@ I encountered MatrixGenerics error  due to inconsistent seqname style. When work
 
 You can fix this by remapping the chromosome names using the UCSC–RefSeq conversion file (ucsdtorefseq_rheMac10.txt), which looks like:
 
-chr1    0   223616942   NC_041754.1
-chr2    0   196197964   NC_041755.1
+chr1    0   223616942   NC_041754.1 \
+chr2    0   196197964   NC_041755.1 \
 ...
 
 Fix All CpG Reports in a Directory:
